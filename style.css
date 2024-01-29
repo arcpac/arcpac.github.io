@@ -14,3 +14,10 @@
     height
   margin: 10px;
 }
+.card {
+  border: none;
+}
+/* .cert-image{
+  max-width: 80%;
+  height: auto;
+} */
