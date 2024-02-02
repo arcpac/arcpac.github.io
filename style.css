@@ -5,7 +5,7 @@
 }
 
 .profile-image {
-  height: 100px;
+  height: 150px;
   border-radius: 50%;
   margin: 10px;
 }
@@ -17,7 +17,12 @@
 .card {
   border: none;
 }
-/* .cert-image{
-  max-width: 80%;
-  height: auto;
-} */
+
+
+@media (max-width: 945px) {
+  .profile-image {
+    height: 120px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+}
