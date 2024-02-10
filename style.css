@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+
+*{transition: .3s;}
+
 .icon-square {
   width: 3rem;
   height: 3rem;
@@ -14,10 +18,6 @@
     height
   margin: 10px;
 }
-.card {
-  border: none;
-}
-
 
 @media (max-width: 945px) {
   .profile-image {
@@ -25,4 +25,58 @@
     border-radius: 50%;
     margin: 10px;
   }
+}
+
+// cards
+
+.card {
+  border: none;
+}
+
+.skill-card { 
+  background: color:rgba(255,255,255,1);
+  border: none;
+  &:hover {
+    background: linear-gradient(170deg, #B4EC51 0%, #429321 100%);
+    .skill-title {
+      margin-left:1rem;
+      color: #ffffff;
+    }
+    .skill-icon {
+      top: 1%;
+    }
+    .skill-title i {
+      display: none;
+    }
+  }
+}
+
+.skill-title {
+  font-weight: 300;
+  font-size:1.5rem;
+  font-family: 'Open Sans', sans-serif;
+  i {
+    font-size: 2rem
+  }
+}
+
+.skill-icon-container {
+  position:absolute;
+  top: 0;
+  left:0;
+  bottom:0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.skill-icon {
+  position: relative;
+  top: -50%;
+  top:60%;
+  font-size: 12rem;
+  opacity: 0.2;
+  color:rgba(255,255,255,1);
+  z-index: 0;
 }
