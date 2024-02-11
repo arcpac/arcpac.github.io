@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+@font-face{
+  font-family: "SF-Pro";
+  src: url("css/fonts/SF-Pro.ttf")
+}
+
+*{
+  font-family: SF-Pro;
+}
 
 *{transition: .3s;}
 
@@ -53,7 +61,7 @@
 
 .skill-title {
   font-weight: 300;
-  font-size:1.5rem;
+  font-size:1.3rem;
   font-family: 'Open Sans', sans-serif;
   i {
     font-size: 2rem
