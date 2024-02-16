@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+@import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
+
 @font-face{
-  font-family: "SF-Pro";
-  src: url("css/fonts/SF-Pro.ttf")
+  font-family: "Grotesk Pro Thin";
+  src: url("css/fonts/grotesk/NeueHaasDisplayThin.ttf")
+}
+@font-face{
+  font-family: "Grotesk Pro Med";
+  src: url("css/fonts/grotesk/NeueHaasDisplayMediu.ttf")
+}
+@font-face{
+  font-family: "Grotesk Pro Roman";
+  src: url("css/fonts/grotesk/HankenGrotesk-VariableFont_wght.ttf")
 }
 
 *{
-  font-family: SF-Pro;
+  font-family: Grotesk Pro Roman;
 }
 
 *{transition: .3s;}
@@ -87,4 +97,36 @@
   opacity: 0.2;
   color:rgba(255,255,255,1);
   z-index: 0;
+}
+
+.dev-tools {
+  background: #F4F5F7;
+}
+
+.dev-tool1 {
+  background-image: url(./assets/images/icon-bgs/icon-bg.png); 
+  background-position: center;
+  position: relative;
+}
+.dev-tool2 {
+  background-image: url(./assets/images/icon-bgs/icon-bg2.png); 
+  /* background-size: cover; */
+  background-position: center;
+  position: relative;
+}
+
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distribute space evenly around the child elements */
+  height: 100%; 
+}
+.content-wrapper img {
+  margin: auto;
+  max-height: 100%; /* Set a smaller maximum height for the image */
+  max-width: 100%;
+}
+.content-wrapper .dev-desc {
+  margin-top: 1rem
 }
