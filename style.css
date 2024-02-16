@@ -100,7 +100,20 @@
 }
 
 .dev-tools {
-  background: #F4F5F7;
+  /* background: #F4F5F7; */
+  background-image: url(./assets/images/icon-bgs/bg.png); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.dev-tools-description {
+  font-weight: 300;
+  /* letter-spacing: -1px; */
+}
+.tagline {
+  font-weight: 300;
+  letter-spacing: -1px;
 }
 
 .dev-tool1 {
@@ -111,6 +124,12 @@
 .dev-tool2 {
   background-image: url(./assets/images/icon-bgs/icon-bg2.png); 
   /* background-size: cover; */
+  background-position: center;
+  position: relative;
+}
+.dev-tool3 {
+  background-image: url(./assets/images/icon-bgs/bg.png); 
+  background-size: cover;
   background-position: center;
   position: relative;
 }
