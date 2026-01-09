@@ -14,51 +14,76 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const WORK_EXPERIENCES = [
   {
-    company: "Company XYZ",
+    company: "CorporateInteractive",
     role: "Software Developer",
-    period: "2018 - 2020",
-    location: "Sydney, AU",
+    period: "Jun 2024 – Present",
+    location: "Australia",
+    icon: "/logos/qc.png",
     description:
-      "Built internal tools for inventory tracking, improving data accuracy and reducing manual reporting overhead.",
+      "Contribute to QuoteCloud’s core product features end-to-end from UI implementation to backend integration ensuring components are consistent, reusable, and conflict-free across the app. Maintain and enhance the QuoteCloud product and marketing websites via an in-house CMS, including ongoing improvements to the Visual Editor and content-building workflow. Support product growth through research and experiments focused on improving user experience and customer acquisition.",
   },
   {
-    company: "Nova Labs",
-    role: "Frontend Engineer",
-    period: "2020 - 2021",
-    location: "Melbourne, AU",
+    company: "Yondu Inc.",
+    role: "Systems Analyst",
+    period: "Jun 2021 – Feb 2022",
+    location: "Philippines",
+    icon: "/logos/yondu.png",
     description:
-      "Delivered customer-facing UI features in React and optimized bundle performance for faster load times.",
+      "Served as the system SME for enterprise projects—capturing requirements from client and dev discussions, documenting decisions, and maintaining clear references for configuration and environment details. Supported system setup and configuration, ran User Acceptance Testing (UAT), and produced functional/non-functional documentation to support smooth releases and handover.",
   },
   {
-    company: "Blue Finch",
-    role: "Full Stack Developer",
-    period: "2021 - 2022",
-    location: "Brisbane, AU",
+    company: "Pragtechnologies",
+    role: "Software Engineer",
+    period: "Aug 2019 – Jun 2021",
+    location: "Philippines",
+    icon: "/logos/pragtech.png",
     description:
-      "Shipped end-to-end features across APIs and web clients with a focus on reliability and test coverage.",
+      "Built and shipped features for production web applications in healthcare and SMS platforms, working primarily across React (frontend) and Elixir/Phoenix (backend). Delivered end-to-end improvements with a focus on clean implementation, reliability, and maintainable code.",
   },
   {
-    company: "Orbit Systems",
-    role: "Senior Developer",
-    period: "2022 - 2023",
-    location: "Perth, AU",
+    company: "Bounty Fresh Food Inc.",
+    role: "Software Developer",
+    period: "Feb 2019 – Jul 2019",
+    location: "Philippines",
+    icon: "/logos/bounty.png",
     description:
-      "Led a migration to Next.js and streamlined deployment workflows for quicker release cycles.",
+      "Built and maintained internal business applications using PHP (CodeIgniter), supporting day-to-day operational workflows. Also handled systems analysis—gathering requirements from stakeholders, documenting processes, and translating business needs into practical system features and improvements.",
   },
   {
-    company: "Arcadia Tech",
-    role: "Lead Engineer",
-    period: "2023 - Present",
-    location: "Remote, AU",
+    company: "HDI System Technology",
+    role: "Systems Implementation Specialist",
+    period: "Jul 2018 – Feb 2019",
+    location: "Philippines",
+    icon: "/logos/picture.png",
     description:
-      "Guided a small team, set technical direction, and improved performance and accessibility standards.",
+      "Supported system implementation activities, including setup, rollout support, and coordination to ensure smooth adoption for stakeholders.",
+  },
+  {
+    company: "Optimind Technology Solutions",
+    role: "SEO Link Builder",
+    period: "Jul 2016 – Jun 2018",
+    location: "Philippines",
+    icon: "/logos/optimind.png",
+    description:
+      "Early career role focused on SEO link-building and off-page optimisation tasks, supporting search visibility and content discoverability.",
+  },
+  {
+    company: "Asia Brewery Incorporated",
+    role: "Junior Systems Analyst",
+    period: "Aug 2015 – Jun 2016",
+    location: "Philippines",
+    icon: "/logos/ab.png",
+    description:
+      "Early career role assisting with system support, documentation, and coordination across business and technical teams.",
   },
 ];
+
 const FEATURED_PROJECTS = [
   {
     eyebrow: "FEATURED PROJECT",
     title: "QuoteCloud",
-    subtitle: "Document editor + proposals platform.",
+    subtitle:
+      "Contributed to core QuoteCloud features that help businesses create and send quotes efficiently, track document status end-to-end, and complete approvals via eSignature—no messy back-and-forth.",
     href: "#",
     image: "/images/sample-app.png",
   },
@@ -71,8 +96,9 @@ const FEATURED_PROJECTS = [
   },
   {
     eyebrow: "SIDE PROJECT",
-    title: "Wedding Invitation",
-    subtitle: "A polished Next.js static site.",
+    title: "Chatbot",
+    subtitle:
+      "Ollama + LangChain assistant embedded in QuoteCloud. Uses a local LLM (Ollama) and a LangChain RAG pipeline to answer app-specific questions and guide users through workflows.",
     href: "#",
     image: "/images/sample-app.png",
   },
@@ -81,38 +107,50 @@ const FEATURED_PROJECTS = [
 const TOOLS = [
   {
     name: "Next.js",
-    desc: "App Router, SSR",
-    icon: "/images/sample-app.png",
+    desc: "App Router • SSR/SSG",
+    icon: "/logos/nextjs.svg",
     href: "#",
   },
   {
     name: "React",
-    desc: "UI + components",
-    icon: "/images/sample-app.png",
+    desc: "Component-driven UI",
+    icon: "/logos/react-2.svg",
     href: "#",
   },
   {
     name: "TypeScript",
-    desc: "Type-safe dev",
-    icon: "/images/sample-app.png",
+    desc: "Type-safe JavaScript",
+    icon: "/logos/ts-1.svg",
     href: "#",
   },
   {
-    name: "Tailwind",
-    desc: "Fast styling",
-    icon: "/images/sample-app.png",
+    name: "JavaScript",
+    desc: "Modern ES6+",
+    icon: "/logos/js.png",
+    href: "#",
+  },
+  {
+    name: "Tailwind CSS",
+    desc: "Utility-first styling",
+    icon: "/logos/tailwind.svg",
     href: "#",
   },
   {
     name: "PostgreSQL",
-    desc: "Relational DB",
-    icon: "/images/sample-app.png",
+    desc: "SQL relational database",
+    icon: "/logos/postgres.svg",
     href: "#",
   },
   {
-    name: "Supabase",
-    desc: "Auth + DB",
-    icon: "/images/sample-app.png",
+    name: "Elixir + Phoenix",
+    desc: "Backend APIs • OTP",
+    icon: "/logos/elixir-phoenix.png",
+    href: "#",
+  },
+  {
+    name: "PHP",
+    desc: "Server-side web apps",
+    icon: "/logos/php.svg",
     href: "#",
   },
 ];
@@ -123,6 +161,76 @@ const NAV_ITEMS = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
 ];
+
+const NOW_STACK = [
+  { name: "React", icon: "/logos/react-2.svg" },
+  { name: "Next.js", icon: "/logos/nextjs.svg" },
+  { name: "TypeScript", icon: "/logos/typescript.svg" },
+  { name: "JavaScript", icon: "/logos/javascript.svg" },
+  { name: "Tailwind", icon: "/logos/tailwind.svg" },
+  { name: "PostgreSQL", icon: "/logos/postgres.svg" },
+  { name: "Supabase", icon: "/logos/supabase.svg" },
+  { name: "Docker", icon: "/logos/docker.svg" },
+  { name: "Git", icon: "/logos/git.svg" },
+];
+
+const NEXT_STACK = [
+  { name: "LLMs", icon: "/logos/llm.svg" }, // or OpenAI/Ollama icon
+  { name: "RAG", icon: "/logos/rag.svg" },
+  { name: "LangChain", icon: "/logos/langchain.svg" },
+  { name: "Ollama", icon: "/logos/ollama.svg" },
+  { name: "Vector DBs", icon: "/logos/vector.svg" }, // Pinecone/pgvector/etc.
+];
+
+function StackRow({
+  label,
+  items,
+}: {
+  label: string;
+  items: { name: string; icon: string }[];
+}) {
+  return (
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-6">
+      <div className="shrink-0 text-xs font-semibold tracking-wide text-neutral-500 dark:text-neutral-400">
+        {label}
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {items.map((item) => (
+          <div
+            key={item.name}
+            className="group inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-800 shadow-sm transition hover:-translate-y-[1px] hover:border-neutral-300 hover:shadow dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
+            title={item.name}
+          >
+            <span className="relative h-4 w-4 overflow-hidden rounded-sm">
+              <Image
+                src={item.icon}
+                alt={`${item.name} logo`}
+                fill
+                className="object-contain"
+              />
+            </span>
+            <span className="font-medium">{item.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function NowNextStack() {
+  return (
+    <div className="mx-auto mt-6 w-full max-w-2xl">
+      <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-800 dark:bg-neutral-950">
+        <div className="flex flex-col gap-5">
+          <StackRow label="NOW (daily drivers)" items={NOW_STACK} />
+          <div className="h-px w-full bg-neutral-200 dark:bg-neutral-800" />
+          <StackRow label="NEXT (currently exploring)" items={NEXT_STACK} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -186,26 +294,12 @@ export default function Home() {
             real-world use. I’ve worked across both frontend and backend, and
             I’m comfortable picking up new tools and technologies along the way.
             I’m currently looking for a full-time Software Developer or QA/Test
-            role.{" "}
+            role.
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
-            {/* Explore */}
-            <button
-              className="
-          group inline-flex items-center justify-center
-          rounded-full 
-          bg-neutral-200 text-neutral-800
-          px-8 py-2 text-md font-bold
-          dark:bg-neutral-600 dark:text-slate-100
-          transition hover:bg-neutral-300 dark:hover:bg-neutral-500
-        "
-            >
+            <button className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500">
               <span
-                className="inline-flex items-center overflow-hidden
-            w-0 opacity-0 -ml-1
-            transition-all duration-200
-            group-hover:w-4 group-hover:opacity-100 group-hover:ml-0
-          "
+                className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
                 aria-hidden="true"
               >
                 x
@@ -214,35 +308,24 @@ export default function Home() {
               <span className="ml-2">Explore my Work</span>
             </button>
 
-            {/* Resume */}
-            <button
-              className="
-          group inline-flex items-center justify-center
-          rounded-full
-          bg-neutral-200 text-neutral-800
-          px-8 py-2 text-md font-bold
-          dark:bg-neutral-600 dark:text-slate-100
-          transition hover:bg-neutral-300 dark:hover:bg-neutral-500
-        "
+            <a
+              href="/next.svg"
+              download
+              className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
             >
               <span
-                className="
-            inline-flex items-center overflow-hidden
-            w-0 opacity-0 -ml-1
-            transition-all duration-200
-            group-hover:w-4 group-hover:opacity-100 group-hover:ml-0
-          "
+                className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
                 aria-hidden="true"
               >
                 x
               </span>
 
               <span className="ml-2">Check my Resume</span>
-            </button>
+            </a>
           </div>
           <div className="flex justify-center gap-6 pb-2">
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/anton-caballes-a44a4a18b/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -258,23 +341,6 @@ export default function Home() {
                 <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.75 9.5H6.5V17H8.75V9.5M7.63 6.75A1.38 1.38 0 0 0 6.25 8.12A1.38 1.38 0 0 0 7.63 9.5A1.38 1.38 0 0 0 9 8.12A1.37 1.37 0 0 0 7.63 6.75M17.5 12.5C17.5 10.79 16.5 9.5 14.71 9.5C13.81 9.5 13.25 10 13 10.5V9.5H10.75V17H13V13C13 12 13.22 11 14.2 11C15.16 11 15.25 11.86 15.25 13V17H17.5V12.5Z" />
               </svg>
             </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="rounded-full border border-slate-300 p-3 transition hover:bg-slate-200 dark:border-slate-700 dark:hover:bg-slate-800"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-6 w-6 text-slate-800 dark:text-slate-200"
-                aria-hidden="true"
-              >
-                <path d="M12 2C6.48 2 2 6.58 2 12.26C2 16.94 4.87 20.98 8.84 22.5C9.34 22.58 9.5 22.27 9.5 22V20.13C6.73 20.75 6.14 18.92 6.14 18.92C5.68 17.73 5 17.42 5 17.42C4.09 16.77 5.07 16.78 5.07 16.78C6.06 16.85 6.58 17.83 6.58 17.83C7.47 19.38 8.92 18.95 9.48 18.7C9.57 18.03 9.83 17.57 10.12 17.31C7.91 17.05 5.58 16.16 5.58 11.69C5.58 10.42 6.03 9.39 6.77 8.58C6.65 8.31 6.24 7.2 6.88 5.73C6.88 5.73 7.86 5.41 9.5 6.57C10.43 6.31 11.41 6.18 12.39 6.18C13.37 6.18 14.35 6.31 15.28 6.57C16.92 5.41 17.9 5.73 17.9 5.73C18.54 7.2 18.13 8.31 18.01 8.58C18.75 9.39 19.2 10.42 19.2 11.69C19.2 16.17 16.86 17.04 14.64 17.3C15 17.61 15.33 18.22 15.33 19.13V22C15.33 22.27 15.49 22.58 15.99 22.5C19.97 20.98 22.84 16.94 22.84 12.26C22.84 6.58 18.36 2 12 2Z" />
-              </svg>
-            </a>
           </div>
         </div>
       </section>
@@ -284,48 +350,90 @@ export default function Home() {
         className="flex w-full max-w-3xl flex-col items-center justify-center gap-4 p-2 md:min-h-screen"
       >
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
-              The mind behind the creations
-            </h2>
-            <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
-              Computer Science text for the story behind the work. This space is
-              where I share what fuels my creativity, from late-night coding
-              sessions to riff-heavy guitar practice.
-            </p>
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6">
+            <div className="flex flex-col items-center gap-2 text-center">
+              <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
+                The mind behind the creations
+              </h2>
+              <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
+                Always learning, always optimising. Lately, I’ve been exploring
+                AI-powered apps: chatbots, LLMs, and practical ways to bring
+                them into real products. I’m comfortable picking up new
+                technologies quickly, and I enjoy learning from strong teams and
+                experienced engineers to keep improving how I build.
+              </p>
+            </div>
           </div>
 
-          <div className="grid items-center gap-12">
-            <div className="flex flex-col gap-6 text-neutral-700 dark:text-neutral-200">
-              <div className="grid gap-4 text-neutral-700 dark:text-neutral-300">
-                <div className="mb-2">
-                  <p className="uppercase tracking-[0.3em] text-neutral-800 dark:text-neutral-200">
-                    Coding + Software Developer
-                  </p>
-                  <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-                    Placeholder text about building clean systems, refining
-                    ideas, and staying curious with new tools.
-                  </p>
-                </div>
-                <div className="mb-2">
-                  <p className="uppercase tracking-[0.3em] text-neutral-800 dark:text-neutral-200">
-                    Coding + Software Developer
-                  </p>
-                  <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-                    Placeholder text about building clean systems, refining
-                    ideas, and staying curious with new tools.
-                  </p>
-                </div>
-                <div className="mb-2">
-                  <p className="uppercase tracking-[0.3em] text-neutral-800 dark:text-neutral-200">
-                    Coding + Software Developer
-                  </p>
-                  <p className="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-                    Placeholder text about building clean systems, refining
-                    ideas, and staying curious with new tools.
-                  </p>
-                </div>
+          {/* <NowNextStack /> */}
+        </div>
+        <div id="techs" className="w-full">
+          <div className="mx-auto w-full px-4 md:px-16 py-16">
+            {/* Tools header row */}
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <div>
+                {/* <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white">
+                  Tools & Tech I use
+                </h3> */}
+                <p className="mt-1 text-neutral-600 dark:text-neutral-300">
+                  The stack I reach for to ship fast and keep things stable.
+                </p>
               </div>
+
+              <Link
+                href="#"
+                className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+              >
+                See All
+              </Link>
+            </div>
+
+            {/* Small “icon rows” grid */}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+              {TOOLS.map((t) => (
+                <div
+                  key={t.name}
+                  className="
+                flex items-center justify-between gap-4
+                rounded-2xl border border-neutral-200 bg-white p-4
+                shadow-sm transition hover:shadow-md
+                dark:border-neutral-800 dark:bg-neutral-900
+              "
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                      <Image
+                        src={t.icon}
+                        alt={`${t.name} icon`}
+                        fill
+                        className="object-contain"
+                        sizes="48px"
+                      />
+                    </div>
+
+                    <div className="leading-tight">
+                      <div className="text-sm font-semibold text-neutral-900 dark:text-white">
+                        {t.name}
+                      </div>
+                      <div className="text-xs text-neutral-600 dark:text-neutral-300">
+                        {t.desc}
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={t.href}
+                    className="
+                  rounded-full bg-neutral-100 px-4 py-2
+                  text-xs font-semibold text-blue-600
+                  transition hover:bg-neutral-200
+                  dark:bg-neutral-800 dark:text-blue-400 dark:hover:bg-neutral-700
+                "
+                  >
+                    View
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -346,16 +454,35 @@ export default function Home() {
           </div>
 
           {WORK_EXPERIENCES.map((work_exp) => (
-            <div className="relative grid gap-12">
-              <div className="grid  gap-8">
+            <div
+              key={`${work_exp.company}-${work_exp.period}`}
+              className="relative grid gap-12"
+            >
+              <div className="grid gap-8">
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
-                    <div className="text-lg font-semibold text-neutral-900 dark:text-white">
-                      {work_exp.company}
+                    <div className="flex items-center gap-3">
+                      {work_exp.icon ? (
+                        <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white">
+                          <Image
+                            src={work_exp.icon}
+                            alt={`${work_exp.company} icon`}
+                            fill
+                            className="object-contain"
+                            sizes="48px"
+                          />
+                        </div>
+                      ) : null}
+
+                      <div className="text-lg font-semibold text-neutral-900 dark:text-white">
+                        {work_exp.company}
+                      </div>
                     </div>
-                    <div className="text-sm text-neutral-700 dark:text-neutral-300">
+
+                    <div className="text-sm text-neutral-700 dark:text-neutral-300 font-bold">
                       {work_exp.role} | {work_exp.period} | {work_exp.location}
                     </div>
+
                     <p className="text-sm text-neutral-700 dark:text-neutral-300">
                       {work_exp.description}
                     </p>
@@ -364,25 +491,6 @@ export default function Home() {
               </div>
             </div>
           ))}
-          <div className="relative grid gap-12">
-            <div className="grid  gap-8">
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                  <div className="text-lg font-semibold text-neutral-900 dark:text-white">
-                    Horizon Labs • Horizon Labs Inc.
-                  </div>
-                  <div className="text-sm text-neutral-700 dark:text-neutral-300">
-                    Software Engineer | Jan 2025 – Present | Melbourne
-                  </div>
-                  <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                    Placeholder summary about building responsive web
-                    interfaces, collaborating with cross-functional teams, and
-                    shipping features on a fast cadence.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -444,92 +552,38 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+      <section id="contact" className="w-full py-20">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-8 text-center dark:border-neutral-800 dark:bg-neutral-950 sm:p-12">
+            <h2 className="text-3xl font-semibold text-neutral-900 dark:text-white sm:text-4xl">
+              Let’s build something
+            </h2>
 
-          {/* Divider */}
-          <div className="my-14 h-px w-full bg-neutral-200 dark:bg-neutral-800" />
+            <p className="mx-auto mt-3 max-w-2xl text-base text-neutral-700 dark:text-neutral-300 sm:text-lg">
+              Have a role, project, or collaboration in mind? Email me and I’ll
+              get back to you.
+            </p>
 
-          {/* Tools header row */}
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white">
-                Tools & Tech I use
-              </h3>
-              <p className="mt-1 text-neutral-600 dark:text-neutral-300">
-                The stack I reach for to ship fast and keep things stable.
-              </p>
-            </div>
-
-            <Link
-              href="#"
-              className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
-            >
-              See All
-            </Link>
-          </div>
-
-          {/* Small “icon rows” grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {TOOLS.map((t) => (
-              <div
-                key={t.name}
-                className="
-                flex items-center justify-between gap-4
-                rounded-2xl border border-neutral-200 bg-white p-4
-                shadow-sm transition hover:shadow-md
-                dark:border-neutral-800 dark:bg-neutral-900
-              "
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+              <a
+                href="mailto:YOUR_EMAIL_HERE"
+                className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-8 py-2 text-md font-bold text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
               >
-                <div className="flex items-center gap-4">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800">
-                    <Image
-                      src={t.icon}
-                      alt={`${t.name} icon`}
-                      fill
-                      className="object-cover"
-                      sizes="48px"
-                    />
-                  </div>
+                Email me
+              </a>
 
-                  <div className="leading-tight">
-                    <div className="text-sm font-semibold text-neutral-900 dark:text-white">
-                      {t.name}
-                    </div>
-                    <div className="text-xs text-neutral-600 dark:text-neutral-300">
-                      {t.desc}
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  href={t.href}
-                  className="
-                  rounded-full bg-neutral-100 px-4 py-2
-                  text-xs font-semibold text-blue-600
-                  transition hover:bg-neutral-200
-                  dark:bg-neutral-800 dark:text-blue-400 dark:hover:bg-neutral-700
-                "
-                >
-                  View
-                </Link>
-              </div>
-            ))}
+              <a
+                href="mailto:YOUR_EMAIL_HERE"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+              >
+                antonraphaelcaballes@gmail.com
+              </a>
+            </div>
           </div>
         </div>
       </section>
-      {/* <section>
-        <div className="rounded-2xl border border-slate-700/60 bg-slate-700/70 p-4 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.9)]">
-          <div className="flex items-center gap-2 pb-3">
-            <span className="h-4 w-4 rounded-full bg-rose-400/90" />
-            <span className="h-4 w-4 rounded-full bg-amber-300/100" />
-            <span className="h-4 w-4 rounded-full bg-emerald-500/100" />
-            <span className="ml-auto text-xs uppercase tracking-[0.3em] text-slate-500">
-              hobby
-            </span>
-          </div>
-          <p className="text-lg font-semibold text-white">sdf</p>
-          <p className="mt-2 text-sm text-slate-300">asdf</p>
-        </div>
-      </section> */}
     </div>
   );
 }
