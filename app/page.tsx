@@ -83,16 +83,17 @@ const FEATURED_PROJECTS = [
     eyebrow: "FEATURED PROJECT",
     title: "QuoteCloud",
     subtitle:
-      "Contributed to core QuoteCloud features that help businesses create and send quotes efficiently, track document status end-to-end, and complete approvals via eSignature—no messy back-and-forth.",
-    href: "#",
-    image: "/images/sample-app.png",
+      "Corporate Interactive’s QuoteCloud product — I contributed to core features across the quoting workflow: building/sending quotes, end-to-end document tracking, and eSignature approvals for smoother client sign-off.",
+
+    href: "https://www.quote.cloud/",
+    image: "/gifs/qc-demo-vid.gif",
   },
   {
     eyebrow: "CASE STUDY",
     title: "SplitNest",
     subtitle: "Expense sharing for households.",
     href: "#",
-    image: "/images/sample-app.png",
+    image: "/gifs/Nest-vid.gif",
   },
   {
     eyebrow: "SIDE PROJECT",
@@ -100,7 +101,7 @@ const FEATURED_PROJECTS = [
     subtitle:
       "Ollama + LangChain assistant embedded in QuoteCloud. Uses a local LLM (Ollama) and a LangChain RAG pipeline to answer app-specific questions and guide users through workflows.",
     href: "#",
-    image: "/images/sample-app.png",
+    image: "/images/chatbot.png",
   },
 ];
 
@@ -502,8 +503,8 @@ export default function Home() {
               Projects
             </h2>
             <p className="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">
-              A few builds I’m proud of — clean UI, real-world workflows, and
-              production-ready code.
+              Things I’ve built (and I’m still building) — clean UI, real-world
+              workflows, and code that’s meant to last.
             </p>
           </div>
 
@@ -543,7 +544,7 @@ export default function Home() {
                       src={p.image}
                       alt={`${p.title} screenshot`}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="object-cover object-left transition-transform duration-500"
                       sizes="(min-width: 1024px) 33vw, 100vw"
                       priority
                     />
