@@ -503,7 +503,7 @@ export default function Home() {
         id="experience"
         className="flex w-full max-w-5xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-20 md:min-h-screen"
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 md:gap-12 px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 md:gap-12 px-4">
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
               Work Experience
@@ -548,7 +548,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="grid gap-3 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 hidden md:block">
+                <div className="hidden md:grid gap-3 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                   {work_exp.stack?.map((tool) => (
                     <div className="flex items-center max-w- justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
                       <div className="flex items-center gap-4">
@@ -581,7 +581,7 @@ export default function Home() {
       </section>
 
       <section id="projects" className="w-full">
-        <div className="mx-auto w-full px-4 pt-20 md:pt-0 md:px-16 ">
+        <div className="mx-auto w-full px-4 pt-20 md:pt-0 md:px-16">
           {/* Header */}
           <div className="mb-10">
             <h2 className="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">
