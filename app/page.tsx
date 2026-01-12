@@ -21,6 +21,26 @@ const WORK_EXPERIENCES = [
     icon: "/logos/qc.png",
     description:
       "Contribute to QuoteCloud’s core product features end-to-end from UI implementation to backend integration ensuring components are consistent, reusable, and conflict-free across the app. Maintain and enhance the QuoteCloud product and marketing websites via an in-house CMS, including ongoing improvements to the Visual Editor and content-building workflow. Support product growth through research and experiments focused on improving user experience and customer acquisition.",
+    stack: [
+      {
+        name: "Next.js",
+        desc: "App Router • SSR/SSG",
+        icon: "/logos/nextjs.svg",
+        href: "#",
+      },
+      {
+        name: "React",
+        desc: "Reusable UI components",
+        icon: "/logos/react-2.svg",
+        href: "#",
+      },
+      {
+        name: "TypeScript",
+        desc: "Type-safe codebase",
+        icon: "/logos/ts-1.svg",
+        href: "#",
+      },
+    ],
   },
   {
     company: "Yondu Inc.",
@@ -39,6 +59,26 @@ const WORK_EXPERIENCES = [
     icon: "/logos/pragtech.png",
     description:
       "Built and shipped features for production web applications in healthcare and SMS platforms, working primarily across React (frontend) and Elixir/Phoenix (backend). Delivered end-to-end improvements with a focus on clean implementation, reliability, and maintainable code.",
+    stack: [
+      {
+        name: "Elixir + Phoenix",
+        desc: "Backend services and APIs",
+        icon: "/logos/elixir-phoenix.png",
+        href: "#",
+      },
+      {
+        name: "PostgreSQL",
+        desc: "Relational database",
+        icon: "/logos/postgres.svg",
+        href: "#",
+      },
+      {
+        name: "GraphQL",
+        desc: "Flexible API layer for the React",
+        icon: "/logos/graphql.svg",
+        href: "#",
+      },
+    ],
   },
   {
     company: "Bounty Fresh Food Inc.",
@@ -48,6 +88,26 @@ const WORK_EXPERIENCES = [
     icon: "/logos/bounty.png",
     description:
       "Built and maintained internal business applications using PHP (CodeIgniter), supporting day-to-day operational workflows. Also handled systems analysis—gathering requirements from stakeholders, documenting processes, and translating business needs into practical system features and improvements.",
+    stack: [
+      {
+        name: "PHP",
+        desc: "Server-side",
+        icon: "/logos/php.svg",
+        href: "#",
+      },
+      {
+        name: "CodeIgniter",
+        desc: "MVC framework for maintainable apps.",
+        icon: "/logos/codeigniter.svg",
+        href: "#",
+      },
+      {
+        name: "PostgreSQL",
+        desc: "Database for internal records",
+        icon: "/logos/postgres.svg",
+        href: "#",
+      },
+    ],
   },
   {
     company: "HDI System Technology",
@@ -119,15 +179,15 @@ const TOOLS = [
     href: "#",
   },
   {
-    name: "TypeScript",
-    desc: "Type-safe JavaScript",
-    icon: "/logos/ts-1.svg",
-    href: "#",
-  },
-  {
     name: "JavaScript",
     desc: "Modern ES6+",
     icon: "/logos/js.png",
+    href: "#",
+  },
+  {
+    name: "TypeScript",
+    desc: "Type-safe JavaScript",
+    icon: "/logos/ts-1.svg",
     href: "#",
   },
   {
@@ -158,8 +218,8 @@ const TOOLS = [
 
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
-  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
 ];
 
@@ -238,9 +298,9 @@ export default function Home() {
     <div
       className={`flex flex-col w-full items-center justify-center min-h-screen bg-white text-neutral-700 dark:bg-neutral-950 dark:text-neutral-200 ${inter.className}`}
     >
-      <nav className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
-        <div className="rounded-full border border-white/90 bg-black/95 px-6 py-3 shadow-[0_12px_35px_-20px_rgba(0,0,0,0.9)]">
-          <ul className="flex items-center gap-6 text-[13px] font-semibold uppercase tracking-wide text-white sm:gap-10 sm:text-sm">
+      <nav className="fixed top-5 z-50">
+        <div className="rounded-full bg-black/95 px-6 py-3 shadow-[0_12px_35px_-20px_rgba(0,0,0,0.9)]">
+          <ul className="flex items-center gap-6 text-[10px] font-semibold uppercase tracking-wide text-white sm:gap-10 md:text-[14px]">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
                 <Link
@@ -257,25 +317,24 @@ export default function Home() {
 
       <section
         id="home"
-        className="flex w-full max-w-3xl flex-col items-center justify-center gap-6 px-4 pb-10 pt-28 min-h-screen text-neutral-700 dark:text-neutral-200 sm:gap-4 sm:p-2"
+        className="flex w-full max-w-4xl flex-col items-center justify-center gap-4 md:gap-6 px-4 pb-10 pt-20 md:pt-28 min-h-screen text-neutral-700 dark:text-neutral-200  sm:p-2"
       >
         <div className="flex w-full flex-col items-center">
           <div className="text-center text-xs uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-400 sm:text-sm">
             Based in Australia
           </div>
-          <div className="flex w-full flex-col items-center gap-4 py-4 sm:flex-row sm:items-start sm:justify-center sm:py-3 sm:px-4">
-            <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full border border-[5px] border-slate-400 dark:border-slate-500 sm:h-40 sm:w-40">
+          <div className="flex w-full flex-col gap-4 py-4 items-center sm:flex-row sm:items-center sm:justify-center sm:py-3 sm:px-4">
+            <div className="relative h-40 w-40 md:h-60 md:w-60 shrink-0 overflow-hidden rounded-full border-[5px] border-slate-400 dark:border-slate-500">
               <Image
                 src={`${basePath}/images/me.jpg`}
                 alt="Antonio Caballes"
-                width={450}
-                height={450}
+                fill
                 priority
                 className="object-cover object-[center_10%] dark:brightness-95"
               />
             </div>
             <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-              <div className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-[32px]">
+              <div className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-[42px]">
                 <div>
                   Hi, I am{" "}
                   <span className="font-bold text-neutral-700">
@@ -288,7 +347,7 @@ export default function Home() {
           </div>
         </div>
         <div className="border-t border-slate-400 py-6 text-center text-neutral-700 dark:border-slate-700 dark:text-neutral-200">
-          <div className="text-base text-neutral-700 dark:text-neutral-200 sm:text-[20px]">
+          <div className="text-base text-neutral-700 dark:text-neutral-200 sm:text-[24px]">
             I’m a software developer with 7 years of experience building modern
             web apps using JavaScript, React, and Next.js. I care a lot about
             clean code, testing, and building things that are ready for
@@ -348,10 +407,10 @@ export default function Home() {
 
       <section
         id="skills"
-        className="flex w-full max-w-3xl flex-col items-center justify-center gap-4 p-2 md:min-h-screen"
+        className="flex w-full max-w-4xl flex-col items-center justify-center gap-4 p-2 md:pt-20 md:min-h-screen"
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:gap-12 px-6">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
             <div className="flex flex-col items-center gap-2 text-center">
               <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
                 The mind behind the creations
@@ -369,7 +428,7 @@ export default function Home() {
           {/* <NowNextStack /> */}
         </div>
         <div id="techs" className="w-full">
-          <div className="mx-auto w-full px-4 md:px-16 py-16">
+          <div className="mx-auto w-full px-4 md:px-16 py-8">
             {/* Tools header row */}
             <div className="mb-6 flex items-end justify-between gap-4">
               <div>
@@ -377,7 +436,7 @@ export default function Home() {
                   Tools & Tech I use
                 </h3> */}
                 <p className="mt-1 text-neutral-600 dark:text-neutral-300">
-                  The stack I reach for to ship fast and keep things stable.
+                  My Top-Tier Tools
                 </p>
               </div>
 
@@ -390,7 +449,7 @@ export default function Home() {
             </div>
 
             {/* Small “icon rows” grid */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            <div className="grid gap-3 md:gap-6 grid-cols-2 lg:grid-cols-2">
               {TOOLS.map((t) => (
                 <div
                   key={t.name}
@@ -402,7 +461,7 @@ export default function Home() {
               "
                 >
                   <div className="flex items-center gap-4">
-                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
                       <Image
                         src={t.icon}
                         alt={`${t.name} icon`}
@@ -422,7 +481,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <Link
+                  {/* <Link
                     href={t.href}
                     className="
                   rounded-full bg-neutral-100 px-4 py-2
@@ -432,7 +491,7 @@ export default function Home() {
                 "
                   >
                     View
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
             </div>
@@ -442,9 +501,9 @@ export default function Home() {
 
       <section
         id="experience"
-        className="flex w-full max-w-3xl flex-col items-center justify-center gap-4 p-2 md:min-h-screen"
+        className="flex w-full max-w-5xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-20 md:min-h-screen"
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 md:gap-12 px-6">
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
               Work Experience
@@ -459,7 +518,7 @@ export default function Home() {
               key={`${work_exp.company}-${work_exp.period}`}
               className="relative grid gap-12"
             >
-              <div className="grid gap-8">
+              <div className="grid gap-2 md:gap-8">
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-3">
@@ -489,6 +548,32 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+                <div className="grid gap-3 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 hidden md:block">
+                  {work_exp.stack?.map((tool) => (
+                    <div className="flex items-center max-w- justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+                      <div className="flex items-center gap-4">
+                        <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                          <Image
+                            src={`${tool.icon}`}
+                            alt={`${tool.name} icon`}
+                            fill
+                            className="object-contain"
+                            sizes="48px"
+                          />
+                        </div>
+
+                        <div className="leading-tight">
+                          <div className="text-sm font-semibold text-neutral-900 dark:text-white">
+                            {tool.name}
+                          </div>
+                          <div className="text-xs text-neutral-600 dark:text-neutral-300">
+                            {tool.desc}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -496,7 +581,7 @@ export default function Home() {
       </section>
 
       <section id="projects" className="w-full">
-        <div className="mx-auto w-full px-4 md:px-16 py-16">
+        <div className="mx-auto w-full px-4 pt-20 md:pt-0 md:px-16 ">
           {/* Header */}
           <div className="mb-10">
             <h2 className="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">
@@ -509,7 +594,7 @@ export default function Home() {
           </div>
 
           {/* Featured cards (3 big images) */}
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-3 md:gap-8 lg:grid-cols-3">
             {FEATURED_PROJECTS.map((p) => (
               <Link
                 key={p.title}
@@ -567,17 +652,17 @@ export default function Home() {
               get back to you.
             </p>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <a
-                href="mailto:YOUR_EMAIL_HERE"
+                href="mailto:antonraphaelcaballes@gmail.com"
                 className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-8 py-2 text-md font-bold text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
               >
                 Email me
               </a>
 
               <a
-                href="mailto:YOUR_EMAIL_HERE"
-                className="inline-flex items-center justify-center rounded-full border border-neutral-200 bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+                href="mailto:antonraphaelcaballes@gmail.com"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
               >
                 antonraphaelcaballes@gmail.com
               </a>
