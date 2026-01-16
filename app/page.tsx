@@ -416,11 +416,14 @@ export default function Home() {
                 The mind behind the creations
               </h2>
               <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
-                Always learning, always optimising. Lately, I’ve been exploring
-                AI-powered apps: chatbots, LLMs, and practical ways to bring
-                them into real products. I’m comfortable picking up new
-                technologies quickly, and I enjoy learning from strong teams and
-                experienced engineers to keep improving how I build.
+                I’m a software developer who loves building practical,
+                production-ready web apps — and I’m currently deep into AI
+                tooling. Right now I’m exploring chatbot implementations and RAG
+                systems, including internal assistants (connected to company
+                data and workflows) and external assistants trained on public
+                content like product pages and FAQs. I’m naturally curious,
+                always experimenting, and I enjoy learning new tools that help
+                teams move faster and users get better experiences.
               </p>
             </div>
           </div>
