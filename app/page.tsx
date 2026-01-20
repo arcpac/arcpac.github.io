@@ -369,7 +369,7 @@ export default function Home() {
             </button>
 
             <a
-              href="/next.svg"
+              href="/antonio-caballes-resume.pdf"
               download
               className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
             >
