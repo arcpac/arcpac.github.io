@@ -20,7 +20,7 @@ const FEATURED_PROJECTS = [
         image: "/gifs/qc-demo-vid.gif",
     },
     {
-        eyebrow: "CASE STUDY",
+        eyebrow: "SIDE STUDY",
         title: "SplitNest",
         subtitle: (<>
             Expense sharing for households.
@@ -61,7 +61,7 @@ const FEATURED_PROJECTS = [
         tech: ["Backend", "GraphQL", "API Integration", "Bug Fixing", "React (occasional)"],
     },
     {
-        eyebrow: "FEATURED PROJECT",
+        eyebrow: "SIDE PROJECT",
         title: "LedgerLift API",
         subtitle: (
             <>
@@ -79,7 +79,7 @@ const FEATURED_PROJECTS = [
 ];
 
 const MyProjects = () => {
-    
+
     useEffect(() => {
         const sr = ScrollReveal()
         sr.reveal('.project-card', {

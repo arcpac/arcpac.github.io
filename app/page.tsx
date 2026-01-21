@@ -206,7 +206,7 @@ const TOOLS = [
   {
     name: ".NET Core",
     desc: "Server-side web apps",
-    icon: "/logos/php.svg",
+    icon: "/logos/NET_Core_Logo.png",
     href: "#",
   },
   {
