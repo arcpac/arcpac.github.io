@@ -9,16 +9,22 @@ const FEATURED_PROJECTS = [
     {
         eyebrow: "FEATURED PROJECT",
         title: "QuoteCloud",
-        subtitle:
-            "Corporate Interactive’s QuoteCloud product — I contributed to core features across the quoting workflow: building/sending quotes, end-to-end document tracking, and eSignature approvals for smoother client sign-off.",
-
+        subtitle: (
+            <>
+                <b>Corporate Interactive’s QuoteCloud</b> product. I contributed to core
+                features across the quoting workflow: building/sending quotes, end-to-end
+                document tracking, and eSignature approvals for smoother client sign-off.
+            </>
+        ),
         href: "https://www.quote.cloud/",
         image: "/gifs/qc-demo-vid.gif",
     },
     {
         eyebrow: "CASE STUDY",
         title: "SplitNest",
-        subtitle: "Expense sharing for households.",
+        subtitle: (<>
+            Expense sharing for households.
+        </>),
         href: "#",
         image: "/gifs/Nest-vid.gif",
     },
@@ -26,9 +32,49 @@ const FEATURED_PROJECTS = [
         eyebrow: "SIDE PROJECT",
         title: "Chatbot",
         subtitle:
-            "Ollama + LangChain assistant embedded in QuoteCloud. Uses a local LLM (Ollama) and a LangChain RAG pipeline to answer app-specific questions and guide users through workflows.",
+            (
+                <>
+                    <b>
+                        Ollama
+                    </b>
+                    + <b>LangChain</b> assistant embedded in QuoteCloud. Uses a local LLM (Ollama) and a LangChain RAG pipeline to answer app-specific questions and guide users through workflows.
+                </>
+            ),
         href: "#",
         image: "/images/chatbot.png",
+    },
+    {
+        eyebrow: "FEATURED PROJECT",
+        title: "SeeYouDoc",
+        subtitle: (
+            <>
+                A healthcare platform built at <b>Pragtechnologies</b>, where I worked as a{" "}
+                <b>Software Engineer</b> focused on backend development and{" "}
+                <b>GraphQL integration</b> to support mobile app features and data flows.
+                I built and maintained API endpoints, handled bug fixes across services,
+                and occasionally contributed to UI updates to ensure a smooth end-to-end
+                experience.
+            </>
+        ),
+        href: "https://www.seeyoudoc.com/",
+        image: "/images/seeyoudoc.png", // replace with your screenshot/logo
+        tech: ["Backend", "GraphQL", "API Integration", "Bug Fixing", "React (occasional)"],
+    },
+    {
+        eyebrow: "FEATURED PROJECT",
+        title: "LedgerLift API",
+        subtitle: (
+            <>
+                A <b>.NET 10 Web API</b> built in <b>Visual Studio</b> using{" "}
+                <b>Controllers</b>, <b>Entity Framework Core</b>, <b>SQL Server</b>, and{" "}
+                <b>DTO-based</b> request/response models. Structured with a{" "}
+                <b>Service + Repository</b> pattern for clean separation of concerns,
+                testability, and maintainable business logic.
+            </>
+        ),
+        href: "#", // replace with GitHub/Live link
+        image: "/images/ledgerrlift-api.png", // replace with your screenshot/gif
+        tech: [".NET 10", "ASP.NET Core", "EF Core", "SQL Server", "Swagger"],
     },
 ];
 
@@ -93,12 +139,12 @@ const MyProjects = () => {
                             </div>
 
                             <div className="px-5 pb-5">
-                                <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                                <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
                                     <Image
                                         src={p.image}
                                         alt={`${p.title} screenshot`}
                                         fill
-                                        className="object-cover object-left transition-transform duration-500"
+                                        className="object-contain object-left transition-transform duration-500"
                                         sizes="(min-width: 1024px) 33vw, 100vw"
                                         priority
                                     />
