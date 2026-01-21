@@ -357,7 +357,8 @@ export default function Home() {
             role.
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
-            <button className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500">
+            <a className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
+            href="#experience">
               <span
                 className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
                 aria-hidden="true"
@@ -366,7 +367,7 @@ export default function Home() {
               </span>
 
               <span className="ml-2">Explore my Work</span>
-            </button>
+            </a>
 
             <a
               href="/antonio-caballes-resume.pdf"
