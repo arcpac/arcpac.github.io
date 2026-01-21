@@ -48,8 +48,8 @@ const FEATURED_PROJECTS = [
         title: "SeeYouDoc",
         subtitle: (
             <>
-                A healthcare platform built at <b>Pragtechnologies</b>, where I worked as a{" "}
-                <b>Software Engineer</b> focused on backend development and{" "}
+                A healthcare platform built at <b>Pragtechnologies</b>, where I worked as a
+                <b>Software Engineer</b> focused on backend development and
                 <b>GraphQL integration</b> to support mobile app features and data flows.
                 I built and maintained API endpoints, handled bug fixes across services,
                 and occasionally contributed to UI updates to ensure a smooth end-to-end
@@ -65,9 +65,9 @@ const FEATURED_PROJECTS = [
         title: "LedgerLift API",
         subtitle: (
             <>
-                A <b>.NET 10 Web API</b> built in <b>Visual Studio</b> using{" "}
-                <b>Controllers</b>, <b>Entity Framework Core</b>, <b>SQL Server</b>, and{" "}
-                <b>DTO-based</b> request/response models. Structured with a{" "}
+                A <b>.NET 10 Web API</b> built in <b>Visual Studio</b> using
+                <b>Controllers</b>, <b>Entity Framework Core</b>, <b>SQL Server</b>, and
+                <b>DTO-based</b> request/response models. Structured with a
                 <b>Service + Repository</b> pattern for clean separation of concerns,
                 testability, and maintainable business logic.
             </>
@@ -79,19 +79,28 @@ const FEATURED_PROJECTS = [
 ];
 
 const MyProjects = () => {
-    useEffect(() => {
-        const sr = ScrollReveal()
-        sr.reveal('.project-card', {
-            distance: '90px',
-            duration: 500,
-            easing: 'ease-out',
-            interval: 120,
-            origin: 'bottom',
-            reset: true,
-        })
 
-        return () => sr.destroy()
-    }, [])
+    useEffect(() => {
+        let sr: any;
+
+        (async () => {
+            const ScrollReveal = (await import("scrollreveal")).default;
+
+            sr = ScrollReveal();
+            sr.reveal(".project-card", {
+                distance: "90px",
+                duration: 500,
+                easing: "ease-out",
+                interval: 120,
+                origin: "bottom",
+                reset: true,
+            });
+        })();
+
+        return () => {
+            if (sr?.destroy) sr.destroy();
+        };
+    }, []);
 
     return (
 
