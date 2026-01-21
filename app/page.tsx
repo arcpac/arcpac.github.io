@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Inter, Montserrat } from "next/font/google";
 import Link from "next/link";
-import MyProjects from "./components/projects/MyProjects";
+
+import ProjectSection from "./components/projects/ProjectSection";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -200,6 +201,12 @@ const TOOLS = [
     name: "Elixir + Phoenix",
     desc: "Backend APIs • OTP",
     icon: "/logos/elixir-phoenix.png",
+    href: "#",
+  },
+  {
+    name: ".NET Core",
+    desc: "Server-side web apps",
+    icon: "/logos/php.svg",
     href: "#",
   },
   {
@@ -601,7 +608,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <MyProjects />
+      <ProjectSection />
       <section id="contact" className="w-full py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-8 text-center dark:border-neutral-800 dark:bg-neutral-950 sm:p-12">

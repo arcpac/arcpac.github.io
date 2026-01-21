@@ -79,28 +79,20 @@ const FEATURED_PROJECTS = [
 ];
 
 const MyProjects = () => {
-
+    
     useEffect(() => {
-        let sr: any;
+        const sr = ScrollReveal()
+        sr.reveal('.project-card', {
+            distance: '90px',
+            duration: 500,
+            easing: 'ease-out',
+            interval: 120,
+            origin: 'bottom',
+            reset: true,
+        })
 
-        (async () => {
-            const ScrollReveal = (await import("scrollreveal")).default;
-
-            sr = ScrollReveal();
-            sr.reveal(".project-card", {
-                distance: "90px",
-                duration: 500,
-                easing: "ease-out",
-                interval: 120,
-                origin: "bottom",
-                reset: true,
-            });
-        })();
-
-        return () => {
-            if (sr?.destroy) sr.destroy();
-        };
-    }, []);
+        return () => sr.destroy()
+    }, [])
 
     return (
 
