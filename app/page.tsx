@@ -20,7 +20,11 @@ const WORK_EXPERIENCES = [
     location: "Australia",
     icon: "/logos/qc.png",
     description:
-      "Contributed to the development and maintenance of a production web application by implementing core features and improving user-facing workflows. Integrated the Canva Image Editor into multiple widgets/content blocks (text, image, and gallery), enabling users to create and edit visuals directly within the app. Collaborated closely with senior developers to optimise performance, improve reliability, and refine implementation approaches. Also supported the implementation of an in-app chatbot using a RAG-based approach to help users self-serve answers by retrieving relevant information from product content and internal knowledge. Worked cross-functionally with developers and stakeholders, supported testing/UAT, resolved bugs, and contributed to ongoing continuous improvements.",
+      `Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents.
+
+Contributed to AI-enabled features within the application, including supporting the implementation of a chatbot using a Retrieval-Augmented Generation (RAG) approach.
+
+Worked closely with senior developers and cross-functional stakeholders to optimise performance, address technical debt, and align implementations with best practices. Actively participated in code reviews, debugging, and refactoring.`,
     stack: [
       {
         name: "Next.js",
@@ -49,7 +53,10 @@ const WORK_EXPERIENCES = [
     location: "Philippines",
     icon: "/logos/yondu.png",
     description:
-      "Served as the system SME for enterprise projects—capturing requirements from client and dev discussions, documenting decisions, and maintaining clear references for configuration and environment details. Supported system setup and configuration, ran User Acceptance Testing (UAT), and produced functional/non-functional documentation to support smooth releases and handover.",
+      `- Understanding the products and services back-end configuration and integration
+- Assessing business requirements and ensuring creation of B2B Products
+- Providing the best solution and design based on the business requirement to ensure that the newly created product and services or any modification done on the existing product will not have an impact on business users
+- Support clients with software and implementation`,
   },
   {
     company: "Pragtechnologies",
@@ -58,7 +65,13 @@ const WORK_EXPERIENCES = [
     location: "Philippines",
     icon: "/logos/pragtech.png",
     description:
-      "Built and shipped features for production web applications in healthcare and SMS platforms, working primarily across React (frontend) and Elixir/Phoenix (backend). Delivered end-to-end improvements with a focus on clean implementation, reliability, and maintainable code.",
+      `
+      - Design, code, test and debugging software applications.
+- Collaborating with cross-functional teams to define, design and ship new features.
+- Write clean and maintainable code.
+- Analysing end-users’ requirements and tailoring software solutions to meet their needs.
+- Tech Stack used: Elixir, Phoenix Framework, GraphQL, Git version control, PostgreSQL, ReactJS, HTML, JavaScript
+      `,
     stack: [
       {
         name: "Elixir + Phoenix",
@@ -87,7 +100,14 @@ const WORK_EXPERIENCES = [
     location: "Philippines",
     icon: "/logos/bounty.png",
     description:
-      "Built and maintained internal business applications using PHP (CodeIgniter), supporting day-to-day operational workflows. Also handled systems analysis—gathering requirements from stakeholders, documenting processes, and translating business needs into practical system features and improvements.",
+      `
+- System Design: Contribute to the design architecture of software systems
+- Work with cross-functional teams, including QA, product management and developers.
+- Bug fixing
+- Write and maintain high-quality, efficient code
+- Tech stack used: CodeIgniter (PHP), HTML, JavaScript, SVN, CSS, JQuery
+
+      `,
     stack: [
       {
         name: "PHP",
@@ -98,7 +118,7 @@ const WORK_EXPERIENCES = [
       {
         name: "CodeIgniter",
         desc: "MVC framework for maintainable apps.",
-        icon: "/logos/codeigniter.svg",
+        icon: "/logos/codeigniter.png",
         href: "#",
       },
       {
@@ -358,7 +378,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
             <a className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
-            href="#experience">
+              href="#experience">
               <span
                 className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
                 aria-hidden="true"
@@ -547,9 +567,33 @@ export default function Home() {
                       {work_exp.role} | {work_exp.period} | {work_exp.location}
                     </div>
 
-                    <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                      {work_exp.description}
-                    </p>
+                    {(() => {
+                      const lines = work_exp.description
+                        .split("\n")
+                        .map((line) => line.trim())
+                        .filter(Boolean);
+                      const bulletLines = lines.filter((line) =>
+                        line.startsWith("- "),
+                      );
+                      const renderBullets =
+                        lines.length > 1 && bulletLines.length === lines.length;
+
+                      if (renderBullets) {
+                        return (
+                          <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
+                            {bulletLines.map((line, index) => (
+                              <li key={`${index}-${line}`}>{line.slice(2)}</li>
+                            ))}
+                          </ul>
+                        );
+                      }
+
+                      return (
+                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                          {work_exp.description}
+                        </p>
+                      );
+                    })()}
                   </div>
                 </div>
                 <div className="hidden md:grid gap-3 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
