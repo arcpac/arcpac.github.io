@@ -20,7 +20,7 @@ const WORK_EXPERIENCES = [
     location: "Australia",
     icon: "/logos/qc.png",
     description:
-      "Contribute to QuoteCloud’s core product features end-to-end from UI implementation to backend integration ensuring components are consistent, reusable, and conflict-free across the app. Maintain and enhance the QuoteCloud product and marketing websites via an in-house CMS, including ongoing improvements to the Visual Editor and content-building workflow. Support product growth through research and experiments focused on improving user experience and customer acquisition.",
+      "Contributed to the development and maintenance of a production web application by implementing core features and improving user-facing workflows. Integrated the Canva Image Editor into multiple widgets/content blocks (text, image, and gallery), enabling users to create and edit visuals directly within the app. Collaborated closely with senior developers to optimise performance, improve reliability, and refine implementation approaches. Also supported the implementation of an in-app chatbot using a RAG-based approach to help users self-serve answers by retrieving relevant information from product content and internal knowledge. Worked cross-functionally with developers and stakeholders, supported testing/UAT, resolved bugs, and contributed to ongoing continuous improvements.",
     stack: [
       {
         name: "Next.js",
