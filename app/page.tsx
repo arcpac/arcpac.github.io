@@ -298,7 +298,7 @@ export default function Home() {
             clean code, testing, and building things that are ready for
             real-world use. I’ve worked across both frontend and backend, and
             I’m comfortable picking up new tools and technologies along the way.
-            I’m currently looking for a full-time Software Developer or QA/Test
+            
             role.
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
