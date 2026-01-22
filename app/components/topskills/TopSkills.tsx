@@ -94,6 +94,20 @@ const TOOLS: Tool[] = [
         category: "other",
     },
     {
+        name: "GitHub",
+        desc: "CI/CD pipelines",
+        icon: "/logos/github.svg",
+        href: "#",
+        category: "other",
+    },
+    {
+        name: "GitLab",
+        desc: "CI/CD pipelines",
+        icon: "/logos/gitlab.svg",
+        href: "#",
+        category: "other",
+    },
+    {
         name: "GraphQL",
         desc: "Server-side web apps",
         icon: "/logos/graphql.svg",
