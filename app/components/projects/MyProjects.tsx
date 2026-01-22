@@ -11,9 +11,12 @@ const FEATURED_PROJECTS = [
         title: "QuoteCloud",
         subtitle: (
             <>
-                <b>Corporate Interactive’s QuoteCloud</b> product. I contributed to core
-                features across the quoting workflow: building/sending quotes, end-to-end
-                document tracking, and eSignature approvals for smoother client sign-off.
+                <b>Corporate Interactive’s QuoteCloud</b>. I contributed to core features across the
+                quoting workflow building and sending quotes, end-to-end document tracking, and
+                eSignature approvals for smoother client sign-off. I also delivered embedded
+                spreadsheet widgets, Canva image editing integration, and password-protected
+                documents with confirmation prompts, plus eSignature validation to ensure all
+                required signatures are completed before acceptance.
             </>
         ),
         href: "https://www.quote.cloud/",

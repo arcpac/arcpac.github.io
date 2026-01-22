@@ -171,7 +171,6 @@ export function ToolIcon({ name, src, className = "" }: ToolIconProps) {
 }
 
 const TopSkills = () => {
-    const [imageFailed, setFailed] = useState(false)
     return (
         <div id="techs" className="w-full">
             <div className="mx-auto w-full px-4 md:px-16 py-8">
