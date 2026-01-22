@@ -181,17 +181,10 @@ const TopSkills = () => {
                         <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white">
                             Tools & Tech I use
                         </h3>
-                        <p className="mt-1 text-neutral-600 dark:text-neutral-300">
+                        {/* <p className="mt-1 text-neutral-600 dark:text-neutral-300">
                             My Top-Tier Tools
-                        </p>
+                        </p> */}
                     </div>
-
-                    {/* <Link
-                        href="#topskills"
-                        className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
-                    >
-                        See All
-                    </Link> */}
                 </div>
 
                 <div className="grid gap-4 md:gap-6 md:grid-cols-3">
