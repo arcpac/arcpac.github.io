@@ -1,5 +1,7 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link'
+import { useState } from 'react';
 
 type Tool = {
     name: string;
@@ -7,6 +9,11 @@ type Tool = {
     icon: string;
     href?: string;
     category: "frontend" | "backend" | "other";
+};
+type ToolIconProps = {
+    name: string;
+    src: string;
+    className?: string;
 };
 const TOOLS: Tool[] = [
     {
@@ -106,7 +113,65 @@ const CATEGORIES = [
     { key: "backend", label: "Backend" },
     { key: "other", label: "Other tools & AI integrations" },
 ] as const;
+
+export function getInitials(name: string) {
+    const clean = name.replace(/[^a-zA-Z0-9\s.+#]/g, "").trim();
+
+    // Special cases (optional, tweak as you like)
+    if (clean.toLowerCase().includes("next")) return "N";
+    if (clean.toLowerCase().includes("react")) return "R";
+    if (clean.toLowerCase().includes("typescript")) return "TS";
+    if (clean.toLowerCase().includes("javascript")) return "JS";
+    if (clean.toLowerCase().includes("tailwind")) return "TW";
+    if (clean.toLowerCase().includes("postgres")) return "PG";
+    if (clean.toLowerCase().includes("graphql")) return "GQL";
+    if (clean.toLowerCase().includes(".net")) return ".NET";
+
+    const parts = clean.split(/\s+/).filter(Boolean);
+
+    // Take first char of first 2 words (e.g. "Tailwind CSS" -> "TC")
+    const initials = parts.slice(0, 2).map(p => p[0]?.toUpperCase()).join("");
+
+    // If single word, take first 2 chars (e.g. "PHP" -> "PH" but we may want "PHP")
+    if (parts.length === 1) {
+        const w = parts[0].toUpperCase();
+        return w.length <= 3 ? w : w.slice(0, 2);
+    }
+
+    return initials || "?";
+}
+
+
+export function ToolIcon({ name, src, className = "" }: ToolIconProps) {
+    const [failed, setFailed] = useState(false);
+
+    if (failed) {
+        return (
+            <div
+                aria-label={`${name} logo`}
+                title={name}
+                className={`flex items-center justify-center rounded-full border border-neutral-200 bg-neutral-100 text-neutral-700 font-semibold select-none ${className}`}
+                style={{}}
+            >
+                {getInitials(name)}
+            </div>
+        );
+    }
+
+    return (
+        <Image
+            src={src}
+            alt={`${name} logo`}
+            sizes="40px"
+            fill
+            className={`rounded-full ${className}`}
+            onError={() => setFailed(true)}
+        />
+    );
+}
+
 const TopSkills = () => {
+    const [imageFailed, setFailed] = useState(false)
     return (
         <div id="techs" className="w-full">
             <div className="mx-auto w-full px-4 md:px-16 py-8">
@@ -142,19 +207,11 @@ const TopSkills = () => {
                                 {TOOLS.filter((t) => t.category === category.key).map((t) => (
                                     <div
                                         key={t.name}
-                                        className="
-              flex items-center gap-3 rounded-xl border border-neutral-200/70
-              bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-950
-            "
+                                        className="flex items-center gap-3 rounded-xl border border-neutral-200/70 bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-950"
                                     >
                                         <div className="relative h-10 w-10 overflow-hidden rounded-lg bg-white dark:bg-neutral-800">
-                                            <Image
-                                                src={t.icon}
-                                                alt={`${t.name} icon`}
-                                                fill
-                                                className="object-contain"
-                                                sizes="40px"
-                                            />
+                                            <ToolIcon name={t.name} src={t.icon} />
+
                                         </div>
                                         <div className="leading-tight">
                                             <div className="text-sm font-semibold text-neutral-900 dark:text-white">

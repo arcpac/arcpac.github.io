@@ -114,16 +114,9 @@ const MyProjects = () => {
                     {FEATURED_PROJECTS.map((p) => (
                         <Link
                             key={p.title}
+                            target='_blank'
                             href={p.href}
-                            className="project-card
-            group rounded-2xl border border-neutral-200 bg-white
-            shadow-sm transition
-            hover:-translate-y-1 hover:shadow-md
-            focus:outline-none focus:ring-2 focus:ring-neutral-900/20
-            dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none
-            dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)]
-            dark:focus:ring-neutral-200/20
-          "
+                            className="project-card group rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
                         >
                             <div className="p-5">
                                 <div className="text-[11px] font-semibold tracking-widest text-blue-600 dark:text-blue-400">
