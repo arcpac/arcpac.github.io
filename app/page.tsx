@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import Link from "next/link";
 
 import ProjectSection from "./components/projects/ProjectSection";
+import TopSkills from "./components/topskills/TopSkills";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -157,63 +158,6 @@ Worked closely with senior developers and cross-functional stakeholders to optim
     icon: "/logos/ab.png",
     description:
       "Early career role assisting with system support, documentation, and coordination across business and technical teams.",
-  },
-];
-
-const TOOLS = [
-  {
-    name: "Next.js",
-    desc: "App Router • SSR/SSG",
-    icon: "/logos/nextjs.svg",
-    href: "#",
-  },
-  {
-    name: "React",
-    desc: "Component-driven UI",
-    icon: "/logos/react-2.svg",
-    href: "#",
-  },
-  {
-    name: "JavaScript",
-    desc: "Modern ES6+",
-    icon: "/logos/js.png",
-    href: "#",
-  },
-  {
-    name: "TypeScript",
-    desc: "Type-safe JavaScript",
-    icon: "/logos/ts-1.svg",
-    href: "#",
-  },
-  {
-    name: "Tailwind CSS",
-    desc: "Utility-first styling",
-    icon: "/logos/tailwind.svg",
-    href: "#",
-  },
-  {
-    name: "PostgreSQL",
-    desc: "SQL relational database",
-    icon: "/logos/postgres.svg",
-    href: "#",
-  },
-  {
-    name: "Elixir + Phoenix",
-    desc: "Backend APIs • OTP",
-    icon: "/logos/elixir-phoenix.png",
-    href: "#",
-  },
-  {
-    name: ".NET Core",
-    desc: "Server-side web apps",
-    icon: "/logos/NET_Core_Logo.png",
-    href: "#",
-  },
-  {
-    name: "PHP",
-    desc: "Server-side web apps",
-    icon: "/logos/php.svg",
-    href: "#",
   },
 ];
 
@@ -409,7 +353,7 @@ export default function Home() {
 
       <section
         id="skills"
-        className="flex w-full max-w-4xl flex-col items-center justify-center gap-4 p-2 md:pt-20 md:min-h-screen"
+        className="flex w-full max-w-6xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-20 md:min-h-screen"
       >
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:gap-12 px-6">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
@@ -429,80 +373,10 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          {/* <NowNextStack /> */}
         </div>
-        <div id="techs" className="w-full">
-          <div className="mx-auto w-full px-4 md:px-16 py-8">
-            {/* Tools header row */}
-            <div className="mb-6 flex items-end justify-between gap-4">
-              <div>
-                {/* <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white">
-                  Tools & Tech I use
-                </h3> */}
-                <p className="mt-1 text-neutral-600 dark:text-neutral-300">
-                  My Top-Tier Tools
-                </p>
-              </div>
-
-              <Link
-                href="#"
-                className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
-              >
-                See All
-              </Link>
-            </div>
-
-            {/* Small “icon rows” grid */}
-            <div className="grid gap-3 md:gap-6 grid-cols-2 lg:grid-cols-2">
-              {TOOLS.map((t) => (
-                <div
-                  key={t.name}
-                  className="
-                flex items-center justify-between gap-4
-                rounded-2xl border border-neutral-200 bg-white p-4
-                shadow-sm transition hover:shadow-md
-                dark:border-neutral-800 dark:bg-neutral-900
-              "
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
-                      <Image
-                        src={t.icon}
-                        alt={`${t.name} icon`}
-                        fill
-                        className="object-contain"
-                        sizes="48px"
-                      />
-                    </div>
-
-                    <div className="leading-tight">
-                      <div className="text-sm font-semibold text-neutral-900 dark:text-white">
-                        {t.name}
-                      </div>
-                      <div className="text-xs text-neutral-600 dark:text-neutral-300">
-                        {t.desc}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* <Link
-                    href={t.href}
-                    className="
-                  rounded-full bg-neutral-100 px-4 py-2
-                  text-xs font-semibold text-blue-600
-                  transition hover:bg-neutral-200
-                  dark:bg-neutral-800 dark:text-blue-400 dark:hover:bg-neutral-700
-                "
-                  >
-                    View
-                  </Link> */}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <TopSkills />
       </section>
+
 
       <section
         id="experience"
@@ -579,9 +453,9 @@ export default function Home() {
                 </div>
                 <div className="hidden md:grid gap-3 md:gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                   {work_exp.stack?.map((tool) => (
-                    <div className="flex items-center max-w- justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
-                      <div className="flex items-center gap-4">
-                        <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                    <div className="flex items-center max-w- justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-2 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900">
+                      <div className="flex items-center gap-3">
+                        <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
                           <Image
                             src={`${tool.icon}`}
                             alt={`${tool.name} icon`}
