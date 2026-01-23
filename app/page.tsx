@@ -154,8 +154,6 @@ export default function Home() {
             clean code, testing, and building things that are ready for
             real-world use. I’ve worked across both frontend and backend, and
             I’m comfortable picking up new tools and technologies along the way.
-
-            role.
           </div>
           <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
             <a className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
