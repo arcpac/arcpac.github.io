@@ -67,14 +67,20 @@ const FEATURED_PROJECTS = [
     },
     {
         eyebrow: "SIDE PROJECT",
-        title: "LedgerLift API",
+        title: "Booking Web API",
         subtitle: (
             <>
-                A <b>.NET 10 Web API</b> built in <b>Visual Studio</b> using
-                <b>Controllers</b>, <b>Entity Framework Core</b>, <b>SQL Server</b>, and
-                <b>DTO-based</b> request/response models. Structured with a
-                <b>Service + Repository</b> pattern for clean separation of concerns,
-                testability, and maintainable business logic.
+                Backend features to add
+
+                Prevent double-booking (business rule)
+
+                Pagination + filtering + sorting
+
+                Status lifecycle (Pending → Confirmed → Cancelled)
+
+                Optional: email notification (stub) or background job
+
+                Why it’s strong: shows real business logic beyond CRUD.
             </>
         ),
         href: "#", // replace with GitHub/Live link

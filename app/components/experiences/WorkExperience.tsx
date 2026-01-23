@@ -180,7 +180,7 @@ const WorkExperience = () => {
                 {WORK_EXPERIENCES.map((work_exp) => (
                     <div
                         key={`${work_exp.company}-${work_exp.period}`}
-                        className="relative grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]"
+                        className="relative grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] border-b pb-10 border-neutral-200"
                     >
                         <div className="flex flex-col gap-6">
                             <div className="flex flex-col gap-2">
@@ -256,30 +256,30 @@ const WorkExperience = () => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-3 content-start gap-2 md:gap-3 ">
+                        <div className="grid grid-cols-4 content-start gap-2 md:gap-3 ">
                             {work_exp.stack?.map((tool) => (
-                                <div
-                                    key={`${tool.name}-${tool.icon}`}
-                                    className="flex aspect-square items-center justify-center rounded-xl bg-white shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
-                                // onClick={() =>
-                                //     setActiveTech((prev) =>
-                                //         prev?.company === work_exp.company &&
-                                //             prev.tech === tool.name
-                                //             ? undefined
-                                //             : { company: work_exp.company, tech: tool.name },
-                                //     )
-                                // }
-                                >
-                                    <div className="relative h-20 w-20 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
-                                        <Image
-                                            src={`${tool.icon}`}
-                                            alt={`${tool.name} icon`}
-                                            fill
-                                            className="object-contain"
-                                        // sizes="48px"
-                                        />
-                                    </div>
+                                // <div
+                                //     key={`${tool.name}-${tool.icon}`}
+                                //     className="flex aspect-square items-center justify-center rounded-xl bg-white shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+                                // // onClick={() =>
+                                // //     setActiveTech((prev) =>
+                                // //         prev?.company === work_exp.company &&
+                                // //             prev.tech === tool.name
+                                // //             ? undefined
+                                // //             : { company: work_exp.company, tech: tool.name },
+                                // //     )
+                                // // }
+                                // >
+                                <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                                    <Image
+                                        src={`${tool.icon}`}
+                                        alt={`${tool.name} icon`}
+                                        fill
+                                        className="object-contain"
+                                    // sizes="48px"
+                                    />
                                 </div>
+                                // </div>
                             ))}
                         </div>
                     </div>
