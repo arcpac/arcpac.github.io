@@ -256,7 +256,7 @@ const WorkExperience = () => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-4 content-start gap-2 md:gap-3 ">
+                        <div className="grid grid-cols-6 md:grid-cols-4 content-start gap-2 md:gap-3 ">
                             {work_exp.stack?.map((tool) => (
                                 // <div
                                 //     key={`${tool.name}-${tool.icon}`}

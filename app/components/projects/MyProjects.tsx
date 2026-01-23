@@ -107,7 +107,7 @@ const MyProjects = () => {
 
     return (
 
-        <section id="projects" className="w-full">
+        <section id="projects" className="w-full pt-10">
             <div className="mx-auto w-full px-4 pt-20 md:pt-0 md:px-16">
                 {/* Header */}
                 <div className="mb-10">
