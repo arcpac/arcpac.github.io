@@ -120,7 +120,7 @@ const Hero = () => {
                 </div>
 
                 <section
-                    className="min-h-[60vh] w-full bg-no-repeat bg-[length:130%] bg-[position:center_30%] bg-[image:var(--hero-bg)] [--hero-bg:url('/backgrounds/hero-bg-1.png')] dark:[--hero-bg:url('/backgrounds/hero-bg-dark.png')]"
+                    className="min-h-[60vh] hidden md:block w-full bg-no-repeat bg-[length:130%] bg-[position:center_30%] bg-[image:var(--hero-bg)] [--hero-bg:url('/backgrounds/hero-bg-1.png')] dark:[--hero-bg:url('/backgrounds/hero-bg-dark.png')]"
                 />
             </div>
         </section >
