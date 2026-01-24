@@ -1,13 +1,42 @@
+'use client'
+
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import RippleGrid from './RippleGrid';
 import GradientText from '@/components/GradientText';
 
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const Hero = () => {
+    const [colorMode, setColorMode] = useState<'light' | 'dark'>('light')
+
+    useEffect(() => {
+        if (typeof document === 'undefined') {
+            return;
+        }
+
+        const getMode = () =>
+            document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+
+        setColorMode(getMode());
+
+        const observer = new MutationObserver(() => {
+            setColorMode(getMode());
+        });
+
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['class'],
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    console.log('colorMode', colorMode)
     return (
         <section
             id="home"
+            data-theme={colorMode}
             className="relative flex w-full max-w-screen flex-col items-center justify-center gap-4 md:gap-6 px-4 pt-20 md:pt-28 min-h-screen text-neutral-700 dark:text-neutral-200 sm:p-2 overflow-hidden"
         >
 
@@ -23,7 +52,7 @@ const Hero = () => {
                             fadeDistance={1.1}
                             vignetteStrength={1}
                             glowIntensity={0.1}
-                            opacity={0.50}
+                            opacity={colorMode === 'light' ? 0.50 : 0.90}
                             gridRotation={0}
                             mouseInteraction
                             mouseInteractionRadius={0.9}

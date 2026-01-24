@@ -180,9 +180,9 @@ const WorkExperience = () => {
                 {WORK_EXPERIENCES.map((work_exp) => (
                     <div
                         key={`${work_exp.company}-${work_exp.period}`}
-                        className="relative grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] pb-10"
+                        className={`relative grid gap-8 ${work_exp.stack?.length && `md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]`} pb-10`}
                     >
-                        <div className="flex flex-col gap-6 border-r">
+                        <div className={`flex flex-col gap-6 ${work_exp.stack?.length && `border-r`}`}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex items-center gap-3">
                                     {work_exp.icon ? (
@@ -236,21 +236,23 @@ const WorkExperience = () => {
 
                             </div>
                         </div>
+                        {work_exp.stack?.length &&
+                            <div className="grid grid-cols-6 md:grid-cols-6 content-start gap-2 md:gap-1 ">
+                                {work_exp.stack?.map((tool) => (
+                                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
+                                        <Image
+                                            src={`${tool.icon}`}
+                                            alt={`${tool.name} icon`}
+                                            fill
+                                            className="object-contain"
+                                        // sizes="48px"
+                                        />
+                                    </div>
+                                    // </div>
+                                ))}
+                            </div>
+                        }
 
-                        <div className="grid grid-cols-6 md:grid-cols-6 content-start gap-2 md:gap-1 ">
-                            {work_exp.stack?.map((tool) => (
-                                <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
-                                    <Image
-                                        src={`${tool.icon}`}
-                                        alt={`${tool.name} icon`}
-                                        fill
-                                        className="object-contain"
-                                    // sizes="48px"
-                                    />
-                                </div>
-                                // </div>
-                            ))}
-                        </div>
                     </div>
                 ))}
             </div>

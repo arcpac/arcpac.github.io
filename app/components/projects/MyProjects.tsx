@@ -27,8 +27,6 @@ const FEATURED_PROJECTS = [
         title: "SplitNest",
         subtitle: (<>
             A modern household expense-sharing app for tracking bills, balances, and who owes who.
-            Next up: an in-app AI assistant powered by RAG to answer questions from your household data,
-            with reporting served to a .NET backend for secure processing.
         </>),
         href: "#",
         image: "/gifs/Nest-vid.gif",

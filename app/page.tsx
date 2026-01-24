@@ -7,6 +7,7 @@ import TopSkills from "./components/topskills/TopSkills";
 import WorkExperience from "./components/experiences/WorkExperience";
 import Hero from "./components/hero/Hero";
 import RippleGrid from "./components/hero/RippleGrid";
+import ThemeToggle from "./components/ThemeToggle";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -102,18 +103,22 @@ export default function Home() {
     >
       <nav className="fixed top-5 z-50">
         <div className="rounded-full bg-black/95 px-6 py-3 shadow-[0_12px_35px_-20px_rgba(0,0,0,0.9)]">
-          <ul className="flex items-center gap-6 text-[10px] font-semibold uppercase tracking-wide text-white sm:gap-10 md:text-[14px]">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="transition-opacity hover:opacity-80"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center gap-6 sm:gap-8">
+            <ul className="flex items-center gap-6 text-[10px] font-semibold uppercase tracking-wide text-white sm:gap-10 md:text-[14px]">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="transition-opacity hover:opacity-80"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="hidden h-5 w-px bg-white/20 sm:block" />
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
 
