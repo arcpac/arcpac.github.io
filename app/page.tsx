@@ -123,18 +123,6 @@ export default function Home() {
         id="skills"
         className="flex relative w-full max-w-6xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-1 md:min-h-screen"
       >
-        {/* <div className="absolute inset-0 z-0">
-          <RippleGrid
-            enableRainbow={false}
-            gridColor="#ffffff"
-            rippleIntensity={0.07}
-            gridSize={28}
-            gridThickness={100}
-            mouseInteraction={true}
-            mouseInteractionRadius={1.2}
-            opacity={0.8}
-          />
-        </div> */}
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:gap-12 px-6">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
             <div className="flex flex-col items-center gap-2 text-center">

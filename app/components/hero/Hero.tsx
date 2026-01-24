@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import RippleGrid from './RippleGrid';
+import GradientText from '@/components/GradientText';
 
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -11,11 +12,27 @@ const Hero = () => {
         >
 
             <div className="relative z-10 max-w-4xl">
-                <div className="flex w-full flex-col items-center">
-                    <div className="text-center text-xs uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-400 sm:text-sm">
+                <div className="flex relative w-full flex-col items-center">
+                    <div className="absolute inset-0 z-0">
+                        <RippleGrid
+                            enableRainbow
+                            gridColor="#5227FF"
+                            rippleIntensity={0.05}
+                            gridSize={15}
+                            gridThickness={15}
+                            fadeDistance={1.1}
+                            vignetteStrength={1}
+                            glowIntensity={0.1}
+                            opacity={0.50}
+                            gridRotation={0}
+                            mouseInteraction
+                            mouseInteractionRadius={0.9}
+                        />
+                    </div>
+                    <div className="text-center text-xs uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-400 sm:text-sm relative z-10">
                         Based in Australia
                     </div>
-                    <div className="flex w-full flex-col gap-4 py-4 items-center sm:flex-row sm:items-center sm:justify-center sm:py-3 sm:px-4">
+                    <div className="flex w-full flex-col gap-4 py-4 items-center sm:flex-row sm:items-center sm:justify-center sm:py-3 sm:px-4 relative z-10">
                         <div className="relative h-40 w-40 md:h-50 md:w-50 shrink-0 overflow-hidden rounded-full border-[5px] border-slate-400 dark:border-slate-500">
                             <Image
                                 src={`${basePath}/images/me.jpg`}
@@ -25,17 +42,23 @@ const Hero = () => {
                                 className="object-cover object-[center_10%] dark:brightness-95"
                             />
                         </div>
-                        <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-                            <div className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-[38px]">
-                                <div>
-                                    Hi, I am{" "}
-                                    <span className="font-bold text-neutral-700">
-                                        Anton Caballes
-                                    </span>
-                                </div>
-                                <div className="font-bold">Software Developer</div>
+                        <div className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-[38px]">
+                            <div className="flex items-baseline justify-center gap-2 whitespace-nowrap sm:justify-start">
+                                <span>Hi, I&apos;m</span>
+
+                                <GradientText
+                                    colors={["#FF0000", "#FF7A00", "#FFD400", "#00C853", "#00B0FF", "#3D5AFE", "#B400FF"]}
+                                    animationSpeed={8}
+                                    showBorder={false}
+                                    yoyo
+                                >
+                                    Antonio Caballes
+                                </GradientText>
                             </div>
+
+                            <div className="font-bold">Software Developer</div>
                         </div>
+
                     </div>
 
                 </div>
