@@ -70,17 +70,11 @@ const FEATURED_PROJECTS = [
         title: "Booking Web API",
         subtitle: (
             <>
-                Backend features to add
-
-                Prevent double-booking (business rule)
-
-                Pagination + filtering + sorting
-
-                Status lifecycle (Pending → Confirmed → Cancelled)
-
-                Optional: email notification (stub) or background job
-
-                Why it’s strong: shows real business logic beyond CRUD.
+                A .NET Web API for managing bookings with real-world business rules —
+                prevents double-booking, supports pagination/filtering/sorting, and includes
+                a booking status lifecycle (Pending → Confirmed → Cancelled). Built with EF
+                Core + SQL Server, documented via Swagger, with optional email/background
+                job hooks for notifications.
             </>
         ),
         href: "#", // replace with GitHub/Live link

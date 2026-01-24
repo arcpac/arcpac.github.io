@@ -1,0 +1,108 @@
+import Image from 'next/image'
+import RippleGrid from './RippleGrid';
+
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const Hero = () => {
+    return (
+        <section
+            id="home"
+            className="relative flex w-full max-w-screen flex-col items-center justify-center gap-4 md:gap-6 px-4 pt-20 md:pt-28 min-h-screen text-neutral-700 dark:text-neutral-200 sm:p-2 overflow-hidden"
+        >
+
+            <div className="relative z-10 max-w-4xl">
+                <div className="flex w-full flex-col items-center">
+                    <div className="text-center text-xs uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-400 sm:text-sm">
+                        Based in Australia
+                    </div>
+                    <div className="flex w-full flex-col gap-4 py-4 items-center sm:flex-row sm:items-center sm:justify-center sm:py-3 sm:px-4">
+                        <div className="relative h-40 w-40 md:h-50 md:w-50 shrink-0 overflow-hidden rounded-full border-[5px] border-slate-400 dark:border-slate-500">
+                            <Image
+                                src={`${basePath}/images/me.jpg`}
+                                alt="Antonio Caballes"
+                                fill
+                                priority
+                                className="object-cover object-[center_10%] dark:brightness-95"
+                            />
+                        </div>
+                        <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+                            <div className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-[38px]">
+                                <div>
+                                    Hi, I am{" "}
+                                    <span className="font-bold text-neutral-700">
+                                        Anton Caballes
+                                    </span>
+                                </div>
+                                <div className="font-bold">Software Developer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div className="border-t border-slate-400 py-6 text-center text-neutral-700 dark:border-slate-700 dark:text-neutral-200">
+                    <div className="text-base text-neutral-700 dark:text-neutral-200 sm:text-[18px]">
+                        I’m a software developer with 7 years of experience building modern
+                        web apps using JavaScript, React, and Next.js. I care a lot about
+                        clean code, testing, and building things that are ready for
+                        real-world use. I’ve worked across both frontend and backend, and
+                        I’m comfortable picking up new tools and technologies along the way.
+                    </div>
+                    <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
+                        <a className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
+                            href="#experience">
+                            <span
+                                className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
+                                aria-hidden="true"
+                            >
+                                x
+                            </span>
+
+                            <span className="ml-2">Explore my Work</span>
+                        </a>
+
+                        <a
+                            href="/antonio-caballes-resume.pdf"
+                            download
+                            className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-md font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
+                        >
+                            <span
+                                className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
+                                aria-hidden="true"
+                            >
+                                x
+                            </span>
+
+                            <span className="ml-2">Check my Resume</span>
+                        </a>
+                    </div>
+                    <div className="flex justify-center gap-6 pb-2">
+                        <a
+                            href="https://www.linkedin.com/in/anton-caballes-a44a4a18b/"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="LinkedIn"
+                            className="rounded-full border border-slate-300 p-3 transition hover:bg-slate-200 dark:border-slate-700 dark:hover:bg-slate-800"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-6 w-6 text-slate-800 dark:text-slate-200"
+                                aria-hidden="true"
+                            >
+                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.75 9.5H6.5V17H8.75V9.5M7.63 6.75A1.38 1.38 0 0 0 6.25 8.12A1.38 1.38 0 0 0 7.63 9.5A1.38 1.38 0 0 0 9 8.12A1.37 1.37 0 0 0 7.63 6.75M17.5 12.5C17.5 10.79 16.5 9.5 14.71 9.5C13.81 9.5 13.25 10 13 10.5V9.5H10.75V17H13V13C13 12 13.22 11 14.2 11C15.16 11 15.25 11.86 15.25 13V17H17.5V12.5Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <section
+                    className="min-h-[60vh] w-full bg-no-repeat bg-[length:130%] bg-[position:center_30%] bg-[image:var(--hero-bg)] [--hero-bg:url('/backgrounds/hero-bg-1.png')] dark:[--hero-bg:url('/backgrounds/hero-bg-dark.png')]"
+                />
+            </div>
+        </section >
+
+    )
+}
+
+export default Hero
