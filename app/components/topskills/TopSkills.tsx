@@ -17,14 +17,14 @@ type ToolIconProps = {
 };
 const TOOLS: Tool[] = [
     {
-        name: "Next.js",
+        name: "NextJS",
         desc: "App Router • SSR/SSG",
         icon: "/logos/nextjs.svg",
         href: "#",
         category: "frontend",
     },
     {
-        name: "React",
+        name: "ReactJS",
         desc: "Component-driven UI",
         icon: "/logos/react-2.svg",
         href: "#",
@@ -62,6 +62,13 @@ const TOOLS: Tool[] = [
         name: "Elixir + Phoenix",
         desc: "Backend APIs • OTP",
         icon: "/logos/elixir-phoenix.png",
+        href: "#",
+        category: "backend",
+    },
+    {
+        name: "NodeJS",
+        desc: "Runtime • APIs • tooling",
+        icon: "/logos/nodejs.svg",
         href: "#",
         category: "backend",
     },
