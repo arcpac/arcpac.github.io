@@ -180,9 +180,9 @@ const WorkExperience = () => {
                 {WORK_EXPERIENCES.map((work_exp) => (
                     <div
                         key={`${work_exp.company}-${work_exp.period}`}
-                        className={`relative grid gap-8 ${work_exp.stack?.length && `md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]`} pb-10`}
+                        className={`relative grid gap-2 md:gap-8 ${work_exp.stack?.length && `md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]`} pb-2 md:pb-10`}
                     >
-                        <div className={`flex flex-col gap-6 ${work_exp.stack?.length && `border-r`}`}>
+                        <div className={`flex flex-col gap-6 ${work_exp.stack?.length && `md:border-r`}`}>
                             <div className="flex flex-col gap-2">
                                 <div className="flex items-center gap-3">
                                     {work_exp.icon ? (
@@ -237,9 +237,9 @@ const WorkExperience = () => {
                             </div>
                         </div>
                         {work_exp.stack?.length &&
-                            <div className="grid grid-cols-6 md:grid-cols-6 content-start gap-2 md:gap-1 ">
+                            <div className="grid grid-cols-6 md:grid-cols-6 content-start justify-center justify-items-center gap-2 md:gap-1 ">
                                 {work_exp.stack?.map((tool) => (
-                                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
+                                    <div className="relative h-8 w-8 overflow-hidden rounded-xl bg-white dark:bg-neutral-800 sm:h-10 sm:w-10 md:h-12 md:w-12">
                                         <Image
                                             src={`${tool.icon}`}
                                             alt={`${tool.name} icon`}
