@@ -33,7 +33,7 @@ const WORK_EXPERIENCES = [
                 icon: "/logos/ts-1.svg",
                 href: "#",
             },
-    
+
         ],
     },
     {
@@ -131,8 +131,11 @@ const WORK_EXPERIENCES = [
         period: "Jul 2018 – Feb 2019",
         location: "Philippines",
         icon: "/logos/picture.png",
-        description:
-            "Supported system implementation activities, including setup, rollout support, and coordination to ensure smooth adoption for stakeholders.",
+        description: `
+        - Supported system implementation activities, including setup, rollout support, and coordination to ensure smooth adoption for stakeholders.
+        - Work closely with developers to validate databases during rollout.
+
+        `,
     },
     {
         company: "Optimind Technology Solutions",
@@ -149,8 +152,11 @@ const WORK_EXPERIENCES = [
         period: "Aug 2015 – Jun 2016",
         location: "Philippines",
         icon: "/logos/ab.png",
-        description:
-            "Early career role assisting with system support, documentation, and coordination across business and technical teams.",
+        description: `
+         - Early career role assisting with system support, documentation, and coordination across business and technical teams.
+         - Perform SQL queries and basic database analysis to validate data accuracy.
+
+        `,
     },
 ];
 const WorkExperience = () => {

@@ -32,6 +32,19 @@ const FEATURED_PROJECTS = [
         image: "/gifs/Nest-vid.gif",
     },
     {
+        eyebrow: "CAPSTONE PROJECT",
+        title: "HVAC Holiday Scheduler",
+        subtitle: (
+            <>
+                Automated holiday scheduling concept for smart-building HVAC. Uses Australian public-holiday data,
+                a cloud NoSQL store, and an IoT-style workflow (Node-RED + MQTT) to sync schedules and trigger device states.
+            </>
+        ),
+        href: "#",
+        image: "/images/airconnect.png",
+        tech: ["React", "Node.js", "Express", "MongoDB", "Node-RED", "MQTT (Mosquitto)"],
+    },
+    {
         eyebrow: "SIDE PROJECT",
         title: "Chatbot",
         subtitle:
