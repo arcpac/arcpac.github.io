@@ -128,13 +128,13 @@ export default function Home() {
         id="skills"
         className="flex relative w-full max-w-6xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-1 md:min-h-screen"
       >
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:gap-12 px-6">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:gap-12 px-1 md:px-6">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
             <div className="flex flex-col items-center gap-2 text-center">
-              <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
+              <h2 className="text-3xl font-semibold text-neutral-900 text-3xl md:text-4xl dark:text-white">
                 The mind behind the creations
               </h2>
-              <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
+              <p className="max-w-2xl text-base text-neutral-700 text-sm md:text-lg dark:text-neutral-300">
                 I’m a software developer who loves building practical,
                 production-ready web apps and I’m currently deep into AI
                 tooling. Right now I’m exploring chatbot implementations and RAG
