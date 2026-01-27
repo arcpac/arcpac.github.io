@@ -15,12 +15,12 @@ const WORK_EXPERIENCES = [
             - Contributed to AI-enabled features within the application, including supporting the implementation of a chatbot using a Retrieval-Augmented Generation (RAG) approach.
             - Worked closely with senior developers and cross-functional stakeholders to optimise performance, address technical debt, and align implementations with best practices. Actively participated in code reviews, debugging, and refactoring.`,
         stack: [
-            // {
-            //     name: "Next.js",
-            //     desc: "App Router • SSR/SSG",
-            //     icon: "/logos/nextjs.svg",
-            //     href: "#",
-            // },
+            {
+                name: "Next.js",
+                desc: "App Router • SSR/SSG",
+                icon: "/logos/nextjs.svg",
+                href: "#",
+            },
             {
                 name: "React",
                 desc: "Reusable UI components",
@@ -33,12 +33,7 @@ const WORK_EXPERIENCES = [
                 icon: "/logos/ts-1.svg",
                 href: "#",
             },
-            {
-                name: "RAG Systems",
-                desc: "Embeddings • Vector search • Grounding",
-                icon: "/logos/rag.svg",
-                href: "#",
-            },
+    
         ],
     },
     {
