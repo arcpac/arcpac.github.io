@@ -101,10 +101,10 @@ export default function Home() {
     <div
       className={`flex flex-col w-full items-center justify-center min-h-screen bg-white text-neutral-700 dark:bg-neutral-950 dark:text-neutral-200 ${inter.className}`}
     >
-      <nav className="fixed top-5 z-50">
-        <div className="rounded-full bg-black/95 px-6 py-3 shadow-[0_12px_35px_-20px_rgba(0,0,0,0.9)]">
-          <div className="flex items-center gap-6 sm:gap-8">
-            <ul className="flex items-center gap-6 text-[10px] font-semibold uppercase tracking-wide text-white sm:gap-10 md:text-[14px]">
+      <nav className="fixed top-3 z-50 w-full px-3 sm:top-5 sm:w-auto sm:px-0">
+        <div className="mx-auto w-full max-w-md rounded-2xl bg-black/95 px-4 py-2 shadow-[0_12px_35px_-20px_rgba(0,0,0,0.9)] sm:max-w-none sm:rounded-full sm:px-6">
+          <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-8">
+            <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] font-semibold uppercase tracking-wide text-white sm:gap-10 md:text-[14px]">
               {NAV_ITEMS.map((item) => (
                 <li key={item.label}>
                   <Link
