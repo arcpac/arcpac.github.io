@@ -31,6 +31,13 @@ const TOOLS: Tool[] = [
         category: "frontend",
     },
     {
+        name: "React Native",
+        desc: "Mobile apps (iOS/Android)",
+        icon: "/logos/react-native.svg",
+        href: "#",
+        category: "frontend",
+    },
+    {
         name: "JavaScript",
         desc: "Modern ES6+",
         icon: "/logos/js.png",

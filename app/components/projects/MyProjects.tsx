@@ -23,13 +23,26 @@ const FEATURED_PROJECTS = [
         image: "/gifs/qc-demo-vid.gif",
     },
     {
-        eyebrow: "SIDE STUDY",
+        eyebrow: "FEATURED PROJECT",
         title: "SplitNest",
         subtitle: (<>
             A modern household expense-sharing app for tracking bills, balances, and who owes who.
         </>),
         href: "#",
         image: "/gifs/Nest-vid.gif",
+    },
+    {
+        eyebrow: "FEATURED PROJECT",
+        title: "SplitNest (Mobile + Web)",
+        subtitle: (
+            <>
+                Expense-sharing app for households. Mobile app built with React Native (Expo Router),
+                backed by a Next.js API with token-based auth and a shared Postgres/Drizzle data layer.
+            </>
+        ),
+        href: "#",
+        image: "/images/NestApp-marketing.png",
+        tech: ["React Native", "Expo Router", "Next.js", "Postgres", "Drizzle", "JWT Auth"],
     },
     {
         eyebrow: "CAPSTONE PROJECT",
@@ -120,8 +133,7 @@ const MyProjects = () => {
                         Projects
                     </h2>
                     <p className="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">
-                        Things I’ve built (and I’m still building) — clean UI, real-world
-                        workflows, and code that’s meant to last.
+                        Things I’ve built (and I’m still building) I'm open to developers who wants to contribute share knowledge.
                     </p>
                 </div>
 
