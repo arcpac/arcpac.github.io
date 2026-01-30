@@ -124,7 +124,6 @@ const MyProjects = () => {
     }, [])
 
     return (
-
         <section id="projects" className="w-full pt-10">
             <div className="mx-auto w-full px-4 pt-20 md:pt-0 md:px-16">
                 {/* Header */}
@@ -136,6 +135,7 @@ const MyProjects = () => {
                         Things I’ve built (and I’m still building) I'm open to developers who wants to contribute share knowledge.
                     </p>
                 </div>
+
 
                 {/* Featured cards (3 big images) */}
                 <div className="grid gap-3 md:gap-8 lg:grid-cols-3">

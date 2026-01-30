@@ -56,11 +56,12 @@ const WORK_EXPERIENCES = [
         icon: "/logos/pragtech.png",
         description:
             `
-        - Design, code, test and debugging software applications.
-  - Collaborating with cross-functional teams to define, design and ship new features.
-  - Write clean and maintainable code.
-  - Analysing end-users’ requirements and tailoring software solutions to meet their needs.
-  - Tech Stack used: Elixir, Phoenix Framework, GraphQL, Git version control, PostgreSQL, ReactJS, HTML, JavaScript
+        - Delivered end-to-end features for the SeeYouDoc software: requirements analysis, design, implementation, testing, and debugging.
+  - SeeYouDoc is a healthcare platform that connects patients and doctors for online consultation, appointment scheduling, and clinic workflow management.
+  - Collaborated with cross-functional stakeholders to define scope, design solutions, and ship new product functionality.
+  - Practiced TDD, writing tests before implementation to ensure reliable releases and reduce regressions.
+  - Wrote clean, maintainable code with a focus on reliability, readability, and long-term support.
+  - Tech Stack: Elixir, Phoenix Framework, GraphQL, PostgreSQL, React, HTML, JavaScript, Git
         `,
         stack: [
             {
@@ -91,13 +92,11 @@ const WORK_EXPERIENCES = [
         icon: "/logos/bounty.png",
         description:
             `
-  - System Design: Contribute to the design architecture of software systems
-  - Work with cross-functional teams, including QA, product management and developers.
-  - Bug fixing
-  - Write and maintain high-quality, efficient code
-  - Tech stack used: CodeIgniter (PHP), HTML, JavaScript, SVN, CSS, JQuery
-
-        `,
+  - Supported system design and architecture decisions by gathering inputs from multiple subsidiaries and translating them into implementable requirements.
+  - Developed a Feed Monitoring System with an Excel import workflow and SQL Server Reporting Services reporting for tracking feed availability across farms and monitoring progress over time.
+  - Managed bug fixes from client feedback—logged, prioritised, and delivered fixes within sprint cycles.
+  - Partnered with QA and Product to deliver stable releases, improving reliability through structured testing and issue resolution.
+  - Tech Stack: C#/.NET, CodeIgniter (PHP), SSRS, JavaScript, HTML/CSS, jQuery, SVN`,
         stack: [
             {
                 name: "PHP",
