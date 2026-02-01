@@ -10,9 +10,15 @@ const WORK_EXPERIENCES = [
     period: "Jun 2024 – Present",
     location: "Australia",
     icon: "/logos/qc.png",
-    description: `- Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents.
-            - Contributed to AI-enabled features within the application, including supporting the implementation of a chatbot using a Retrieval-Augmented Generation (RAG) approach.
-            - Worked closely with senior developers and cross-functional stakeholders to optimise performance, address technical debt, and align implementations with best practices. Actively participated in code reviews, debugging, and refactoring.`,
+    details: {
+      project: "QuoteCloud — document editor & quoting platform",
+      industry: "SaaS / Sales Enablement",
+      keyAchievements: [
+        "Shipped and maintained core editor features used to build proposals, quotes, and sales documents in production.",
+        "Supported AI-enabled features, including a chatbot using a Retrieval-Augmented Generation (RAG) approach.",
+        "Collaborated with senior engineers and stakeholders to reduce technical debt through debugging, refactoring, and performance improvements.",
+      ],
+    },
     stack: [
       {
         name: "Next.js",
@@ -34,124 +40,6 @@ const WORK_EXPERIENCES = [
       },
     ],
   },
-  {
-    company: "Yondu Inc.",
-    role: "Systems Analyst",
-    period: "Jun 2021 – Feb 2022",
-    location: "Philippines",
-    icon: "/logos/yondu.png",
-    description: `- Understanding the products and services back-end configuration and integration
-  - Assessing business requirements and ensuring creation of B2B Products
-  - Providing the best solution and design based on the business requirement to ensure that the newly created product and services or any modification done on the existing product will not have an impact on business users
-  - Support clients with software and implementation`,
-  },
-  {
-    company: "Pragtechnologies",
-    role: "Software Engineer",
-    period: "Aug 2019 – Jun 2021",
-    location: "Philippines",
-    icon: "/logos/pragtech.png",
-    description: `
-        - Delivered end-to-end features for the SeeYouDoc software: requirements analysis, design, implementation, testing, and debugging.
-  - SeeYouDoc is a healthcare platform that connects patients and doctors for online consultation, appointment scheduling, and clinic workflow management.
-  - Collaborated with cross-functional stakeholders to define scope, design solutions, and ship new product functionality.
-  - Practiced TDD, writing tests before implementation to ensure reliable releases and reduce regressions.
-  - Wrote clean, maintainable code with a focus on reliability, readability, and long-term support.
-  - Tech Stack: Elixir, Phoenix Framework, GraphQL, PostgreSQL, React, HTML, JavaScript, Git
-        `,
-    stack: [
-      {
-        name: "Elixir + Phoenix",
-        desc: "Backend services and APIs",
-        icon: "/logos/elixir-phoenix.png",
-        href: "#",
-      },
-      {
-        name: "PostgreSQL",
-        desc: "Relational database",
-        icon: "/logos/postgres.svg",
-        href: "#",
-      },
-      {
-        name: "GraphQL",
-        desc: "Flexible API layer for the React",
-        icon: "/logos/graphql.svg",
-        href: "#",
-      },
-    ],
-  },
-  {
-    company: "Bounty Fresh Food Inc.",
-    role: "Software Developer",
-    period: "Feb 2019 – Jul 2019",
-    location: "Philippines",
-    icon: "/logos/bounty.png",
-    description: `
-  - Supported system design and architecture decisions by gathering inputs from multiple subsidiaries and translating them into implementable requirements.
-  - Developed a Feed Monitoring System with an Excel import workflow and SQL Server Reporting Services reporting for tracking feed availability across farms and monitoring progress over time.
-  - Managed bug fixes from client feedback—logged, prioritised, and delivered fixes within sprint cycles.
-  - Partnered with QA and Product to deliver stable releases, improving reliability through structured testing and issue resolution.
-  - Tech Stack: C#/.NET, CodeIgniter (PHP), SSRS, JavaScript, HTML/CSS, jQuery, SVN`,
-    stack: [
-      {
-        name: "PHP",
-        desc: "Server-side",
-        icon: "/logos/php.svg",
-        href: "#",
-      },
-      {
-        name: "CodeIgniter",
-        desc: "MVC framework for maintainable apps.",
-        icon: "/logos/codeigniter.png",
-        href: "#",
-      },
-      {
-        name: "PostgreSQL",
-        desc: "Database for internal records",
-        icon: "/logos/postgres.svg",
-        href: "#",
-      },
-      {
-        name: ".Net",
-        desc: "Database for internal records",
-        icon: "/logos/NET_Core_Logo.png",
-        href: "#",
-      },
-    ],
-  },
-  {
-    company: "HDI System Technology",
-    role: "Systems Implementation Specialist",
-    period: "Jul 2018 – Feb 2019",
-    location: "Philippines",
-    icon: "/logos/picture.png",
-    description: `
-        - Supported system implementation activities, including setup, rollout support, and coordination to ensure smooth adoption for stakeholders.
-        - Work closely with developers to validate databases during rollout.
-
-        `,
-  },
-  {
-    company: "Optimind Technology Solutions",
-    role: "SEO Link Builder",
-    period: "Jul 2016 – Jun 2018",
-    location: "Philippines",
-    icon: "/logos/optimind.png",
-    description:
-      "Early career role focused on SEO link-building and off-page optimisation tasks, supporting search visibility and content discoverability.",
-  },
-  {
-    company: "Asia Brewery Incorporated",
-    role: "Junior Systems Analyst",
-    period: "Aug 2015 – Jun 2016",
-    location: "Philippines",
-    icon: "/logos/ab.png",
-    description: `
-         - Early career role assisting with system support, documentation, and coordination across business and technical teams.
-         - Perform SQL queries and basic database analysis to validate data accuracy.
-
-        `,
-  },
 ];
 const NewVersionWorkExperience = () => {
   const [activeTech, setActiveTech] = useState<
@@ -161,101 +49,145 @@ const NewVersionWorkExperience = () => {
   return (
     <section
       id="experience"
-      className="flex w-full max-w-5xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-20 md:min-h-screen"
+      className="flex w-full max-w-5xl flex-col items-center justify-center gap-4 p-2 pt-2 md:min-h-screen md:pt-20"
     >
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 md:gap-12 px-4">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 md:gap-12">
         <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
+          <h2 className="text-3xl font-semibold text-neutral-900 dark:text-white sm:text-4xl">
             Work Experience
           </h2>
-          <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
+          <p className="max-w-2xl text-base text-neutral-700 dark:text-neutral-300 sm:text-lg">
             Placeholder company experiences following a clean timeline layout.
           </p>
         </div>
-        {WORK_EXPERIENCES.map((work_exp) => (
-          <div
-            key={`${work_exp.company}-${work_exp.period}`}
-            className={`relative grid gap-2 md:gap-8 ${work_exp.stack?.length &&
-              `md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]`
-              } pb-2 md:pb-10`}
-          >
+
+        {WORK_EXPERIENCES.map((work_exp) => {
+          const hasStack = Boolean(work_exp.stack?.length);
+          const hasDetails = Boolean((work_exp as any).details);
+
+          return (
             <div
-              className={`flex flex-col gap-6 ${work_exp.stack?.length && `md:border-r`
+              key={`${work_exp.company}-${work_exp.period}`}
+              className={`relative grid gap-2 pb-2 md:gap-8 md:pb-10 ${hasStack ? "md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]" : ""
                 }`}
             >
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-3">
-                  {work_exp.icon ? (
-                    <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white">
+              <div className={`flex flex-col gap-6 ${hasStack ? "md:border-r md:pr-8" : ""}`}>
+                <div className="flex flex-col gap-3">
+                  {/* Header row */}
+                  <div className="flex items-start gap-3">
+                    {work_exp.icon ? (
+                      <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-white dark:bg-neutral-800">
+                        <Image
+                          src={work_exp.icon}
+                          alt={`${work_exp.company} icon`}
+                          fill
+                          className="object-contain"
+                          sizes="48px"
+                        />
+                      </div>
+                    ) : null}
+
+                    <div className="flex flex-col">
+                      <div className="text-lg font-semibold text-neutral-900 dark:text-white">
+                        {work_exp.company}
+                      </div>
+                      <div className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+                        {work_exp.role}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+                    {work_exp.period} | {work_exp.location}
+                  </div>
+
+                  {/* Details format (new) */}
+                  {hasDetails ? (
+                    <div className="mt-2 space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                          Project
+                        </div>
+                        <div className="font-medium text-neutral-900 dark:text-white">
+                          {(work_exp as any).details.project}
+                        </div>
+                      </div>
+
+                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                          Industry
+                        </div>
+                        <div>{(work_exp as any).details.industry}</div>
+                      </div>
+
+                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                          Key achievements
+                        </div>
+
+                        <ul className="list-disc space-y-1 pl-5">
+                          {(work_exp as any).details.keyAchievements?.map((item: string) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : (
+                    // Fallback (old description string)
+                    (() => {
+                      const desc = (work_exp as any).description ?? "";
+                      const lines = desc
+                        .split("\n")
+                        .map((line: string) => line.trim())
+                        .filter(Boolean);
+
+                      const bulletLines = lines.filter((line: string) => line.startsWith("- "));
+                      const renderBullets = lines.length > 1 && bulletLines.length === lines.length;
+
+                      if (renderBullets) {
+                        return (
+                          <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
+                            {bulletLines.map((line: string, index: number) => (
+                              <li key={`${index}-${line}`}>{line.slice(2)}</li>
+                            ))}
+                          </ul>
+                        );
+                      }
+
+                      return (
+                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                          {desc}
+                        </p>
+                      );
+                    })()
+                  )}
+                </div>
+              </div>
+
+              {/* Stack icons */}
+              {hasStack ? (
+                <div className="grid content-start justify-center justify-items-center gap-2 md:gap-1 grid-cols-6 md:grid-cols-6">
+                  {work_exp.stack!.map((tool) => (
+                    <div
+                      key={`${work_exp.company}-${tool.name}`}
+                      className="relative h-8 w-8 overflow-hidden rounded-xl bg-white dark:bg-neutral-800 sm:h-10 sm:w-10 md:h-12 md:w-12"
+                    >
                       <Image
-                        src={work_exp.icon}
-                        alt={`${work_exp.company} icon`}
+                        src={tool.icon}
+                        alt={`${tool.name} icon`}
                         fill
                         className="object-contain"
-                        sizes="48px"
                       />
                     </div>
-                  ) : null}
-
-                  <div className="text-lg font-semibold text-neutral-900 dark:text-white">
-                    {work_exp.company}
-                  </div>
-                  <div className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                    {work_exp.role}
-                  </div>
+                  ))}
                 </div>
-
-                <div className="text-sm font-semibold text-neutral-700 dark:text-neutral-300">
-                  {work_exp.period} | {work_exp.location}
-                </div>
-
-                {(() => {
-                  const lines = work_exp.description
-                    .split("\n")
-                    .map((line) => line.trim())
-                    .filter(Boolean);
-                  const bulletLines = lines.filter((line) =>
-                    line.startsWith("- ")
-                  );
-                  const renderBullets =
-                    lines.length > 1 && bulletLines.length === lines.length;
-
-                  if (renderBullets) {
-                    return (
-                      <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
-                        {bulletLines.map((line, index) => (
-                          <li key={`${index}-${line}`}>{line.slice(2)}</li>
-                        ))}
-                      </ul>
-                    );
-                  }
-
-                  return (
-                    <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                      {work_exp.description}
-                    </p>
-                  );
-                })()}
-              </div>
+              ) : null}
             </div>
-            {work_exp.stack?.length && (
-              <div className="grid grid-cols-6 md:grid-cols-6 content-start justify-center justify-items-center gap-2 md:gap-1 ">
-                {work_exp.stack?.map((tool) => (
-                  <div className="relative h-8 w-8 overflow-hidden rounded-xl bg-white dark:bg-neutral-800 sm:h-10 sm:w-10 md:h-12 md:w-12">
-                    <Image
-                      src={`${tool.icon}`}
-                      alt={`${tool.name} icon`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
+
   );
 };
 

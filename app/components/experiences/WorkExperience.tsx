@@ -168,9 +168,9 @@ const WorkExperience = () => {
           <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">
             Work Experience
           </h2>
-          <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
+          {/* <p className="max-w-2xl text-base text-neutral-700 sm:text-lg dark:text-neutral-300">
             Placeholder company experiences following a clean timeline layout.
-          </p>
+          </p> */}
         </div>
         {WORK_EXPERIENCES.map((work_exp) => (
           <div
