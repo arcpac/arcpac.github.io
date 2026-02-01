@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link'
 import { useState } from 'react';
+import Aurora from './Aurora';
+
 
 type Tool = {
     name: string;
@@ -200,17 +202,14 @@ export function ToolIcon({ name, src, className = "" }: ToolIconProps) {
 
 const TopSkills = () => {
     return (
-        <div id="techs" className="w-full">
-            <div className="mx-auto w-full px-4 md:px-16 py-8">
+        <div id="techs" className="relative w-full overflow-hidden">
+            <div className="relative z-10 mx-auto w-full px-4 md:px-16 py-8">
                 {/* Tools header row */}
                 <div className="mb-6 flex items-end justify-between gap-4">
                     <div>
                         <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white">
                             Tools & Tech I use
                         </h3>
-                        {/* <p className="mt-1 text-neutral-600 dark:text-neutral-300">
-                            My Top-Tier Tools
-                        </p> */}
                     </div>
                 </div>
 
@@ -218,7 +217,17 @@ const TopSkills = () => {
                     {CATEGORIES.map((category) => (
                         <div
                             key={category.key}
-                            className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900"
+                            className={`rounded-2xl bg-white p-5 shadow-sm ${category.key === "other" ? "border border-neutral-200" : ""} dark:border-neutral-800 dark:bg-neutral-900
+                            
+                            bg-white/70 text-neutral-900
+                            backdrop-blur-xl backdrop-saturate-150
+                            shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)]
+                            supports-[backdrop-filter]:bg-white/60
+
+                            dark:bg-black/55 dark:text-white
+                            dark:shadow-[0_12px_35px_-20px_rgba(0,0,0,0.8)]
+                            dark:supports-[backdrop-filter]:bg-black/40
+                            `}
                         >
                             <div className="mb-4 text-sm font-semibold text-neutral-900 dark:text-white">
                                 {category.label}

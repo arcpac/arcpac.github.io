@@ -8,6 +8,8 @@ import WorkExperience from "./components/experiences/WorkExperience";
 import Hero from "./components/hero/Hero";
 import RippleGrid from "./components/hero/RippleGrid";
 import ThemeToggle from "./components/ThemeToggle";
+import Aurora from "./components/topskills/Aurora";
+import TopSkillsSection from "./components/topskills/TopSkillsSection";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -144,7 +146,8 @@ export default function Home() {
 
       <section
         id="skills"
-        className="flex relative w-full max-w-6xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-1 md:min-h-screen"
+        className="flex relative w-full max-w-6xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-1 md:min-h-screen
+        "
       >
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 md:gap-12 px-1 md:px-6">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
@@ -167,6 +170,7 @@ export default function Home() {
         </div>
         <TopSkills />
       </section>
+      {/* <TopSkillsSection /> */}
       <WorkExperience />
       <ProjectSection />
       <section id="contact" className="w-full py-20">
