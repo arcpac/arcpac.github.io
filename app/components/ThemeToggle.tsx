@@ -43,7 +43,7 @@ export default function ThemeToggle() {
         type="button"
         onClick={() => updateTheme("light")}
         aria-pressed={theme === "light"}
-        className={`rounded-full px-3 py-1 transition ${theme === "light" ? "bg-white text-neutral-900" : "text-white/70 hover:text-white"
+        className={`rounded-full px-3 py-1 transition ${theme === "light" ? "bg-neutral-200 text-neutral-900" : "text-white/70 hover:text-white"
           }`}
       >
         Light
@@ -52,7 +52,7 @@ export default function ThemeToggle() {
         type="button"
         onClick={() => updateTheme("dark")}
         aria-pressed={theme === "dark"}
-        className={`rounded-full px-3 py-1 transition ${theme === "dark" ? "bg-white text-neutral-900" : "text-white/70 hover:text-white"
+        className={`rounded-full px-3 py-1 transition ${theme === "dark" ? "bg-neutral-200 text-neutral-900" : "text-black/70 hover:text-black"
           }`}
       >
         Dark

@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 const FEATURED_PROJECTS = [
     {
+        slug: "quotecloud",
         eyebrow: "FEATURED PROJECT",
         title: "QuoteCloud",
         subtitle: (
@@ -23,6 +24,7 @@ const FEATURED_PROJECTS = [
         image: "/gifs/qc-demo-vid.gif",
     },
     {
+        slug: "splitnest",
         eyebrow: "FEATURED PROJECT",
         title: "SplitNest",
         subtitle: (<>
@@ -32,6 +34,7 @@ const FEATURED_PROJECTS = [
         image: "/gifs/Nest-vid.gif",
     },
     {
+        slug: "splitnest-mobile-web",
         eyebrow: "FEATURED PROJECT",
         title: "SplitNest (Mobile + Web)",
         subtitle: (
@@ -45,6 +48,7 @@ const FEATURED_PROJECTS = [
         tech: ["React Native", "Expo Router", "Next.js", "Postgres", "Drizzle", "JWT Auth"],
     },
     {
+        slug: "hvac-holiday-scheduler",
         eyebrow: "CAPSTONE PROJECT",
         title: "HVAC Holiday Scheduler",
         subtitle: (
@@ -58,6 +62,7 @@ const FEATURED_PROJECTS = [
         tech: ["React", "Node.js", "Express", "MongoDB", "Node-RED", "MQTT (Mosquitto)"],
     },
     {
+        slug: "chatbot",
         eyebrow: "SIDE PROJECT",
         title: "Chatbot",
         subtitle:
@@ -73,6 +78,7 @@ const FEATURED_PROJECTS = [
         image: "/images/chatbot.png",
     },
     {
+        slug: "seeyoudoc",
         eyebrow: "FEATURED PROJECT",
         title: "SeeYouDoc",
         subtitle: (
@@ -90,6 +96,7 @@ const FEATURED_PROJECTS = [
         tech: ["Backend", "GraphQL", "API Integration", "Bug Fixing", "React (occasional)"],
     },
     {
+        slug: "booking-web-api",
         eyebrow: "SIDE PROJECT",
         title: "Booking Web API",
         subtitle: (
@@ -143,7 +150,7 @@ const MyProjects = () => {
                         <Link
                             key={p.title}
                             target='_blank'
-                            href={p.href}
+                            href={`/projects/${p.slug}`}
                             className="project-card group rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
                         >
                             <div className="p-5">
