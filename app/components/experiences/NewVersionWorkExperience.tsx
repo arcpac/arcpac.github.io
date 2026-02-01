@@ -153,7 +153,7 @@ const WORK_EXPERIENCES = [
         `,
   },
 ];
-const WorkExperience = () => {
+const NewVersionWorkExperience = () => {
   const [activeTech, setActiveTech] = useState<
     { company: string; tech: string } | undefined
   >(undefined);
@@ -259,4 +259,4 @@ const WorkExperience = () => {
   );
 };
 
-export default WorkExperience;
+export default NewVersionWorkExperience;
