@@ -302,7 +302,10 @@ const NewVersionWorkExperience = () => {
                 </div>
               ),
             })) ?? [];
+          const count = logosForLoop.length;
 
+          const mobileHeight = Math.min(220, Math.max(120, 90 + count * 12));   // 120–220px
+          const desktopHeight = Math.min(600, Math.max(260, 180 + count * 35));
           return (
             <div
               key={`${work_exp.company}-${work_exp.period}`}
@@ -420,7 +423,7 @@ const NewVersionWorkExperience = () => {
               </div>
               {hasStack &&
                 <div
-                  className="relative overflow-hidden h-[140px] sm:h-[180px] md:h-[520px] lg:h-[600px]"
+                  className="relative flex overflow-hidden h-[110px] sm:h-[120px] md:h-[520px] lg:h-[600px] justify"
                 >
                   <LogoLoop
                     logos={logosForLoop}
@@ -428,7 +431,7 @@ const NewVersionWorkExperience = () => {
                     speed={50}
                     direction={isMobile ? "right" : "up"}
                     logoHeight={65}
-                    gap={40}
+                    gap={30}
 
                     hoverSpeed={0}
                   />
