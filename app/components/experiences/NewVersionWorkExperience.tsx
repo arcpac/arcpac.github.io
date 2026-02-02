@@ -9,7 +9,7 @@ const WORK_EXPERIENCES = [
   {
     company: "CorporateInteractive",
     role: "Software Developer",
-    period: "Jun 2024 – Present",
+    period: "Jun 2024 – Jan 2026",
     location: "Australia",
     icon: "/logos/qc.png",
     details: {
