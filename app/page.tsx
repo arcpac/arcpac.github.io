@@ -4,12 +4,9 @@ import Link from "next/link";
 
 import ProjectSection from "./components/projects/ProjectSection";
 import TopSkills from "./components/topskills/TopSkills";
-import WorkExperience from "./components/experiences/WorkExperience";
 import Hero from "./components/hero/Hero";
-import RippleGrid from "./components/hero/RippleGrid";
 import ThemeToggle from "./components/ThemeToggle";
-import Aurora from "./components/topskills/Aurora";
-import TopSkillsSection from "./components/topskills/TopSkillsSection";
+import NewVersionWorkExperience from "./components/experiences/NewVersionWorkExperience";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -41,11 +38,11 @@ const NOW_STACK = [
 ];
 
 const NEXT_STACK = [
-  { name: "LLMs", icon: "/logos/llm.svg" }, // or OpenAI/Ollama icon
+  { name: "LLMs", icon: "/logos/llm.svg" },
   { name: "RAG", icon: "/logos/rag.svg" },
   { name: "LangChain", icon: "/logos/langchain.svg" },
   { name: "Ollama", icon: "/logos/ollama.svg" },
-  { name: "Vector DBs", icon: "/logos/vector.svg" }, // Pinecone/pgvector/etc.
+  { name: "Vector DBs", icon: "/logos/vector.svg" },
 ];
 
 function StackRow({
@@ -171,7 +168,7 @@ export default function Home() {
         <TopSkills />
       </section>
       {/* <TopSkillsSection /> */}
-      <WorkExperience />
+      <NewVersionWorkExperience />
       <ProjectSection />
       <section id="contact" className="w-full py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
