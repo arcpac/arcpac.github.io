@@ -437,24 +437,6 @@ const NewVersionWorkExperience = () => {
                   />
                 </div>
               }
-              {/* Stack icons
-              {hasStack ? (
-                <div className="grid content-start justify-center justify-items-center gap-2 md:gap-1 grid-cols-6 md:grid-cols-6">
-                  {work_exp.stack!.map((tool) => (
-                    <div
-                      key={`${work_exp.company}-${tool.name}`}
-                      className="relative h-8 w-8 overflow-hidden rounded-xl bg-white dark:bg-neutral-800 sm:h-10 sm:w-10 md:h-12 md:w-12"
-                    >
-                      <Image
-                        src={tool.icon}
-                        alt={`${tool.name} icon`}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
-              ) : null} */}
             </div>
           );
         })}
