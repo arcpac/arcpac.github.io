@@ -35,6 +35,32 @@ const Preview = () => {
         />
     </>)
 }
+const PreviewTwo = () => {
+    return (<>
+        <Image
+            src="/gifs/Nest-vid.gif"
+            alt="SplitNest preview"
+            fill
+            priority
+            sizes="(min-width: 1024px) 960px, 100vw"
+            draggable={false}
+            className="object-contain select-none"
+        />
+    </>)
+}
+const PreviewThree = () => {
+    return (<>
+        <Image
+            src="/images/NestApp-marketing2.png"
+            alt="SplitNest preview"
+            fill
+            priority
+            sizes="(min-width: 1024px) 960px, 100vw"
+            draggable={false}
+            className="object-contain select-none"
+        />
+    </>)
+}
 const DEFAULT_ITEMS: CarouselItem[] = [
     {
         title: 'Text Animations',
@@ -46,19 +72,13 @@ const DEFAULT_ITEMS: CarouselItem[] = [
         title: 'Animations',
         description: 'Smooth animations for your projects.',
         id: 2,
-        icon: <Preview />
+        icon: <PreviewTwo />
     },
     {
         title: 'Components',
         description: 'Reusable components for your projects.',
         id: 3,
-        icon: <Preview />
-    },
-    {
-        title: 'Backgrounds',
-        description: 'Beautiful backgrounds and patterns for your projects.',
-        id: 4,
-        icon: <Preview />
+        icon: <PreviewThree />
     },
 ];
 
