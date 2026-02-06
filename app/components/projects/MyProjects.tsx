@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 const FEATURED_PROJECTS = [
     {
-        slug: "quotecloud",
         eyebrow: "FEATURED PROJECT",
         title: "QuoteCloud",
         subtitle: (
@@ -34,7 +33,7 @@ const FEATURED_PROJECTS = [
         image: "/gifs/Nest-vid.gif",
     },
     {
-        slug: "splitnest-mobile-web",
+        slug: "splitnest",
         eyebrow: "FEATURED PROJECT",
         title: "SplitNest (Mobile + Web)",
         subtitle: (
@@ -48,7 +47,7 @@ const FEATURED_PROJECTS = [
         tech: ["React Native", "Expo Router", "Next.js", "Postgres", "Drizzle", "JWT Auth"],
     },
     {
-        slug: "hvac-holiday-scheduler",
+        slug: "under-construction",
         eyebrow: "CAPSTONE PROJECT",
         title: "HVAC Holiday Scheduler",
         subtitle: (
@@ -62,7 +61,7 @@ const FEATURED_PROJECTS = [
         tech: ["React", "Node.js", "Express", "MongoDB", "Node-RED", "MQTT (Mosquitto)"],
     },
     {
-        slug: "chatbot",
+        slug: "under-construction",
         eyebrow: "SIDE PROJECT",
         title: "Chatbot",
         subtitle:
@@ -96,7 +95,7 @@ const FEATURED_PROJECTS = [
         tech: ["Backend", "GraphQL", "API Integration", "Bug Fixing", "React (occasional)"],
     },
     {
-        slug: "booking-web-api",
+        slug: "under-construction",
         eyebrow: "SIDE PROJECT",
         title: "Booking Web API",
         subtitle: (
@@ -150,7 +149,7 @@ const MyProjects = () => {
                 {/* Featured cards (3 big images) */}
                 <div className="grid gap-3 md:gap-8 lg:grid-cols-3">
                     {FEATURED_PROJECTS.map((p) => {
-                        const hasProjectPage = PROJECT_PAGE_SLUGS.has(p.slug)
+                        const hasProjectPage = p?.slug
                         const isExternal = !hasProjectPage && p.href.startsWith("http")
                         const href = hasProjectPage ? `/${p.slug}` : isExternal ? p.href : "#projects"
 
@@ -202,3 +201,42 @@ const MyProjects = () => {
 }
 
 export default MyProjects
+
+{/* <Link
+  key={p.title}
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noreferrer" : undefined}
+  className="project-card group flex h-full flex-col rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
+>
+  <div className="p-5">
+    <div className="text-[11px] font-semibold tracking-widest text-blue-600 dark:text-blue-400">
+      {p.eyebrow}
+    </div>
+
+    <div className="mt-2 text-lg font-semibold text-neutral-900 dark:text-white">
+      {p.title}
+    </div>
+
+    <div className="mt-1 text-sm text-neutral-600 dark:text-neutral-300 line-clamp-3">
+      {p.subtitle}
+    </div>
+
+    <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+      {hasProjectPage ? "View project page" : isExternal ? "Visit live site" : "Project page coming soon"}
+    </div>
+  </div>
+
+  <div className="mt-auto px-5 pb-5">
+    <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+      <Image
+        src={p.image}
+        alt={`${p.title} screenshot`}
+        fill
+        className="object-contain object-left transition-transform duration-500"
+        sizes="(min-width: 1024px) 33vw, 100vw"
+        priority
+      />
+    </div>
+  </div>
+</Link> */}

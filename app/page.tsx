@@ -170,6 +170,7 @@ export default function Home() {
       {/* <TopSkillsSection /> */}
       <NewVersionWorkExperience />
       <ProjectSection />
+
       <section id="contact" className="w-full py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-8 text-center dark:border-neutral-800 dark:bg-neutral-950 sm:p-12">
@@ -195,6 +196,13 @@ export default function Home() {
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
               >
                 antonraphaelcaballes@gmail.com
+              </a>
+
+              <a
+                href="tel:0452437783"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+              >
+                0452 437 783
               </a>
             </div>
           </div>
