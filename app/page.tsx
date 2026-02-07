@@ -105,9 +105,9 @@ export default function Home() {
           className="
       mx-auto w-full max-w-md rounded-2xl px-4 py-2 sm:max-w-none sm:rounded-full sm:px-6
       bg-white/70 text-neutral-900
-      backdrop-blur-xl backdrop-saturate-150
+      backdrop-blur-xs backdrop-saturate-150
       shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)]
-      supports-[backdrop-filter]:bg-white/60
+      supports-[backdrop-filter]:bg-white/30
 
       dark:bg-black/55 dark:text-white
       dark:shadow-[0_12px_35px_-20px_rgba(0,0,0,0.8)]
