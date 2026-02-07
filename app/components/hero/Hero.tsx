@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import RippleGrid from './RippleGrid';
 import GradientText from '@/components/GradientText';
+import Folder from './Folder';
 
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -99,35 +100,16 @@ const Hero = () => {
                         real-world use. I’ve worked across both frontend and backend, and
                         I’m comfortable picking up new tools and technologies along the way.
                     </div>
-                    <div className="flex flex-col items-center justify-center gap-3 py-4 sm:flex-row sm:gap-9">
-                        <a className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-sm md:text-lg font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
-                            href="#experience">
-                            <span
-                                className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
-                                aria-hidden="true"
-                            >
-                                x
-                            </span>
-
-                            <span className="ml-2">Explore my Work</span>
-                        </a>
-
-                        <a
-                            href="/antonio-caballes-resume.pdf"
-                            download
-                            className="group inline-flex items-center justify-center rounded-full bg-neutral-200 text-neutral-800 px-8 py-2 text-sm md:text-lg font-bold dark:bg-neutral-600 dark:text-slate-100 transition hover:bg-neutral-300 dark:hover:bg-neutral-500"
-                        >
-                            <span
-                                className="inline-flex items-center overflow-hidden w-0 opacity-0 -ml-1 transition-all duration-200 group-hover:w-4 group-hover:opacity-100 group-hover:ml-0"
-                                aria-hidden="true"
-                            >
-                                x
-                            </span>
-
-                            <span className="ml-2">Check my Resume</span>
-                        </a>
+                    <div className='flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row sm:gap-9'>
+                        <div>
+                            <Folder size={2} color="#5227FF" className="custom-folder"
+                                color="#e5e5e5"
+                                size={1}
+                            />
+                        </div>
                     </div>
-                    <div className="flex justify-center gap-6 pb-2">
+
+                    {/* <div className="flex justify-center gap-6 pb-2">
                         <a
                             href="https://www.linkedin.com/in/anton-caballes-a44a4a18b/"
                             target="_blank"
@@ -145,7 +127,7 @@ const Hero = () => {
                                 <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.75 9.5H6.5V17H8.75V9.5M7.63 6.75A1.38 1.38 0 0 0 6.25 8.12A1.38 1.38 0 0 0 7.63 9.5A1.38 1.38 0 0 0 9 8.12A1.37 1.37 0 0 0 7.63 6.75M17.5 12.5C17.5 10.79 16.5 9.5 14.71 9.5C13.81 9.5 13.25 10 13 10.5V9.5H10.75V17H13V13C13 12 13.22 11 14.2 11C15.16 11 15.25 11.86 15.25 13V17H17.5V12.5Z" />
                             </svg>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
 
                 <section
