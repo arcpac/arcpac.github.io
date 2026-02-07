@@ -124,7 +124,6 @@ const Folder: React.FC<FolderProps> = ({ color = '#5227FF', size = 1, items = []
                         className="absolute z-0 bottom-[98%] left-0 w-[30px] h-[10px] rounded-tl-[5px] rounded-tr-[5px] rounded-bl-0 rounded-br-0"
                         style={{ backgroundColor: folderBackColor }}
                     ></span>
-
                     {papers.map((item, i) => {
                         let sizeClasses = '';
                         if (i === 0) sizeClasses = open ? 'w-[70%] h-[80%]' : 'w-[70%] h-[80%]';
@@ -140,6 +139,7 @@ const Folder: React.FC<FolderProps> = ({ color = '#5227FF', size = 1, items = []
                         const anchorProps = meta.link
                             ? {
                                 href: meta.link,
+                                ...(meta.label === "LinkedIn" ? { target: "_blank" } : {}),
                                 ...(meta.download ? { download: true } : {})
                             }
                             : {};
