@@ -16,7 +16,7 @@ export default function UnderConstructionPage() {
                         UNDER CONSTRUCTION
                     </p>
                     <h1 className="mt-4 text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white md:text-4xl">
-                        SplitNest case study in progress.
+                        Still working on this page or case study in progress.
                     </h1>
                     <p className="mt-4 text-base text-neutral-700 dark:text-neutral-300 md:text-lg">
                         I&apos;m currently planning the technical study and the detailed walkthrough for this project.
