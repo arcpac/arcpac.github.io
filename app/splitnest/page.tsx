@@ -62,7 +62,7 @@ export default function SplitNestPage() {
                             <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-3 dark:border-neutral-800 dark:bg-neutral-950">
                                 <div className="relative aspect-video overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-900">
                                     <Carousel
-                                        autoplay={false}
+                                        autoplay={true}
                                         autoplayDelay={3000}
                                         pauseOnHover={false}
                                         loop={false}
@@ -76,7 +76,7 @@ export default function SplitNestPage() {
                         <section id="overview" className="mt-10 scroll-mt-28 border-t border-neutral-200 pt-8 dark:border-neutral-800">
                             <h2 className="text-2xl font-semibold text-neutral-900 dark:text-white">Overview</h2>
                             <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-                                SplitNest is a shared-backend expense sharing platform for mobile and web—tracking groups, expenses, and shares,
+                                SplitNest is a shared-backend expense sharing platform for mobile and web tracking groups, expenses, and shares,
                                 computing balances in real time, and supporting streamlined repayments with consistent business rules across clients.
                             </p>
                         </section>
