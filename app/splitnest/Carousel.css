@@ -6,6 +6,7 @@
   --outer-r: 24px;
   --p-distance: 12px;
 }
+
 .carousel-track {
   display: flex;
   height: 100%;
@@ -43,34 +44,31 @@
   text-align: center;
 }
 
-.carousel-indicators-container.round {
+/* Dots */
+.carousel-indicators-container {
   position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* allow drag through */
+}
+
+.carousel-indicators-container.round {
   bottom: 3em;
   left: 50%;
+  right: auto;
   transform: translateX(-50%);
 }
 
-.carousel-indicator.active {
-  background-color: #333333;
-}
-
-.carousel-indicator.inactive {
-  background-color: rgba(51, 51, 51, 0.4);
-}
-
-.carousel-indicators-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
 .carousel-indicators {
-  margin-top: 16px;
   display: flex;
-  width: 150px;
-  justify-content: space-between;
-  padding: 0 32px;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  pointer-events: auto; /* allow clicking dots */
 }
 
 .carousel-indicator {
@@ -78,7 +76,9 @@
   width: 8px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 150ms;
+  transition:
+    background-color 150ms,
+    transform 150ms;
 }
 
 .carousel-indicator.active {
@@ -86,5 +86,5 @@
 }
 
 .carousel-indicator.inactive {
-  background-color: #555;
+  background-color: rgba(255, 255, 255, 0.45);
 }
