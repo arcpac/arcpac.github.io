@@ -102,9 +102,9 @@ const Hero = () => {
                     </div>
                     <div className='flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row sm:gap-9'>
                         <div>
-                            <Folder size={2} color="#5227FF" className="custom-folder"
+                            {/* todo: fix color  */}
+                            <Folder size={1} className="custom-folder"
                                 color="#e5e5e5"
-                                size={1}
                             />
                         </div>
                     </div>
