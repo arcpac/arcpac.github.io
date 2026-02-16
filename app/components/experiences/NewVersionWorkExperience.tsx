@@ -18,10 +18,10 @@ const WORK_EXPERIENCES = [
       industry: "SaaS / Sales Enablement",
       overview: "Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents",
       keyAchievements: [
-        "Shipped a Spreadsheet widget/block that expanded document capabilities by enabling structured tables and calculations inside quotes and proposals.",
-        "Integrated the Canva Editor into QuoteCloud, allowing users to create and embed designs directly within the quoting workflow.",
-        "Delivered an text-editor paint, insert image, Canva editor, editable image in text-editor, spelling suggestion.",
         `Implemented secure View Mode access control for password-protected documents with end-to-end validation and middleware enforcement to prevent bypass and protect client data.`,
+        `Integrated the Canva Editor into QuoteCloud via an OAuth-style flow (token exchange) and secure client-server handoff, enabling users to create and embed designs directly inside the quoting workflow.`,
+        `Delivered an text-editor paint, insert image, Canva editor, editable image in text-editor, spelling suggestion.`,
+        `Shipped a Spreadsheet widget/block that expanded document capabilities by enabling structured tables and calculations inside quotes and proposals.`,
         `Created, maintained and expanded FAQ and User guide pages as knowledge source for QuoteCloud’s RAG systems. This will be implemented in the near future for chatbots.`,
         `Built mandatory e-signature for document acceptance, ensuring compliance by blocking acceptance until required signing is completed.`,
         `Day to day: Maintained WebDirector client websites, handling bug fixes and implementing change requests to keep sites up to date and stable.`,
@@ -83,10 +83,9 @@ const WORK_EXPERIENCES = [
       overview:
         "Delivered end-to-end features for SeeYouDoc, a healthcare platform connecting patients and doctors for online consultations, appointment scheduling, and clinic workflow management. Worked across requirements analysis, solution design, implementation, testing, and debugging, collaborating with stakeholders to ship reliable product improvements.",
       keyAchievements: [
-        `Implemented GraphQL APIs and integrated them with a React Native mobile app with the help of senior mobile developers, enabling the app to fetch exactly the data it needs in a single request, reducing over-fetching and improving performance on mobile networks.`,
-        `Developed and maintained backend endpoints and business logic in Elixir/Phoenix to support React web pages in SeeYouDoc.`,
+        `Implemented GraphQL APIs and integrated them with a React Native mobile app (paired with senior mobile devs), enabling single-request data fetching, reducing over-fetching, and improving performance on mobile networks.`,
+        `Built and maintained backend APIs + business logic in Elixir/Phoenix to power SeeYouDoc’s React web app, including request validation, domain rules, and reliable data flows`,
         `Delivered core features such as appointment creation, validate forms, and user creation.`,
-        `Collaborating with cross-functional teams to define, design and ship new features.`,
       ],
     },
     stack: [
