@@ -7,6 +7,8 @@ import TopSkills from "./components/topskills/TopSkills";
 import Hero from "./components/hero/Hero";
 import ThemeToggle from "./components/ThemeToggle";
 import NewVersionWorkExperience from "./components/experiences/NewVersionWorkExperience";
+import BlogSection from "./components/blogs/BlogSection";
+import { FaMediumM } from "react-icons/fa";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -140,7 +142,6 @@ export default function Home() {
 
 
       <Hero />
-
       <section
         id="skills"
         className="flex relative w-full max-w-6xl flex-col items-center justify-center gap-4 p-2 pt-2 md:pt-1 md:min-h-screen
@@ -165,12 +166,13 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <TopSkills />
       </section>
-      {/* <TopSkillsSection /> */}
+
       <NewVersionWorkExperience />
       <ProjectSection />
-
+      {/* <BlogSection /> */}
       <section id="contact" className="w-full py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-8 text-center dark:border-neutral-800 dark:bg-neutral-950 sm:p-12">

@@ -89,26 +89,26 @@ const TOOLS: Tool[] = [
         category: "backend",
     },
     {
-        name: "LLM Integration",
-        desc: "Ollama • Prompting • Safety",
-        icon: "/logos/ai.svg",
+        name: "API Integration",
+        desc: "REST/GraphQL • webhooks • third-party services",
+        icon: "",
         href: "#",
-        category: "other",
+        category: "backend",
     },
-    {
-        name: "RAG Systems",
-        desc: "Embeddings • Vector search • Grounding",
-        icon: "/logos/rag.svg",
-        href: "#",
-        category: "other",
-    },
-    {
-        name: "LangChain",
-        desc: "Loaders • Chains • Tools",
-        icon: "/logos/langchain.png",
-        href: "#",
-        category: "other",
-    },
+    // {
+    //     name: "RAG Systems",
+    //     desc: "Embeddings • Vector search • Grounding",
+    //     icon: "/logos/rag.svg",
+    //     href: "#",
+    //     category: "other",
+    // },
+    // {
+    //     name: "LangChain",
+    //     desc: "Loaders • Chains • Tools",
+    //     icon: "/logos/langchain.png",
+    //     href: "#",
+    //     category: "other",
+    // },
     {
         name: "GitHub",
         desc: "CI/CD pipelines",
@@ -129,13 +129,6 @@ const TOOLS: Tool[] = [
         icon: "/logos/graphql.svg",
         href: "#",
         category: "other",
-    },
-    {
-        name: "PHP",
-        desc: "Server-side web apps",
-        icon: "/logos/php.svg",
-        href: "#",
-        category: "backend",
     },
 ];
 const CATEGORIES = [
@@ -217,7 +210,7 @@ const TopSkills = () => {
                     {CATEGORIES.map((category) => (
                         <div
                             key={category.key}
-                            className={`rounded-2xl bg-white p-5 shadow-sm ${category.key === "other" ? "border border-neutral-200" : ""} dark:border-neutral-800 dark:bg-neutral-900
+                            className={`rounded-2xl bg-white p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900
                             
                             bg-white/70 text-neutral-900
                             backdrop-blur-xl backdrop-saturate-150
