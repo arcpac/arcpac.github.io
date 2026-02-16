@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import RippleGrid from './RippleGrid';
 import GradientText from '@/components/GradientText';
-import Folder from './Folder';
 import Link from 'next/link';
 import { FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { IoIosDocument } from 'react-icons/io';

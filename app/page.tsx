@@ -7,8 +7,6 @@ import TopSkills from "./components/topskills/TopSkills";
 import Hero from "./components/hero/Hero";
 import ThemeToggle from "./components/ThemeToggle";
 import NewVersionWorkExperience from "./components/experiences/NewVersionWorkExperience";
-import BlogSection from "./components/blogs/BlogSection";
-import { FaMediumM } from "react-icons/fa";
 
 export const inter = Inter({
   subsets: ["latin"],
