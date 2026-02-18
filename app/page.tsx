@@ -184,14 +184,12 @@ export default function Home() {
               >
                 Email me
               </a>
-
               <a
                 href="mailto:antonraphaelcaballes@gmail.com"
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
               >
                 antonraphaelcaballes@gmail.com
               </a>
-
               <a
                 href="tel:0452437783"
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-2 text-md font-bold text-neutral-900 transition hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"

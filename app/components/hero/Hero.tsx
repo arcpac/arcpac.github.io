@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import RippleGrid from './RippleGrid';
 import GradientText from '@/components/GradientText';
 import Link from 'next/link';
-import { FaLinkedin, FaMediumM } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { IoIosDocument } from 'react-icons/io';
 
 
@@ -98,14 +98,8 @@ const Hero = () => {
                     <div className="text-base text-neutral-700 dark:text-neutral-200 text-sm md:text-lg">
                         I’m a software developer with 7 years of experience building modern web apps with JavaScript, React, and Next.js, with a strong focus on backend development (Nodejs, Express, PHP), APIs, authentication, and databases.
                     </div>
-                    {/* <div className='flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row sm:gap-9'>
-                        <div>
-                            <Folder size={1} className="custom-folder"
-                                color="#e5e5e5"
-                            />
-                        </div>
-                    </div> */}
-                    <div className='flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row sm:gap-9'>
+
+                    <div className='flex flex-col items-center justify-center gap-2 pt-4 sm:flex-row sm:gap-3'>
                         <Link
                             href={'https://antonraphaelcaballes.medium.com/'}
                             target="_blank"
@@ -129,6 +123,18 @@ const Hero = () => {
                                 <FaLinkedin className="text-base" />
                             </span>
                             LinkedIn
+                        </Link>
+                        <Link
+                            href={'https://www.instagram.com/arcdevjs/'}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Visit my Medium profile"
+                            className="inline-flex items-center gap-3 rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-semibold text-blue-600 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-200/60 dark:border-blue-500/30 dark:bg-neutral-900 dark:text-blue-300 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-blue-500/30"
+                        >
+                            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-500/20 dark:text-blue-200">
+                                <FaInstagram className="text-base" />
+                            </span>
+                            Instagram
                         </Link>
                         <Link
                             href={`${basePath}/antonio-caballes-resume.pdf`}
