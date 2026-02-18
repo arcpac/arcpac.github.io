@@ -153,13 +153,7 @@ export default function Home() {
               </h2>
               <p className="max-w-2xl text-base text-neutral-700 text-sm md:text-lg dark:text-neutral-300">
                 I’m a software developer who loves building practical,
-                production-ready web apps and I’m currently deep into AI
-                tooling. Right now I’m exploring chatbot implementations and RAG
-                systems, including internal assistants (connected to company
-                data and workflows) and external assistants trained on public
-                content like product pages and FAQs. I’m naturally curious,
-                always experimenting, and I enjoy learning new tools that help
-                teams move faster and users get better experiences.
+                production-ready web apps. My experience has engaged me on backend development, APIs and implementing auth flows. I'm naturally curious learning tools, technologies that help me build better software.
               </p>
             </div>
           </div>
