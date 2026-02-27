@@ -96,7 +96,7 @@ const Hero = () => {
                 </div>
                 <div className="border-t border-slate-400 py-6 text-center text-neutral-700 dark:border-slate-700 dark:text-neutral-200">
                     <div className="text-base text-neutral-700 dark:text-neutral-200 text-sm md:text-lg">
-                        I’m a software developer with 7 years of experience building modern web apps with JavaScript, React, and Next.js, with a strong focus on backend development (Nodejs, Express, PHP), APIs, authentication, and databases.
+                        Software Developer with 7 years of experience building and supporting web applications end-to-end from UI to backend services. I work primarily with JavaScript/TypeScript, React, and Node.js, specialising in API integration and authentication workflows (JWT/session, access control).
                     </div>
 
                     <div className='flex flex-col items-center justify-center gap-2 pt-4 sm:flex-row sm:gap-3'>
