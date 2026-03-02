@@ -77,7 +77,7 @@ const FEATURED_PROJECTS = [
         image: "/images/chatbot.png",
     },
     {
-        slug: "seeyoudoc",
+
         eyebrow: "FEATURED PROJECT",
         title: "SeeYouDoc",
         subtitle: (
