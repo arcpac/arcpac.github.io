@@ -134,7 +134,7 @@ const Hero = () => {
                             <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-500/20 dark:text-blue-200">
                                 <FaInstagram className="text-base" />
                             </span>
-                            Instagram
+                            arcdevjs
                         </Link>
                         <Link
                             href={`${basePath}/antonio-caballes-resume.pdf`}
