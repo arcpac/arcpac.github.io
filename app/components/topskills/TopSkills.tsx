@@ -20,112 +20,88 @@ const TOOLS: Tool[] = [
         name: "NextJS",
         desc: "App Router • SSR/SSG",
         icon: "/logos/nextjs.svg",
-        href: "#",
         category: "frontend",
     },
     {
         name: "ReactJS",
         desc: "Component-driven UI",
         icon: "/logos/react-2.svg",
-        href: "#",
         category: "frontend",
     },
     {
         name: "React Native",
         desc: "Mobile apps (iOS/Android)",
         icon: "/logos/react-native.svg",
-        href: "#",
+
         category: "frontend",
     },
     {
         name: "JavaScript",
         desc: "Modern ES6+",
         icon: "/logos/js.png",
-        href: "#",
+
         category: "frontend",
     },
     {
         name: "TypeScript",
         desc: "Type-safe JavaScript",
         icon: "/logos/ts-1.svg",
-        href: "#",
+
         category: "frontend",
     },
     {
         name: "Tailwind CSS",
         desc: "Utility-first styling",
         icon: "/logos/tailwind.svg",
-        href: "#",
+
         category: "frontend",
     },
     {
         name: "PostgreSQL",
         desc: "SQL relational database",
         icon: "/logos/postgres.svg",
-        href: "#",
+
         category: "backend",
     },
     {
         name: "Elixir + Phoenix",
         desc: "Backend APIs • OTP",
         icon: "/logos/elixir-phoenix.png",
-        href: "#",
+
         category: "backend",
     },
     {
         name: "NodeJS",
         desc: "Runtime • APIs • tooling",
         icon: "/logos/nodejs.svg",
-        href: "#",
+
         category: "backend",
     },
     {
         name: ".NET Core",
         desc: "Server-side web apps",
         icon: "/logos/NET_Core_Logo.png",
-        href: "#",
+
         category: "backend",
     },
-    {
-        name: "API Integration",
-        desc: "REST/GraphQL • webhooks • third-party services",
-        icon: "",
-        href: "#",
-        category: "backend",
-    },
-    // {
-    //     name: "RAG Systems",
-    //     desc: "Embeddings • Vector search • Grounding",
-    //     icon: "/logos/rag.svg",
-    //     href: "#",
-    //     category: "other",
-    // },
-    // {
-    //     name: "LangChain",
-    //     desc: "Loaders • Chains • Tools",
-    //     icon: "/logos/langchain.png",
-    //     href: "#",
-    //     category: "other",
-    // },
     {
         name: "GitHub",
         desc: "CI/CD pipelines",
         icon: "/logos/github.svg",
-        href: "#",
+
         category: "other",
     },
     {
         name: "GitLab",
         desc: "CI/CD pipelines",
         icon: "/logos/gitlab.svg",
-        href: "#",
+
         category: "other",
     },
     {
         name: "GraphQL",
         desc: "Server-side web apps",
         icon: "/logos/graphql.svg",
-        href: "#",
         category: "other",
     },
 ];
@@ -166,7 +142,7 @@ export function getInitials(name: string) {
 export function ToolIcon({ name, src, className = "" }: ToolIconProps) {
     const [failed, setFailed] = useState(false);
 
-    if (failed) {
+    if (failed || !src) {
         return (
             <div
                 aria-label={`${name} logo`}
@@ -194,59 +170,38 @@ export function ToolIcon({ name, src, className = "" }: ToolIconProps) {
 const TopSkills = () => {
     return (
         <div id="techs" className="relative w-full overflow-hidden">
-            <div className="relative z-10 mx-auto w-full px-4 md:px-16 py-8">
-                {/* Tools header row */}
-                <div className="mb-6 flex items-end justify-between gap-4">
-                    <div>
-                        <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white">
-                            Tools & Tech I use
-                        </h3>
-                    </div>
-                </div>
+            <div className="grid grid-cols-4 grid-rows-4">
+                {Array.from({ length: 16 }, (_, index) => {
+                    const tool = TOOLS[index];
 
-                <div className="grid gap-4 md:gap-6 md:grid-cols-3">
-                    {CATEGORIES.map((category) => (
+                    if (!tool) {
+                        return (
+                            <></>
+                        );
+                    }
+
+                    return (
                         <div
-                            key={category.key}
-                            className={`rounded-2xl bg-white p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-900
-                            
-                            bg-white/70 text-neutral-900
-                            backdrop-blur-xl backdrop-saturate-150
-                            shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)]
-                            supports-[backdrop-filter]:bg-white/60
-
-                            dark:bg-black/55 dark:text-white
-                            dark:shadow-[0_12px_35px_-20px_rgba(0,0,0,0.8)]
-                            dark:supports-[backdrop-filter]:bg-black/40
-                            `}
+                            key={tool.name}
+                            className={`flex h-24 items-center px-3 border-neutral-500 ${index % 4 !== 3 ? "border-r-[0.4px]" : ""} ${index < 12 ? "border-b-[0.4px]" : ""}`}
+                            title={tool.name}
                         >
-                            <div className="mb-4 text-sm font-semibold text-neutral-900 dark:text-white">
-                                {category.label}
+                            <div className="relative h-10 w-10 shrink-0">
+                                <ToolIcon
+                                    name={tool.name}
+                                    src={tool.icon}
+                                    className="object-contain"
+                                />
                             </div>
-                            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
-                                {TOOLS.filter((t) => t.category === category.key).map((t) => (
-                                    <div
-                                        key={t.name}
-                                        className="flex items-center gap-3 rounded-xl border border-neutral-200/70 bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-950"
-                                    >
-                                        <div className="relative h-10 w-10 overflow-hidden rounded-lg bg-white dark:bg-neutral-800">
-                                            <ToolIcon name={t.name} src={t.icon} />
-
-                                        </div>
-                                        <div className="leading-tight">
-                                            <div className="text-sm font-semibold text-neutral-900 dark:text-white">
-                                                {t.name}
-                                            </div>
-                                            <div className="text-xs text-neutral-600 dark:text-neutral-300">
-                                                {t.desc}
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="min-w-0">
+                                <p className="truncate text-sm font-semibold ">
+                                    {tool.name}
+                                </p>
+                                <p className="truncate text-xs text-neutral-600">{tool.desc}</p>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    );
+                })}
             </div>
         </div>
     )

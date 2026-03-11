@@ -39,6 +39,7 @@ const Hero = () => {
             title: 'Security-Minded Engineering',
             description:
                 'Reliable delivery, readable code, and practical solutions that scale with the product.',
+            image: `${basePath}/images/candid.gif`,
         },
     ];
 
