@@ -18,14 +18,11 @@ const WORK_EXPERIENCES = [
       industry: "SaaS / Sales Enablement",
       overview: "Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents",
       keyAchievements: [
-        `Implemented secure View Mode access control for password-protected documents with end-to-end validation and middleware enforcement to prevent bypass and protect client data.`,
-        `Integrated the Canva Editor into QuoteCloud via an OAuth-style flow (token exchange) and secure client-server handoff, enabling users to create and embed designs directly inside the quoting workflow.`,
+        `Implemented secure View Mode access control for password-protected documents.`,
+        `Integrated Canva Editor into QuoteCloud via an OAuth-style flow.`,
+        `Delivered core features`,
         `Delivered an text-editor paint, insert image, Canva editor, editable image in text-editor, spelling suggestion.`,
-        `Shipped a Spreadsheet widget/block that expanded document capabilities by enabling structured tables and calculations inside quotes and proposals.`,
-        `Created, maintained and expanded FAQ and User guide pages as knowledge source for QuoteCloud’s RAG systems. This will be implemented in the near future for chatbots.`,
         `Built mandatory e-signature for document acceptance, ensuring compliance by blocking acceptance until required signing is completed.`,
-        `Day to day: Maintained WebDirector client websites, handling bug fixes and implementing change requests to keep sites up to date and stable.`,
-        "Supported AI-enabled features, including a chatbot using a Retrieval-Augmented Generation (RAG) approach.",
       ],
     },
     stack: [
