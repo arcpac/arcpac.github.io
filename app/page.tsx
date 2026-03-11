@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { Inter, Montserrat } from "next/font/google";
-import Link from "next/link";
 
 import ProjectSection from "./components/projects/ProjectSection";
 import TopSkills from "./components/topskills/TopSkills";
 import Hero from "./components/hero/Hero";
-import ThemeToggle from "./components/ThemeToggle";
+import Navbar from "./components/Navbar";
 import NewVersionWorkExperience from "./components/experiences/NewVersionWorkExperience";
 
 export const inter = Inter({
@@ -16,14 +15,6 @@ export const inter = Inter({
 export const montserrat = Montserrat({
   subsets: ["latin"],
 });
-
-
-const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-];
 
 const NOW_STACK = [
   { name: "React", icon: "/logos/react-2.svg" },
@@ -98,47 +89,9 @@ export function NowNextStack() {
 export default function Home() {
   return (
     <div
-      className={`flex flex-col w-full items-center justify-center min-h-screen bg-white text-neutral-700 dark:bg-neutral-950 dark:text-neutral-200 ${inter.className}`}
+      className={`flex flex-col w-full items-center justify-center min-h-screen bg-white text-neutral-700 dark:bg-[#16171d] dark:text-neutral-200 ${inter.className}`}
     >
-      <nav className="fixed top-3 z-50 w-full px-3 sm:top-5 sm:w-auto sm:px-0">
-        <div
-          className="
-      mx-auto w-full max-w-md rounded-2xl px-4 py-2 sm:max-w-none sm:rounded-full sm:px-6
-      bg-white/70 text-neutral-900
-      backdrop-blur-xs backdrop-saturate-150
-      shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)]
-      supports-[backdrop-filter]:bg-white/30
-
-      dark:bg-black/55 dark:text-white
-      dark:shadow-[0_12px_35px_-20px_rgba(0,0,0,0.8)]
-      dark:supports-[backdrop-filter]:bg-black/40
-    "
-        >
-          <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-8">
-            <ul
-              className="
-          flex flex-wrap items-center justify-center gap-x-4 gap-y-2
-          text-[10px] font-semibold uppercase tracking-wide
-          text-neutral-900 sm:gap-10 md:text-[14px]
-          dark:text-white
-        "
-            >
-              {NAV_ITEMS.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="transition-opacity hover:opacity-80">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="hidden h-5 w-px bg-black/10 sm:block dark:bg-white/20" />
-            <ThemeToggle />
-          </div>
-        </div>
-      </nav>
-
-
+      <Navbar />
       <Hero />
       <section
         id="skills"
@@ -152,8 +105,8 @@ export default function Home() {
                 The mind behind the creations
               </h2>
               <p className="max-w-2xl text-base text-neutral-700 text-sm md:text-lg dark:text-neutral-300">
-                I’m a software developer who loves building practical,
-                production-ready web apps. My experience has engaged me on backend development, APIs and implementing auth flows. I'm naturally curious learning tools, technologies that help me build better software.
+                I&apos;m a software developer who loves building practical,
+                production-ready web apps. My experience has engaged me on backend development, APIs and implementing auth flows. I&apos;m naturally curious learning tools, technologies that help me build better software.
               </p>
             </div>
           </div>
