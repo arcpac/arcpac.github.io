@@ -21,6 +21,26 @@ const getDocumentTheme = (): 'light' | 'dark' => {
 
 const Hero = () => {
     const [colorMode, setColorMode] = useState<'light' | 'dark'>(getDocumentTheme)
+    const heroCards = [
+        {
+            title: 'Auth & API Workflows',
+            description:
+                'JWT/session auth, protected routes, and robust API integrations across frontend and backend.',
+            image: `${basePath}/images/api-sec.gif`,
+            imageAlt: 'Authentication and API workflow preview',
+        },
+        {
+            title: 'Full-Stack Product Builder',
+            description:
+                'I build features from UI to backend services with maintainable architecture and clean handoff.',
+            image: `${basePath}/images/cardImage.png`,
+        },
+        {
+            title: 'Security-Minded Engineering',
+            description:
+                'Reliable delivery, readable code, and practical solutions that scale with the product.',
+        },
+    ];
 
     useEffect(() => {
         if (typeof document === 'undefined') {
@@ -45,7 +65,7 @@ const Hero = () => {
             data-theme={colorMode}
             className="relative flex w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 pt-20 text-neutral-700 dark:text-neutral-200 sm:px-6 md:gap-6 md:pt-28"
         >
-            <div className="relative z-10 w-full max-w-6xl border border-slate-300/80 dark:border-slate-800">
+            <div className="relative z-10 w-full max-w-6xl dark:border-slate-800">
                 <div className="grid min-h-[76vh] w-full grid-cols-1 lg:grid-cols-2">
                     <div className="flex flex-col border-b border-slate-300/80 dark:border-slate-800 lg:border-b-0 lg:border-r">
                         <div className="flex relative w-full flex-col items-center">
@@ -164,31 +184,61 @@ const Hero = () => {
                             </div>
                         </div>
                     </div>
-                    <div
-                        className="relative min-h-[340px] lg:min-h-full"
-                        aria-label="Hero image placeholder"
-                    >
-                        <div className="h-full w-full"><div style={{ height: '600px', position: 'relative' }}>
-                            <CardSwap
-                                cardDistance={60}
-                                verticalDistance={70}
-                                delay={5000}
-                                pauseOnHover={false}
-                            >
-                                <Card>
-                                    <h3>Auth & API Workflows</h3>
-                                    <p>Your content here</p>
-                                </Card>
-                                <Card>
-                                    <h3>Full-Stack Product Builder</h3>
-                                    <p>Your content here</p>
-                                </Card>
-                                <Card>
-                                    <h3>Security-Minded Engineering</h3>
-                                    <p>Your content here</p>
-                                </Card>
-                            </CardSwap>
-                        </div></div>
+                    <div className="relative min-h-[340px] lg:min-h-full" aria-label="Hero image placeholder">
+                        <div className="mx-auto flex w-full max-w-md flex-col gap-4 px-2 py-6 lg:hidden">
+                            {heroCards.map((card, idx) => (
+                                <div
+                                    key={card.title}
+                                    className="overflow-hidden rounded-2xl border border-white/15 bg-[#16171d] p-5 text-slate-100 shadow-[0_24px_60px_-26px_rgba(15,23,42,0.95)]"
+                                >
+                                    <h3 className="text-xl font-semibold tracking-tight text-white">{card.title}</h3>
+                                    <p className="mt-3 text-sm leading-relaxed text-slate-300">{card.description}</p>
+                                    {card.image && (
+                                        <div className="relative mt-4 h-[220px] w-full overflow-hidden rounded-xl">
+                                            <Image
+                                                src={card.image}
+                                                alt={card.imageAlt ?? `Hero card image ${idx + 1}`}
+                                                fill
+                                                className="object-cover opacity-80"
+                                            />
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="hidden h-full w-full lg:block">
+                            <div style={{ height: '600px', position: 'relative' }}>
+                                <CardSwap
+                                    cardDistance={60}
+                                    verticalDistance={70}
+                                    delay={4500}
+                                    pauseOnHover={false}
+                                >
+                                    {heroCards.map((card, idx) => (
+                                        <Card
+                                            key={card.title}
+                                            className={idx === 0 ? 'translate-x-8 rounded-3xl overflow-hidden' : undefined}
+                                        >
+                                            <div data-card-header>
+                                                <h3>{card.title}</h3>
+                                                <p>{card.description}</p>
+                                            </div>
+                                            {card.image && (
+                                                <div className="relative h-[260px] w-full">
+                                                    <Image
+                                                        src={card.image}
+                                                        alt={card.imageAlt ?? `Hero card image ${idx + 1}`}
+                                                        fill
+                                                        className="object-cover opacity-80"
+                                                    />
+                                                </div>
+                                            )}
+                                        </Card>
+                                    ))}
+                                </CardSwap>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

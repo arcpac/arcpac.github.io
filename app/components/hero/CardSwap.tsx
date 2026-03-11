@@ -29,13 +29,22 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     customClass?: string;
 }
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(({ customClass, ...rest }, ref) => (
-    <div
-        ref={ref}
-        {...rest}
-        className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-[#16171d] [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] ${customClass ?? ''} ${rest.className ?? ''}`.trim()}
-    />
-));
+export const Card = forwardRef<HTMLDivElement, CardProps>(({ customClass, ...rest }, ref) => {
+    const { children, className, ...divProps } = rest;
+
+    return (
+        <div
+            ref={ref}
+            {...divProps}
+            className={`group absolute top-1/2 left-1/2 overflow-hidden rounded-2xl border border-white/15 bg-[#16171d] text-slate-100 shadow-[0_24px_60px_-26px_rgba(15,23,42,0.95)] backdrop-blur-sm transform-3d will-change-transform  [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:tracking-tight [&_h3]:text-white [&_p]:mt-3 [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-slate-300 ${customClass ?? ''} ${className ?? ''}`.trim()}
+        >
+            <div className="relative z-10 flex h-full flex-col justify-start p-6 sm:p-7">
+                {children}
+            </div>
+
+        </div>
+    );
+});
 Card.displayName = 'Card';
 
 type CardRef = RefObject<HTMLDivElement | null>;
@@ -78,27 +87,30 @@ const CardSwap: React.FC<CardSwapProps> = ({
     easing = 'elastic',
     children
 }) => {
-    const config =
-        easing === 'elastic'
-            ? {
-                ease: 'elastic.out(0.6,0.9)',
-                durDrop: 2,
-                durMove: 2,
-                durReturn: 2,
-                promoteOverlap: 0.9,
-                returnDelay: 0.05
-            }
-            : {
-                ease: 'power1.inOut',
-                durDrop: 0.8,
-                durMove: 0.8,
-                durReturn: 0.8,
-                promoteOverlap: 0.45,
-                returnDelay: 0.2
-            };
+    const config = useMemo(
+        () =>
+            easing === 'elastic'
+                ? {
+                    ease: 'elastic.out(0.6,0.9)',
+                    durDrop: 2,
+                    durMove: 2,
+                    durReturn: 2,
+                    promoteOverlap: 0.9,
+                    returnDelay: 0.05
+                }
+                : {
+                    ease: 'power1.inOut',
+                    durDrop: 0.8,
+                    durMove: 0.8,
+                    durReturn: 0.8,
+                    promoteOverlap: 0.45,
+                    returnDelay: 0.2
+                },
+        [easing]
+    );
 
     const childArr = useMemo(() => Children.toArray(children) as ReactElement<CardProps>[], [children]);
-    const refs = useMemo<CardRef[]>(() => childArr.map(() => React.createRef<HTMLDivElement>()), [childArr.length]);
+    const refs = useMemo<CardRef[]>(() => childArr.map(() => React.createRef<HTMLDivElement>()), [childArr]);
 
     const order = useRef<number[]>(Array.from({ length: childArr.length }, (_, i) => i));
 
@@ -108,13 +120,23 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
     useEffect(() => {
         const total = refs.length;
-        refs.forEach((r, i) => placeNow(r.current!, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
+        if (total === 0) return;
+
+        if (order.current.length !== total) {
+            order.current = Array.from({ length: total }, (_, i) => i);
+        }
+
+        refs.forEach((r, i) => {
+            if (!r.current) return;
+            placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount);
+        });
 
         const swap = () => {
             if (order.current.length < 2) return;
 
             const [front, ...rest] = order.current;
-            const elFront = refs[front].current!;
+            const elFront = refs[front]?.current;
+            if (!elFront) return;
             const tl = gsap.timeline();
             tlRef.current = tl;
 
@@ -126,7 +148,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
             tl.addLabel('promote', `-=${config.durDrop * config.promoteOverlap}`);
             rest.forEach((idx, i) => {
-                const el = refs[idx].current!;
+                const el = refs[idx]?.current;
+                if (!el) return;
                 const slot = makeSlot(i, cardDistance, verticalDistance, refs.length);
                 tl.set(el, { zIndex: slot.zIndex }, 'promote');
                 tl.to(
@@ -172,7 +195,13 @@ const CardSwap: React.FC<CardSwapProps> = ({
         intervalRef.current = window.setInterval(swap, delay);
 
         if (pauseOnHover) {
-            const node = container.current!;
+            const node = container.current;
+            if (!node) {
+                return () => {
+                    tlRef.current?.kill();
+                    clearInterval(intervalRef.current);
+                };
+            }
             const pause = () => {
                 tlRef.current?.pause();
                 clearInterval(intervalRef.current);
@@ -186,11 +215,15 @@ const CardSwap: React.FC<CardSwapProps> = ({
             return () => {
                 node.removeEventListener('mouseenter', pause);
                 node.removeEventListener('mouseleave', resume);
+                tlRef.current?.kill();
                 clearInterval(intervalRef.current);
             };
         }
-        return () => clearInterval(intervalRef.current);
-    }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing]);
+        return () => {
+            tlRef.current?.kill();
+            clearInterval(intervalRef.current);
+        };
+    }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, refs, config]);
 
     const rendered = childArr.map((child, i) =>
         isValidElement<CardProps>(child)
