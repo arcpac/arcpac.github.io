@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import ScrollReveal from 'scrollreveal'
 import Image from 'next/image'
 import Link from 'next/link'
-import GradientText from '@/components/GradientText'
 
 const FEATURED_PROJECTS = [
     {
@@ -12,8 +11,12 @@ const FEATURED_PROJECTS = [
         title: "QuoteCloud",
         subtitle: (
             <>
-                <b>Corporate Interactive’s QuoteCloud</b>. Delivered core features from the ground up.
-                Tech stack: NextJs, React + Typescript, API (NextJs) integration for mobile app
+                <b>Corporate Interactive’s QuoteCloud</b>. I contributed to core features across the
+                quoting workflow building and sending quotes, end-to-end document tracking, and
+                eSignature approvals for smoother client sign-off. I also delivered embedded
+                spreadsheet widgets, Canva image editing integration, and password-protected
+                documents with confirmation prompts, plus eSignature validation to ensure all
+                required signatures are completed before acceptance.
             </>
         ),
         href: "https://www.quote.cloud/",
@@ -40,55 +43,38 @@ const FEATURED_PROJECTS = [
             </>
         ),
         href: "#",
-        image: "/images/ReactNative+NextJs.gif",
+        image: "/images/NestApp-marketing.png",
         tech: ["React Native", "Expo Router", "Next.js", "Postgres", "Drizzle", "JWT Auth"],
     },
     {
+        slug: "under-construction",
         eyebrow: "CAPSTONE PROJECT",
         title: "HVAC Holiday Scheduler",
         subtitle: (
             <>
-                <p>
-                    <strong>Tech stack:</strong> MongoDB, React, Node.js, Express, MySQL
-                    (edge/local device), and Node-RED
-                </p>
-
-                <ul>
-                    <li>
-                        Designed and developed an automated holiday scheduling system to
-                        optimise HVAC energy usage using Australian public holiday data.
-                    </li>
-                    <li>
-                        Built as an integrated web application with MERN architecture and
-                        edge-device connectivity.
-                    </li>
-                </ul>
+                Automated holiday scheduling concept for smart-building HVAC. Uses Australian public-holiday data,
+                a cloud NoSQL store, and an IoT-style workflow (Node-RED + MQTT) to sync schedules and trigger device states.
             </>
         ),
-        href: "https://gitlab.com/arcpac/holiday-auto-scheduler",
+        href: "#",
         image: "/images/airconnect.png",
         tech: ["React", "Node.js", "Express", "MongoDB", "Node-RED", "MQTT (Mosquitto)"],
     },
     {
-        href: "https://github.com/arcpac/multitenant-nodejs-api",
+        slug: "under-construction",
         eyebrow: "SIDE PROJECT",
-        title: "TeamBoard Production-Grade AuthN/AuthZ API for Multi-Tenant Workspaces",
+        title: "Chatbot",
         subtitle:
             (
                 <>
-                    TeamBoard is an API-first PERN stack project built to demonstrate security and best practices in AuthZ+ AuthN.
-                    It implements secure
-                    <GradientText
-                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
-                        colors={["#fad14f", "#827a89"]}
-                        animationSpeed={2}
-                        showBorder={false}
-                        direction='vertical'
-                        yoyo
-                    >JWT access tokens, rotating refresh-token sessions with replay/race protection, role-based org membership.</GradientText>
+                    <b>
+                        Ollama
+                    </b>
+                    + <b>LangChain</b> assistant embedded in QuoteCloud. Uses a local LLM (Ollama) and a LangChain RAG pipeline to answer app-specific questions and guide users through workflows.
                 </>
             ),
-        image: "/images/authnauthz.gif",
+        href: "#",
+        image: "/images/chatbot.png",
     },
     {
 
@@ -129,7 +115,7 @@ const FEATURED_PROJECTS = [
 
 const PROJECT_PAGE_SLUGS = new Set(["quotecloud", "splitnest", "splitnest-mobile-web"])
 
-const MyProjects = () => {
+const MyProjects2 = () => {
 
     useEffect(() => {
         const sr = ScrollReveal()
@@ -148,7 +134,7 @@ const MyProjects = () => {
 
     return (
         <section id="projects" className="flex w-full max-w-10xl flex-col items-center justify-center gap-4 p-2 pt-2 md:min-h-screen md:pt-20">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 md:gap-12">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-4 md:gap-12">
                 {/* Header */}
                 <div className="mb-10">
                     <h2 className="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">
@@ -161,7 +147,7 @@ const MyProjects = () => {
 
 
                 {/* Featured cards (3 big images) */}
-                <div className="grid grid-cols-2 gap-0">
+                <div className="grid gap-3 md:gap-8 lg:grid-cols-3">
                     {FEATURED_PROJECTS.map((p) => {
                         const hasProjectPage = p?.slug
                         const isExternal = !hasProjectPage && p.href.startsWith("http")
@@ -173,18 +159,18 @@ const MyProjects = () => {
                                 href={href}
                                 target={isExternal ? "_blank" : undefined}
                                 rel={isExternal ? "noreferrer" : undefined}
-                                className="project-card group border-[0.1px] border-neutral-700  bg-[#16171d] shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
+                                className="project-card group rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
                             >
                                 <div className="p-5">
                                     <div className="text-[11px] font-semibold tracking-widest text-blue-600 dark:text-blue-400">
                                         {p.eyebrow}
                                     </div>
 
-                                    <div className="mt-2 text-[24px] font-semibold text-[#ffffff]">
+                                    <div className="mt-2 text-lg font-semibold text-neutral-900 dark:text-white">
                                         {p.title}
                                     </div>
 
-                                    <div className="mt-1 text-[18px] text-[#827a89]">
+                                    <div className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
                                         {p.subtitle}
                                     </div>
 
@@ -193,13 +179,13 @@ const MyProjects = () => {
                                     </div>
                                 </div>
 
-                                <div>
-                                    <div className="relative aspect-16/10 overflow-hidden">
+                                <div className="px-5 pb-5">
+                                    <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
                                         <Image
                                             src={p.image}
                                             alt={`${p.title} screenshot`}
                                             fill
-                                            className="object-contain object-[left_bottom] transition-transform duration-500"
+                                            className="object-contain object-left transition-transform duration-500"
                                             sizes="(min-width: 1024px) 33vw, 100vw"
                                             priority
                                         />
@@ -214,4 +200,4 @@ const MyProjects = () => {
     )
 }
 
-export default MyProjects
+export default MyProjects2

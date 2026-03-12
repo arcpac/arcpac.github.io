@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import ThemeToggle from "./ThemeToggle";
-
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
   { label: "Skills", href: "#skills" },
@@ -25,7 +23,7 @@ export default function Navbar() {
       dark:supports-[backdrop-filter]:bg-black/40
     "
       >
-        <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-8">
+        <div className="flex items-center justify-center">
           <ul
             className="
           flex flex-wrap items-center justify-center gap-x-4 gap-y-2
@@ -42,9 +40,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
-          <div className="hidden h-5 w-px bg-black/10 sm:block dark:bg-white/20" />
-          <ThemeToggle />
         </div>
       </div>
     </nav>

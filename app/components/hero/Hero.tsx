@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import RippleGrid from './RippleGrid';
 import GradientText from '@/components/GradientText';
 import Link from 'next/link';
@@ -12,15 +11,7 @@ import CardSwap, { Card } from './CardSwap';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const getDocumentTheme = (): 'light' | 'dark' => {
-    if (typeof document === 'undefined') {
-        return 'light';
-    }
-    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-};
-
 const Hero = () => {
-    const [colorMode, setColorMode] = useState<'light' | 'dark'>(getDocumentTheme)
     const heroCards = [
         {
             title: 'Auth & API Workflows',
@@ -33,7 +24,7 @@ const Hero = () => {
             title: 'Full-Stack Product Builder',
             description:
                 'I build features from UI to backend services with maintainable architecture and clean handoff.',
-            image: `${basePath}/images/cardImage.png`,
+            image: `${basePath}/images/ReactNative+NextJs.gif`,
         },
         {
             title: 'Security-Minded Engineering',
@@ -43,27 +34,9 @@ const Hero = () => {
         },
     ];
 
-    useEffect(() => {
-        if (typeof document === 'undefined') {
-            return;
-        }
-
-        const observer = new MutationObserver(() => {
-            setColorMode(getDocumentTheme());
-        });
-
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['class'],
-        });
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <section
             id="home"
-            data-theme={colorMode}
             className="relative flex w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 pt-20 text-neutral-700 dark:text-neutral-200 sm:px-6 md:gap-6 md:pt-28"
         >
             <div className="relative z-10 w-full max-w-6xl dark:border-slate-800">
@@ -80,7 +53,7 @@ const Hero = () => {
                                     fadeDistance={1.1}
                                     vignetteStrength={1}
                                     glowIntensity={0.1}
-                                    opacity={colorMode === 'light' ? 0.90 : 2}
+                                    opacity={2}
                                     gridRotation={0}
                                     mouseInteraction
                                     mouseInteractionRadius={0.9}
@@ -150,7 +123,7 @@ const Hero = () => {
                                     rel="noreferrer"
                                     download={true}
                                     aria-label="Download my resume"
-                                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-violet-500/60 bg-gradient-to-r from-violet-600 to-fuchsia-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_14px_30px_-18px_rgba(139,92,246,0.9)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-20px_rgba(139,92,246,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 sm:w-auto"
+                                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-5 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 dark:border-slate-700 dark:bg-neutral-900/70 dark:text-slate-100 dark:hover:border-slate-600 dark:hover:bg-neutral-900 sm:w-auto"
                                 >
                                     <span className="inline-flex h-5 w-5 items-center justify-center">
                                         <IoIosDocument className="text-base" />
