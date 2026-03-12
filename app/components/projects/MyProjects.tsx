@@ -147,21 +147,21 @@ const MyProjects = () => {
 
 
     return (
-        <section id="projects" className="flex w-full max-w-10xl flex-col items-center justify-center gap-4 p-2 pt-2 md:min-h-screen md:pt-20">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 md:gap-12">
+        <section id="projects" className="flex w-full max-w-10xl flex-col items-center justify-center gap-4 px-3 pt-4 pb-6 sm:px-4 md:min-h-screen md:pt-20">
+            <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 md:gap-12">
                 {/* Header */}
-                <div className="mb-10">
-                    <h2 className="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+                <div className="mb-6 md:mb-10">
+                    <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl dark:text-white">
                         Projects
                     </h2>
-                    <p className="mt-2 max-w-2xl text-neutral-600 dark:text-neutral-300">
+                    <p className="mt-2 max-w-2xl text-sm text-neutral-600 sm:text-base dark:text-neutral-300">
                         Things I&apos;ve built (and I&apos;m still building). I&apos;m open to developers who want to contribute and share knowledge.
                     </p>
                 </div>
 
 
                 {/* Featured cards (3 big images) */}
-                <div className="grid grid-cols-2 gap-0">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-0">
                     {FEATURED_PROJECTS.map((p) => {
                         const hasProjectPage = p?.slug
                         const isExternal = !hasProjectPage && p.href.startsWith("http")
@@ -173,34 +173,34 @@ const MyProjects = () => {
                                 href={href}
                                 target={isExternal ? "_blank" : undefined}
                                 rel={isExternal ? "noreferrer" : undefined}
-                                className="project-card group border-[0.1px] border-neutral-700  bg-[#16171d] shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
+                                className="project-card group  border-[0.1px] border-neutral-700 bg-[#16171d] shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-900/20 rounded-none dark:shadow-none dark:hover:shadow-[0_12px_28px_-20px_rgba(0,0,0,0.8)] dark:focus:ring-neutral-200/20"
                             >
-                                <div className="p-5">
-                                    <div className="text-[11px] font-semibold tracking-widest text-blue-600 dark:text-blue-400">
+                                <div className="p-4 sm:p-5">
+                                    <div className="text-[10px] font-semibold tracking-widest text-blue-600 sm:text-[11px] dark:text-blue-400">
                                         {p.eyebrow}
                                     </div>
 
-                                    <div className="mt-2 text-[24px] font-semibold text-[#ffffff]">
+                                    <div className="mt-2 text-[20px] font-semibold leading-tight text-[#ffffff] sm:text-[24px]">
                                         {p.title}
                                     </div>
 
-                                    <div className="mt-1 text-[18px] text-[#827a89]">
+                                    <div className="mt-1 text-[15px] leading-relaxed text-[#827a89] sm:text-[18px]">
                                         {p.subtitle}
                                     </div>
 
-                                    <div className="mt-3 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                                    <div className="mt-3 text-[10px] font-semibold uppercase tracking-wide text-neutral-500 sm:text-xs dark:text-neutral-400">
                                         {hasProjectPage ? "View project page" : isExternal ? "Visit live site" : "Project page coming soon"}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <div className="relative aspect-16/10 overflow-hidden">
+                                    <div className="relative aspect-[4/3] overflow-hidden sm:aspect-16/10">
                                         <Image
                                             src={p.image}
                                             alt={`${p.title} screenshot`}
                                             fill
                                             className="object-contain object-[left_bottom] transition-transform duration-500"
-                                            sizes="(min-width: 1024px) 33vw, 100vw"
+                                            sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
                                             priority
                                         />
                                     </div>
