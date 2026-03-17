@@ -8,7 +8,6 @@ import { FaInstagram, FaLinkedin, FaMediumM } from 'react-icons/fa';
 import { IoIosDocument } from 'react-icons/io';
 import CardSwap, { Card } from './CardSwap';
 
-
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const Hero = () => {

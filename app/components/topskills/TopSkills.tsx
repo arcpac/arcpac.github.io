@@ -187,10 +187,10 @@ const TopSkills = () => {
                                 />
                             </div>
                             <div className="min-w-0">
-                                <p className="truncate text-sm font-semibold ">
+                                <p className="truncate text-2xl font-semibold ">
                                     {tool.name}
                                 </p>
-                                <p className="truncate text-xs text-neutral-600">{tool.desc}</p>
+                                {/* <p className="truncate text-xs text-neutral-600">{tool.desc}</p> */}
                             </div>
                         </div>
                     );
