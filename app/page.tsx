@@ -2,10 +2,11 @@ import Image from "next/image";
 import { Inter, Montserrat } from "next/font/google";
 
 import ProjectSection from "./components/projects/ProjectSection";
-import TopSkills from "./components/topskills/TopSkills";
+
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/Navbar";
 import NewVersionWorkExperience from "./components/experiences/NewVersionWorkExperience";
+import TopSkills from "./components/topskills/TopSkills";
 
 export const inter = Inter({
   subsets: ["latin"],
