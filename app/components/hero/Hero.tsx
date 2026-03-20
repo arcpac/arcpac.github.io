@@ -73,31 +73,30 @@ const Hero = () => {
                                 </div>
                             </div>
                             <div className="flex w-full flex-col gap-4 py-4 items-center sm:flex-row sm:items-center sm:justify-center sm:py-3 sm:px-4 relative z-10">
-                                <div className="text-2xl font-semibold text-neutral-900 dark:text-white sm:text-[38px]">
+                                <div className="text-2xl font-semibold text-white sm:text-[38px]">
                                     <div className="flex items-baseline justify-center gap-2 whitespace-nowrap sm:justify-start">
                                         <span>Hi, I&apos;m</span>
 
-                                        <GradientText
+                                        {/* <GradientText
                                             colors={["#FF0000", "#FF7A00", "#FFD400", "#00C853", "#00B0FF", "#3D5AFE", "#B400FF"]}
                                             animationSpeed={8}
                                             showBorder={false}
                                             yoyo
-                                        >
-                                            Antonio Caballes
-                                        </GradientText>
+                                        > */}
+                                        Antonio Caballes
+                                        {/* </GradientText> */}
                                     </div>
 
-                                    <div className="font-bold">Software Developer</div>
+                                    <div className="text-2xl font-bold">Software Developer</div>
                                 </div>
 
                             </div>
                         </div>
                         <div id="external-links" className="w-full px-4 pb-8 pt-6 text-neutral-700 dark:text-neutral-200 md:px-6">
                             <div className="max-w-2xl text-start text-sm leading-relaxed text-neutral-700 dark:text-neutral-200 md:text-lg">
-                                Software Developer with 7 years of experience building and supporting web applications end-to-end from UI to backend services. I work primarily with{' '}
-                                <GradientText
+                                Software Developer with 7 years of experience building and supporting web applications from UI to backend services. I work primarily with  <GradientText
                                     className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
-                                    colors={["#4d94ff", "#0066ff", "#ffffff"]}
+                                    colors={["#4d94ff", "#ffffff"]}
                                     animationSpeed={10}
                                     showBorder={false}
                                     direction='vertical'
@@ -107,12 +106,31 @@ const Hero = () => {
                                 </GradientText>{' '}
                                 and <GradientText
                                     className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
-                                    colors={["#33cc33", "#70db70", "#ffffff"]}
+                                    colors={["#33cc33", "#ffffff"]}
                                     animationSpeed={10}
                                     showBorder={false}
                                     direction='vertical'
                                     yoyo
-                                >NodeJs</GradientText>, specialising in API integration and AuthN & AuthZ workflows (JWT/session, access control).
+                                >NodeJs</GradientText>, and {' '}
+                                <GradientText
+                                    className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                    colors={["#5dd4f8", "#ffffff"]}
+                                    animationSpeed={10}
+                                    showBorder={false}
+                                    direction='vertical'
+                                    yoyo
+                                >ReactJs+TS</GradientText>
+
+                                . I specialise in         <GradientText
+                                    className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+
+                                    colors={["#FF0000", "#FF7A00", "#FFD400", "#00C853", "#00B0FF", "#3D5AFE", "#B400FF"]}
+                                    animationSpeed={8}
+                                    showBorder={false}
+                                    yoyo
+                                >
+                                    OpenAI
+                                </GradientText> API and AI integration, API integration, and secure AuthN/AuthZ workflows, including OAuth, JWT, session handling, and access control.
                             </div>
 
                             <div className="mt-6 flex flex-wrap items-center gap-3">
