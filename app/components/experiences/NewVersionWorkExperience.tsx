@@ -18,11 +18,11 @@ const WORK_EXPERIENCES = [
       industry: "SaaS / Sales Enablement",
       overview: "Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents",
       keyAchievements: [
-        `Implemented secure View Mode access control for password-protected documents.`,
-        `Integrated Canva Editor into QuoteCloud via an OAuth-style flow.`,
+        `Delivered core features from the ground up.`,
+        `AI features (Itinerary text and AI coworker)`,
         `Delivered core features`,
-        `Delivered an text-editor paint, insert image, Canva editor, editable image in text-editor, spelling suggestion.`,
-        `Built mandatory e-signature for document acceptance, ensuring compliance by blocking acceptance until required signing is completed.`,
+        `Security features: View Mode access control for password-protected document feature and access control. Built mandatory e-signature for document acceptance`,
+        `Shipped a Integrated the Canva Editor (Image editor) into QuoteCloud`,
       ],
     },
     stack: [

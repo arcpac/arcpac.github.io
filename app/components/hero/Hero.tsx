@@ -15,15 +15,15 @@ const Hero = () => {
         {
             title: 'Auth & API Workflows',
             description:
-                'JWT/session auth, protected routes, and robust API integrations across frontend and backend.',
+                'JWT/session auth, OAuth, protected routes, and robust API integrations across frontend and backend.',
             image: `${basePath}/images/api-sec.gif`,
             imageAlt: 'Authentication and API workflow preview',
         },
         {
-            title: 'Full-Stack Product Builder',
+            title: 'AI-Ready Full-Stack Development',
             description:
-                'I build features from UI to backend services with maintainable architecture and clean handoff.',
-            image: `${basePath}/images/ReactNative+NextJs.gif`,
+                'Experienced in building end-to-end products and integrating modern AI-powered workflows into web applications.',
+            image: `${basePath}/images/AIs.gif`,
         },
         {
             title: 'Security-Minded Engineering',
@@ -221,7 +221,7 @@ const Hero = () => {
                                 <CardSwap
                                     cardDistance={60}
                                     verticalDistance={70}
-                                    delay={4500}
+                                    delay={6000}
                                     pauseOnHover={false}
                                 >
                                     {heroCards.map((card, idx) => (
