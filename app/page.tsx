@@ -6,7 +6,6 @@ import ProjectSection from "./components/projects/ProjectSection";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/Navbar";
 import NewVersionWorkExperience from "./components/experiences/NewVersionWorkExperience";
-import TopSkills from "./components/topskills/TopSkills";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +34,33 @@ const NEXT_STACK = [
   { name: "LangChain", icon: "/logos/langchain.svg" },
   { name: "Ollama", icon: "/logos/ollama.svg" },
   { name: "Vector DBs", icon: "/logos/vector.svg" },
+];
+
+type SkillItem = {
+  name: string;
+  icon?: string;
+};
+
+const DEVOPS_SKILLS: SkillItem[] = [
+  { name: "GitHub CI/CD", icon: "/logos/github.svg" },
+  { name: "Docker" },
+  { name: "Deployments" },
+  { name: "DevOps" },
+];
+
+const SOFTWARE_DEV_SKILLS: SkillItem[] = [
+  { name: "NextJS", icon: "/logos/nextjs.svg" },
+  { name: "ReactJS", icon: "/logos/react-2.svg" },
+  { name: "React Native", icon: "/logos/react-native.svg" },
+  { name: "JavaScript", icon: "/logos/js.png" },
+  { name: "TypeScript", icon: "/logos/ts-1.svg" },
+  { name: "Tailwind CSS", icon: "/logos/tailwind.svg" },
+  { name: "NodeJS", icon: "/logos/nodejs.svg" },
+  { name: "PostgreSQL", icon: "/logos/postgres.svg" },
+  { name: "GraphQL", icon: "/logos/graphql.svg" },
+  { name: ".NET Core", icon: "/logos/NET_Core_Logo.png" },
+  { name: "Elixir + Phoenix", icon: "/logos/elixir-phoenix.png" },
+  { name: "API Integration" },
 ];
 
 function StackRow({
@@ -68,6 +94,78 @@ function StackRow({
             <span className="font-medium">{item.name}</span>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function getSkillInitials(name: string) {
+  const parts = name
+    .replace(/[^a-zA-Z0-9\s.+#]/g, "")
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (parts.length === 1) {
+    const value = parts[0].toUpperCase();
+    return value.length <= 3 ? value : value.slice(0, 2);
+  }
+
+  return parts
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
+}
+
+function SkillGrid({
+  title,
+  subtitle,
+  items,
+}: {
+  title: string;
+  subtitle: string;
+  items: SkillItem[];
+}) {
+  return (
+    <div className="relative w-full">
+      <div className="mb-4 flex flex-col gap-1">
+        {/* <h3 className="text-2xl font-semibold text-neutral-900 md:text-3xl dark:text-white">
+          {title}
+        </h3> */}
+        <p className="text-sm text-neutral-600 md:text-base dark:text-neutral-300">
+          {subtitle}
+        </p>
+      </div>
+
+      <div className="overflow-hidden  border border-neutral-200 dark:border-neutral-800">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {items.map((item, index) => (
+            <div
+              key={item.name}
+              className={`flex min-h-[108px] items-center gap-3 border-neutral-500/40 px-4 py-4 md:min-h-[96px] md:px-5 ${index % 2 !== 1 ? "border-r-[0.4px] md:border-r-0" : ""} ${index % 4 !== 3 ? "md:border-r-[0.4px]" : ""} ${index < items.length - 2 ? "border-b-[0.4px] md:border-b-0" : ""} ${index < items.length - 4 ? "md:border-b-[0.4px]" : ""}`}
+              title={item.name}
+            >
+              <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900">
+                {item.icon ? (
+                  <Image
+                    src={item.icon}
+                    alt={`${item.name} logo`}
+                    fill
+                    className="object-contain p-2"
+                  />
+                ) : (
+                  <span className="text-xs font-semibold text-neutral-700 dark:text-neutral-200">
+                    {getSkillInitials(item.name)}
+                  </span>
+                )}
+              </div>
+              <div className="min-w-0">
+                <p className="text-lg font-semibold leading-tight text-neutral-900 md:text-xl dark:text-white">
+                  {item.name}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -112,8 +210,19 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-1 md:px-6">
+          <SkillGrid
+            title="DevOps & delivery workflow"
+            subtitle="The tools and practices I use to build, release, and support software reliably."
+            items={DEVOPS_SKILLS}
+          />
+          <SkillGrid
+            title="Top software development skills"
+            subtitle="The stack I use most when building modern web and product experiences."
+            items={SOFTWARE_DEV_SKILLS}
+          />
+        </div>
 
-        <TopSkills />
       </section>
 
       <NewVersionWorkExperience />
@@ -121,7 +230,7 @@ export default function Home() {
       {/* <BlogSection /> */}
       <section id="contact" className="w-full py-20">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-8 text-center dark:border-neutral-800 dark:bg-neutral-950 sm:p-12">
+          <div className=" border border-neutral-200 bg-neutral-50 p-8 text-center dark:border-neutral-800 dark:bg-neutral-950 sm:p-12">
             <h2 className="text-3xl font-semibold text-neutral-900 dark:text-white sm:text-4xl">
               Let’s build something
             </h2>

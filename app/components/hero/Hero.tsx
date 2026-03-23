@@ -96,7 +96,7 @@ const Hero = () => {
                         </div>
                         <div id="external-links" className="w-full px-4 pb-8 pt-6 text-neutral-700 dark:text-neutral-200 md:px-6">
                             <div className="max-w-2xl text-start text-sm leading-relaxed text-neutral-700 dark:text-neutral-200 md:text-lg">
-                                Software Developer with 7 years of experience building and supporting web applications from UI to backend services. I work primarily with  <GradientText
+                                Software Developer with 7 years of experience. I work primarily with  <GradientText
                                     className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
                                     colors={["#4d94ff", "#ffffff"]}
                                     animationSpeed={10}
@@ -113,16 +113,7 @@ const Hero = () => {
                                     showBorder={false}
                                     direction='vertical'
                                     yoyo
-                                >NodeJs</GradientText>, and {' '}
-                                <GradientText
-                                    className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
-                                    colors={["#5dd4f8", "#ffffff"]}
-                                    animationSpeed={10}
-                                    showBorder={false}
-                                    direction='vertical'
-                                    yoyo
-                                >ReactJs+TS</GradientText>
-
+                                >NodeJs</GradientText>
                                 . I specialise in         <GradientText
                                     className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
 
@@ -132,7 +123,7 @@ const Hero = () => {
                                     yoyo
                                 >
                                     OpenAI
-                                </GradientText> API and AI integration, API integration, and secure AuthN/AuthZ workflows, including OAuth, JWT, session handling, and access control.
+                                </GradientText> API, API integration,and secure AuthN/AuthZ workflows. I also bring hands-on experience with Git, Docker, CI/CD, and deployment workflows to support reliable delivery and maintainable production systems.
                             </div>
 
                             <div className="mt-6 flex flex-wrap items-center gap-3">
