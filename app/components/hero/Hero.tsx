@@ -26,10 +26,11 @@ const Hero = () => {
             image: `${basePath}/images/AIs.gif`,
         },
         {
-            title: 'Security-Minded Engineering',
+            title: 'DevOps & Delivery Workflows',
             description:
-                'Reliable delivery, readable code, and practical solutions that scale with the product.',
+                'Hands-on with Git, Docker, and CI/CD workflows to support reliable builds, smoother deployments, and maintainable delivery pipelines.',
             image: `${basePath}/images/candid.gif`,
+            imageAlt: 'DevOps and delivery workflow preview',
         },
     ];
 
@@ -87,7 +88,8 @@ const Hero = () => {
                                         {/* </GradientText> */}
                                     </div>
 
-                                    <div className="text-2xl font-bold">Software Developer</div>
+                                    <div className="text-2xl font-bold">Software Engineer | DevOps</div>
+                                    <div className="text-xl font-bold">I can build and ship</div>
                                 </div>
 
                             </div>
