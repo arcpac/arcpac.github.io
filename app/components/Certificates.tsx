@@ -24,6 +24,13 @@ export const certificates: Certificate[] = [
     },
     {
         id: "Linux1",
+        title: "Linux Administration",
+        image: `/certificates/Antonio-Caballes-LINUX-ADMIN.png`,
+        url: `${basePath}/certificates/Antonio-Caballes-LINUX-ADMIN.pdf`,
+        download: true
+    },
+    {
+        id: "Linux2",
         title: "NDG Linux Unhatched",
         image: `/certificates/NDG-Linux-Unhatc-certificate.png`,
         url: `${basePath}/certificates/antonio-caballes-ndg-linux.pdf`,
