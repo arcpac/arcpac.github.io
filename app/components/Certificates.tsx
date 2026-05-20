@@ -42,6 +42,12 @@ export const certificates: Certificate[] = [
         image: `/certificates/Docker-Training-Course.png`,
         url: `https://learn.kodekloud.com/certificate/e67a0567-c7c0-40eb-bdf9-43d3d51ff13d`,
     },
+    {
+        id: "AWS-AI-Practitioner-Challenge",
+        title: "AWS AI Practitioner Challenge",
+        image: `/certificates/AWS-AI-Practitioner-Challenge.png`,
+        url: `https://www.udacity.com/certificate/e/93caa168-38d0-11f1-8b5e-5bbf499630b1`,
+    },
 
 ];
 
