@@ -78,17 +78,15 @@ const TOOLS: Tool[] = [
         category: "backend",
     },
     {
-        name: ".NET Core",
-        desc: "Server-side web apps",
-        icon: "/logos/NET_Core_Logo.png",
-
+        name: "Elixir",
+        desc: "Elixir",
+        icon: "/logos/Elixir.png",
         category: "backend",
     },
     {
         name: "GitHub",
         desc: "CI/CD pipelines",
         icon: "/logos/github.svg",
-
         category: "other",
     },
     {
@@ -115,7 +113,6 @@ export function getInitials(name: string) {
     if (clean.toLowerCase().includes("tailwind")) return "TW";
     if (clean.toLowerCase().includes("postgres")) return "PG";
     if (clean.toLowerCase().includes("graphql")) return "GQL";
-    if (clean.toLowerCase().includes(".net")) return ".NET";
 
     const parts = clean.split(/\s+/).filter(Boolean);
 
@@ -190,7 +187,6 @@ const TopSkills = () => {
                                 <p className="truncate text-2xl font-semibold ">
                                     {tool.name}
                                 </p>
-                                {/* <p className="truncate text-xs text-neutral-600">{tool.desc}</p> */}
                             </div>
                         </div>
                     );

@@ -61,8 +61,8 @@ const SOFTWARE_DEV_SKILLS: SkillItem[] = [
   { name: "NodeJS", icon: "/logos/nodejs.svg" },
   { name: "PostgreSQL", icon: "/logos/postgres.svg" },
   { name: "GraphQL", icon: "/logos/graphql.svg" },
-  { name: ".NET Core", icon: "/logos/NET_Core_Logo.png" },
-  { name: "Elixir + Phoenix", icon: "/logos/elixir-phoenix.png" },
+  { name: "Elixir", icon: "/logos/Elixir.png" },
+  { name: "Elixir + Phoenix", icon: "/logos/Phoenix Framework.png" },
   { name: "API Integration" },
 ];
 

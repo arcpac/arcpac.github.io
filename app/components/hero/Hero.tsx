@@ -44,7 +44,7 @@ const Hero = () => {
                     <div className="flex flex-col border-b border-slate-300/80 dark:border-slate-800 lg:border-b-0 lg:border-r">
                         <div className="flex relative w-full flex-col items-center">
                             <div className="absolute inset-0 z-0">
-                                <RippleGrid
+                                {/* <RippleGrid
                                     enableRainbow
                                     gridColor="#5227FF"
                                     rippleIntensity={0.05}
@@ -57,7 +57,7 @@ const Hero = () => {
                                     gridRotation={0}
                                     mouseInteraction
                                     mouseInteractionRadius={0.9}
-                                />
+                                /> */}
                             </div>
                             <div className="text-start text-xs uppercase tracking-[0.3em] text-neutral-600 dark:text-neutral-400 sm:text-sm relative z-10">
                                 Based in Australia
@@ -77,15 +77,6 @@ const Hero = () => {
                                 <div className="text-2xl font-semibold text-white sm:text-[38px]">
                                     <div className="flex items-baseline justify-center gap-2 whitespace-nowrap sm:justify-start">
                                         <span>Hi, I&apos;m</span>
-
-                                        {/* <GradientText
-                                            colors={["#FF0000", "#FF7A00", "#FFD400", "#00C853", "#00B0FF", "#3D5AFE", "#B400FF"]}
-                                            animationSpeed={8}
-                                            showBorder={false}
-                                            yoyo
-                                        > */}
-                                        Antonio Caballes
-                                        {/* </GradientText> */}
                                     </div>
 
                                     <div className="text-2xl font-bold">Software Engineer | DevOps</div>
@@ -95,35 +86,72 @@ const Hero = () => {
                             </div>
                         </div>
                         <div id="external-links" className="w-full px-4 pb-8 pt-6 text-neutral-700 dark:text-neutral-200 md:px-6">
-                            <div className="max-w-2xl text-start text-sm leading-relaxed text-neutral-700 dark:text-neutral-200 md:text-lg">
-                                Software Developer with 7 years of experience. I work primarily with  <GradientText
-                                    className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
-                                    colors={["#4d94ff", "#ffffff"]}
-                                    animationSpeed={10}
-                                    showBorder={false}
-                                    direction='vertical'
-                                    yoyo
-                                >
-                                    NextJs
-                                </GradientText>{' '}
-                                and <GradientText
-                                    className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
-                                    colors={["#33cc33", "#ffffff"]}
-                                    animationSpeed={10}
-                                    showBorder={false}
-                                    direction='vertical'
-                                    yoyo
-                                >NodeJs</GradientText>
-                                . I specialise in         <GradientText
-                                    className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                            <div className="max-w-2xl space-y-4 text-start text-sm leading-relaxed text-neutral-700 dark:text-neutral-200 md:text-lg">
+                                <p>
+                                    Software Developer with 7 years of experience, working across full-stack development and DevOps-focused delivery. I work primarily with <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#3399ff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    >
+                                        <b>Next.js</b>
+                                    </GradientText>, <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#33cc33"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    ><b>Node.js</b></GradientText>, <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#3399ff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    ><b>React</b></GradientText>. I also bring practical experience with <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#3399ff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    ><b>AWS</b></GradientText>, <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#3399ff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    >Docker</GradientText>, <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#3399ff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    >GitHub Actions</GradientText>, <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#3399ff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    >CI/CD</GradientText>, and deployment workflows.
+                                </p>
 
-                                    colors={["#FF0000", "#FF7A00", "#FFD400", "#00C853", "#00B0FF", "#3D5AFE", "#B400FF"]}
-                                    animationSpeed={8}
-                                    showBorder={false}
-                                    yoyo
-                                >
-                                    OpenAI
-                                </GradientText> API, API integration,and secure AuthN/AuthZ workflows. I also bring hands-on experience with Git, Docker, CI/CD, and deployment workflows to support reliable delivery and maintainable production systems.
+                                <p>
+                                    I have hands-on experience in <GradientText
+                                        className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
+                                        colors={["#8e44ad", "#ffffff"]}
+                                        animationSpeed={10}
+                                        showBorder={false}
+                                        direction='vertical'
+                                        yoyo
+                                    >Elixir Phoenix</GradientText>. <b>Elixir</b> has become one of my favourite technologies, and I continue to build side projects and backend systems around it. While Elixir roles can be harder to find, I&apos;m still keen to work with it professionally again.
+                                </p>
                             </div>
 
                             <div className="mt-6 flex flex-wrap items-center gap-3">
