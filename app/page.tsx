@@ -54,16 +54,12 @@ const DEVOPS_SKILLS: SkillItem[] = [
 const SOFTWARE_DEV_SKILLS: SkillItem[] = [
   { name: "NextJS", icon: "/logos/nextjs.svg" },
   { name: "ReactJS", icon: "/logos/react-2.svg" },
-  { name: "React Native", icon: "/logos/react-native.svg" },
-  { name: "JavaScript", icon: "/logos/js.png" },
+  { name: "Elixir", icon: "/logos/Elixir.png" },
+  { name: "Elixir + Phoenix", icon: "/logos/Phoenix Framework.png" },
   { name: "TypeScript", icon: "/logos/ts-1.svg" },
-  { name: "Tailwind CSS", icon: "/logos/tailwind.svg" },
   { name: "NodeJS", icon: "/logos/nodejs.svg" },
   { name: "PostgreSQL", icon: "/logos/postgres.svg" },
   { name: "GraphQL", icon: "/logos/graphql.svg" },
-  { name: "Elixir", icon: "/logos/Elixir.png" },
-  { name: "Elixir + Phoenix", icon: "/logos/Phoenix Framework.png" },
-  { name: "API Integration" },
 ];
 
 function StackRow({
