@@ -47,7 +47,7 @@ type SkillItem = {
 const DEVOPS_SKILLS: SkillItem[] = [
   { name: "GitHub CI/CD", icon: "/logos/github.svg" },
   { name: "Docker" },
-  { name: "Deployments" },
+  { name: "Github Actions" },
   { name: "DevOps" },
 ];
 
