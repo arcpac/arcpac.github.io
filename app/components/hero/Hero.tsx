@@ -76,11 +76,11 @@ const Hero = () => {
                             <div className="flex w-full flex-col gap-4 py-4 items-center sm:flex-row sm:items-center sm:justify-center sm:py-3 sm:px-4 relative z-10">
                                 <div className="text-2xl font-semibold text-white sm:text-[38px]">
                                     <div className="flex items-baseline justify-center gap-2 whitespace-nowrap sm:justify-start">
-                                        <span>Hi, I&apos;m</span>
+                                        <span>Hi, I&apos;m</span> Anton
                                     </div>
 
                                     <div className="text-2xl font-bold">Software Engineer | DevOps</div>
-                                    <div className="text-xl font-bold">I can build and ship</div>
+                                    <div className="text-lg">NextJs | React | Elixir | NodeJs</div>
                                 </div>
 
                             </div>
