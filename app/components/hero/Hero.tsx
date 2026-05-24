@@ -87,7 +87,7 @@ const Hero = () => {
                         </div>
                         <div id="external-links" className="w-full px-4 pb-8 pt-6 text-neutral-700 dark:text-neutral-200 md:px-6">
                             <div className="max-w-2xl space-y-4 text-start text-sm leading-relaxed text-neutral-700 dark:text-neutral-200 md:text-lg">
-                                <p>
+                                <div>
                                     Software Developer with 7 years of experience, working across full-stack development and DevOps-focused delivery. I work primarily with <GradientText
                                         className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
                                         colors={["#3399ff"]}
@@ -140,9 +140,9 @@ const Hero = () => {
                                         direction='vertical'
                                         yoyo
                                     >CI/CD</GradientText>, and deployment workflows.
-                                </p>
+                                </div>
 
-                                <p>
+                                <div>
                                     I have hands-on experience in <GradientText
                                         className="!mx-0 !inline-flex !max-w-none !rounded-none !bg-transparent !shadow-none !align-baseline !items-baseline !cursor-default"
                                         colors={["#8e44ad", "#ffffff"]}
@@ -151,7 +151,7 @@ const Hero = () => {
                                         direction='vertical'
                                         yoyo
                                     >Elixir Phoenix</GradientText>. <b>Elixir</b> has become one of my favourite technologies, and I continue to build side projects and backend systems around it. While Elixir roles can be harder to find, I&apos;m still keen to work with it professionally again.
-                                </p>
+                                </div>
                             </div>
 
                             <div className="mt-6 flex flex-wrap items-center gap-3">

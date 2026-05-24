@@ -4,8 +4,39 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import LogoLoop from "./LogoLoop";
 
+type WorkStackItem = {
+  name: string;
+  desc: string;
+  icon: string;
+  href?: string;
+};
 
-const WORK_EXPERIENCES = [
+type WorkDetails = {
+  project: string;
+  website: string;
+  industry: string;
+  overview?: string;
+  techStack: string[];
+  keyAchievements: string[];
+  products?: string[];
+  highlights?: {
+    item: string;
+    tools: string;
+    outcome: string;
+  }[];
+};
+
+type WorkExperience = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  icon: string;
+  details: WorkDetails;
+  stack: WorkStackItem[];
+};
+
+const WORK_EXPERIENCES: WorkExperience[] = [
   {
     company: "CorporateInteractive",
     role: "Software Developer",
@@ -17,6 +48,7 @@ const WORK_EXPERIENCES = [
       website: "https://www.quote.cloud/",
       industry: "SaaS / Sales Enablement",
       overview: "Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents",
+      techStack: ["Next.js", "React + TypeScript", "JavaScript", "jQuery", "GitHub Copilot", "CodeRabbit", "GraphQL", "React Native", "Node.js"],
       keyAchievements: [
         `Delivered core features from the ground up.`,
         `AI features (Itinerary text and AI coworker)`,
@@ -45,6 +77,7 @@ const WORK_EXPERIENCES = [
         href: "#",
       },
       { name: "JavaScript / jQuery", desc: "UI + interactions", icon: "/logos/js.png", href: "#" },
+      { name: "CodeRabbit", desc: "CodeRabbit", icon: "/logos/coderabbit.svg", href: "#" },
     ],
   },
   {
@@ -58,6 +91,7 @@ const WORK_EXPERIENCES = [
       website: "https://www.yondu.com/",
       industry: "Telecommunications / B2B Digital Services. Subsidiary of Globe Telecom",
       overview: "Technical developer-analyst contributing to enterprise system delivery across backend testing, API integration, serverless support, deployment validation, and requirements implementation. Worked with pytest, SOAP APIs, and AWS Lambda to support reliable system behavior, technical delivery, and stable releases across multiple projects.",
+      techStack: ["Python", "pytest", "SOAP APIs", "AWS Lambda", "Backend services", "Enterprise system configuration"],
       keyAchievements: [
         "Used pytest (Python) to execute automated tests for backend services and integration-related workflows",
         "Worked with SOAP APIs for request/response handling, payload validation, and integration support",
@@ -67,7 +101,11 @@ const WORK_EXPERIENCES = [
         "Assisted with deployment support, validation, and test execution to help ensure stable releases",
       ],
     },
-    stack: [],
+    stack: [
+      { name: "AWS Lambda", desc: "AWS Lambda", icon: "/logos/aws-lambda-1.svg", href: "#" },
+      { name: "Python", desc: "Python", icon: "/logos/python.svg", href: "#" },
+      { name: "Linux", desc: "Linux", icon: "/logos/linux.svg", href: "#" },
+    ],
   },
   {
     company: "Pragtechnologies",
@@ -81,6 +119,7 @@ const WORK_EXPERIENCES = [
       industry: "SeeYouDoc Healthcare platform / Telehealth SaaS",
       overview:
         "Delivered end-to-end features for SeeYouDoc, a healthcare platform connecting patients and doctors for online consultations, appointment scheduling, and clinic workflow management. Worked across requirements analysis, solution design, implementation, testing, and debugging, collaborating with stakeholders to ship reliable product improvements.",
+      techStack: ["Elixir", "Phoenix", "GraphQL", "PostgreSQL", "React", "React Native"],
       keyAchievements: [
         `Implemented GraphQL APIs and integrated them with a React Native mobile app (paired with senior mobile devs), enabling single-request data fetching, reducing over-fetching, and improving performance on mobile networks.`,
         `Built and maintained backend APIs + business logic in Elixir/Phoenix to power SeeYouDoc’s React web app, including request validation, domain rules, and reliable data flows`,
@@ -136,6 +175,7 @@ const WORK_EXPERIENCES = [
       overview:
         `Workflow involved exporting data from interal system, importing it into the application (Feed monitoring system) and running validation and processing to generate dashboard summaries.
         The system also generate SSRS reports for offical reporting purposes.`,
+      techStack: ["PHP", "CodeIgniter 3", "SQL Server", "SSRS", "JavaScript", "jQuery", "HTML", "CSS"],
       keyAchievements: [
         "Built an internal web app from scratch (CodeIgniter 3) with Excel upload, validation, processing, and dashboard summaries.",
         "Integrated SSRS reporting so users could generate formal reports with a one-click action from the dashboard.",
@@ -179,6 +219,7 @@ const WORK_EXPERIENCES = [
       industry: "HR Technology / Enterprise Systems",
       overview:
         "Implemented HRIS solutions for client organizations by aligning system configuration with existing HR and manual payroll processes. Gathered requirements with HR stakeholders, mapped workflows, and produced functional and non-functional specifications to support implementation and adoption.",
+      techStack: ["Workwise HRIS", "SQL", "Database validation", "System configuration", "Functional testing"],
       keyAchievements: [
         "Configured HRIS workflows based on client processes and validated outputs against manual payroll calculations.",
         "Facilitated requirements gathering with HR staff and documented functional/non-functional specifications.",
@@ -200,6 +241,7 @@ const WORK_EXPERIENCES = [
       industry: "Digital Marketing / SEO",
       overview:
         "Early career role focused on off-page SEO and link-building to improve search visibility, domain authority, and content discoverability. Supported SEO reporting and performance monitoring using analytics and search performance tools.",
+      techStack: ["Google Analytics", "Google Search Console", "SEO tools", "Link-building tools"],
       keyAchievements: [
         "Executed link-building and outreach activities to support organic search growth and improve content discoverability.",
         "Monitored search performance and indexing health using Google Search Console; flagged issues and opportunities for improvements.",
@@ -234,6 +276,7 @@ const WORK_EXPERIENCES = [
       industry: "FMCG Distribution",
       overview:
         "Supported SOAS (Sales Office Automation System), an internal sales monitoring platform used across multiple sales offices. Each sales office operated its own instance, which triggered end-of-day sales and summary uploads to head office. Provided operational and technical support to ensure end-to-end data flow—from salesperson handheld devices to on-premise syncing, registration in SOAS, and successful delivery to headquarters.",
+      techStack: ["SQL", "SOAS", "Sales handheld systems", "On-premise sync tools", "Database validation"],
       keyAchievements: [
         "Supported multiple sales office instances of SOAS and ensured daily end-to-end data delivery to head office.",
         "Troubleshot syncing and registration issues between sales handheld devices/apps and the sales office SOAS system.",
@@ -247,9 +290,6 @@ const WORK_EXPERIENCES = [
 
 
 const NewVersionWorkExperience = () => {
-  const [activeTech, setActiveTech] = useState<
-    { company: string; tech: string } | undefined
-  >(undefined);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -277,13 +317,12 @@ const NewVersionWorkExperience = () => {
             Work Experience
           </h2>
           <p className="max-w-2xl text-base text-neutral-700 dark:text-neutral-300 sm:text-lg">
-            A timeline of the products I've shipped and contributed. Experiences delivering features, collaborating with stakeholders, and keeping production systems stable.
+            A timeline of the products I&apos;ve shipped and contributed. Experiences delivering features, collaborating with stakeholders, and keeping production systems stable.
           </p>
         </div>
 
         {WORK_EXPERIENCES.map((work_exp) => {
           const hasStack = Boolean(work_exp.stack?.length);
-          const hasDetails = Boolean((work_exp as any).details);
           const logosForLoop =
             work_exp.stack?.map((tool) => ({
               title: tool.name,
@@ -300,10 +339,6 @@ const NewVersionWorkExperience = () => {
                 </div>
               ),
             })) ?? [];
-          const count = logosForLoop.length;
-
-          const mobileHeight = Math.min(220, Math.max(120, 90 + count * 12));   // 120–220px
-          const desktopHeight = Math.min(600, Math.max(260, 180 + count * 35));
           return (
             <div
               key={`${work_exp.company}-${work_exp.period}`}
@@ -341,82 +376,70 @@ const NewVersionWorkExperience = () => {
                   </div>
 
                   {/* Details format (new) */}
-                  {hasDetails ? (
-                    <div className="mt-2 space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
-                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
-                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                          Project
-                        </div>
-                        <div className="font-medium text-neutral-900 dark:text-white">
-                          {(work_exp as any).details.project}
-                        </div>
+                  <div className="mt-2 space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+                    <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                        Project
                       </div>
-
-                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
-                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                          Industry
-                        </div>
-                        <div>{(work_exp as any).details.industry}</div>
-                      </div>
-                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
-                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                          Website
-                        </div>
-                        <div><a className="hover: text-blue-500" href={`${(work_exp as any).details.website}`}>{(work_exp as any).details.website} </a></div>
-                      </div>
-
-                      {work_exp.details.overview ? (
-                        <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
-                          <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                            Overview
-                          </div>
-                          <p className="leading-relaxed">
-                            {work_exp.details.overview}
-                          </p>
-                        </div>
-                      ) : null}
-
-                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
-                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                          Key achievements
-                        </div>
-
-                        <ul className="list-disc space-y-1 pl-5">
-                          {(work_exp as any).details.keyAchievements?.map((item: string) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
+                      <div className="font-medium text-neutral-900 dark:text-white">
+                        {work_exp.details.project}
                       </div>
                     </div>
-                  ) : (
-                    // Fallback (old description string)
-                    (() => {
-                      const desc = (work_exp as any).description ?? "";
-                      const lines = desc
-                        .split("\n")
-                        .map((line: string) => line.trim())
-                        .filter(Boolean);
 
-                      const bulletLines = lines.filter((line: string) => line.startsWith("- "));
-                      const renderBullets = lines.length > 1 && bulletLines.length === lines.length;
+                    <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                        Industry
+                      </div>
+                      <div>{work_exp.details.industry}</div>
+                    </div>
+                    <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                        Website
+                      </div>
+                      <div><a className="hover:text-blue-500" href={work_exp.details.website}>{work_exp.details.website} </a></div>
+                    </div>
 
-                      if (renderBullets) {
-                        return (
-                          <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300">
-                            {bulletLines.map((line: string, index: number) => (
-                              <li key={`${index}-${line}`}>{line.slice(2)}</li>
-                            ))}
-                          </ul>
-                        );
-                      }
-
-                      return (
-                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                          {desc}
+                    {work_exp.details.overview ? (
+                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                          Overview
+                        </div>
+                        <p className="leading-relaxed">
+                          {work_exp.details.overview}
                         </p>
-                      );
-                    })()
-                  )}
+                      </div>
+                    ) : null}
+
+                    {work_exp.details.techStack.length ? (
+                      <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                        <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                          Tech Stack
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {work_exp.details.techStack.map((item) => (
+                            <span
+                              key={item}
+                              className="rounded-md border border-neutral-300 px-2 py-1 text-xs font-medium text-neutral-700 dark:border-neutral-700 dark:text-neutral-200"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    <div className="grid gap-2 sm:grid-cols-[120px_1fr]">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                        Key achievements
+                      </div>
+
+                      <ul className="list-disc space-y-1 pl-5">
+                        {work_exp.details.keyAchievements.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               {hasStack &&
@@ -426,7 +449,7 @@ const NewVersionWorkExperience = () => {
                   <LogoLoop
                     logos={logosForLoop}
                     fadeOutColor="var(--background)"
-                    speed={50}
+                    speed={18}
                     direction={isMobile ? "right" : "up"}
                     logoHeight={65}
                     gap={30}
