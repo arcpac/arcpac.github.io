@@ -117,8 +117,7 @@ export default function SkillsSection() {
               The mind behind the creations
             </h2>
             <p className="max-w-2xl text-base text-neutral-700 text-sm md:text-lg dark:text-neutral-300">
-              My DevOps experience is part of how I design — not something
-              bolted on at the end. I use <b>AWS</b> (SQS, Lambda, S3),{" "}
+              My DevOps experience is part of how I design I use <b>AWS</b> (SQS, Lambda, S3),{" "}
               <b>Docker</b>, <b>GitHub Actions</b>, and <b>CI/CD</b> to build
               systems that are observable, repeatable, and reliable from day
               one. Infrastructure decisions and software decisions happen in the
