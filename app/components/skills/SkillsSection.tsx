@@ -124,12 +124,14 @@ export default function SkillsSection() {
               same conversation for me.
             </p>
             <p className="max-w-2xl text-base text-neutral-700 text-sm md:text-lg dark:text-neutral-300">
-              <b>Elixir</b> and the BEAM VM reshaped how I think about
-              concurrency, fault tolerance, and distributed systems. Building
-              with Elixir Phoenix taught me to design for isolation, supervision,
-              and message-passing — principles I carry into every system I build,
-              regardless of the stack. I continue building backend systems in
-              Elixir and am keen to work with it professionally again.
+              I genuinely love working with <b>Elixir</b> the BEAM VM reshaped
+              how I think about concurrency, fault tolerance, and distributed
+              systems. I use it in systems that have processes reacting to
+              events in real time, message queues handling load without
+              blocking, and supervision trees that keep things running even
+              when parts fail. I continue
+              building with Elixir and am keen to bring that event-driven
+              mindset to a team's production systems.
             </p>
           </div>
         </div>
