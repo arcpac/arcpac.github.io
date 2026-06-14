@@ -48,7 +48,7 @@ const WORK_EXPERIENCES: WorkExperience[] = [
       website: "https://www.quote.cloud/",
       industry: "SaaS / Sales Enablement",
       overview: "Worked as a Software Developer contributing to the design, development, and ongoing improvement of QuoteCloud, a production-grade document editor and quoting platform used by customers to create proposals, quotes, and other sales documents",
-      techStack: ["Next.js", "React + TypeScript", "JavaScript", "jQuery", "GitHub Copilot", "CodeRabbit", "GraphQL", "React Native", "Node.js"],
+      techStack: ["Next.js", "React + TypeScript", "JavaScript", "jQuery", "GitHub Copilot", "CodeRabbit", "GraphQL", "React Native", "Node.js", "AWS S3"],
       keyAchievements: [
         `Delivered core features from the ground up.`,
         `AI features (Itinerary text and AI coworker)`,
@@ -78,6 +78,7 @@ const WORK_EXPERIENCES: WorkExperience[] = [
       },
       { name: "JavaScript / jQuery", desc: "UI + interactions", icon: "/logos/js.png", href: "#" },
       { name: "CodeRabbit", desc: "CodeRabbit", icon: "/logos/coderabbit.svg", href: "#" },
+      { name: "AWS S3", desc: "Document data and images", icon: "/logos/aws-s3.svg", href: "#" },
     ],
   },
   {
